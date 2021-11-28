@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/BMI1"
+        android:title="Item"
+        android:visible="true"></item>
+    <item android:title="Item"
+          android:id="@+id/BMI2"></item>
+    <item android:title="Item"
+          android:id="@+id/BMI3"
+          android:visible="true"></item>
+    <item android:title="Item"
+          android:id="@+id/BMI4"
+          android:visible="true"></item>
+
+</menu>
