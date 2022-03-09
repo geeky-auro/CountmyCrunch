@@ -31,6 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:background="#F5E8C7"
             android:weightSum="2">
 
             <ImageButton

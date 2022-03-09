@@ -1,14 +1,18 @@
 package com.aurosaswatraj.countmycrunch
 
+import android.animation.ObjectAnimator
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
+import android.view.animation.BounceInterpolator
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import java.math.BigDecimal
+
+
 private const val TAG="MainActivity"
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,13 +38,16 @@ class MainActivity : AppCompatActivity() {
             btn_girl.setBackgroundColor(Color.parseColor("#9E7777"))
             gender="male"
             Log.d(TAG,"$gender")
+            goback(it,gender)
         }
 
         btn_girl.setOnClickListener{
+
             it.setBackgroundColor(Color.parseColor("#774E4E"))
             btn_boy.setBackgroundColor(Color.parseColor("#9E7777"))
             gender="female"
             Log.d(TAG,"$gender")
+            goback(it,gender)
         }
 
 
@@ -60,7 +67,7 @@ class MainActivity : AppCompatActivity() {
                         take_input_BMI_Male_calculate()
                     }
                         else{
-                            it.isEnabled = false
+
 //                        Alternative can be shown is a error message
                         }
                 }
@@ -73,7 +80,7 @@ class MainActivity : AppCompatActivity() {
                         take_input_BMI_Female_calculate()
                     }
                     else{
-                        it.isEnabled = false
+
 //                        Alternative can be shown is a error message
                     }
                 }
@@ -149,6 +156,28 @@ Obesity = BMI of 30 or greater */
         }
 
 }
+//    Enhancements
+
+    private fun goback(view: View?,gender:String?) {
+        when(gender){
+            "male"->{ val animY = ObjectAnimator.ofFloat(view, "translationX", 50f, 0f)
+                animY.duration = 500 //1sec
+                animY.interpolator = BounceInterpolator()
+                animY.repeatCount = 0
+                animY.start() }
+            "female"->{
+                val animY = ObjectAnimator.ofFloat(view, "translationX", -50f, 0f)
+                animY.duration = 500 //1sec
+                animY.interpolator = BounceInterpolator()
+                animY.repeatCount = 0
+                animY.start()
+            }
+        }
+
+
+    }
+
+
 }
 
 /** Monitor your health in your hands. */
