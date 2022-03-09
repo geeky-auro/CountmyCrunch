@@ -2,16 +2,18 @@ package com.aurosaswatraj.countmycrunch
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import java.math.BigDecimal
-
+private const val TAG="MainActivity"
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        submit_Button()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -26,7 +28,8 @@ class MainActivity : AppCompatActivity() {
 //    TODO:Create a menu for Male and Female selection with color changes
 
     private fun submit_Button(){
-        var listener=View.OnClickListener {
+
+        val listener=View.OnClickListener {
 
             when(gender){
                 "Male"->{
@@ -58,49 +61,75 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
+        submit_button.setOnClickListener(listener)
     }
 
     private fun take_input_BMI_Male_calculate(){
-        var wt=weight_input.text.toString().toBigDecimal()
-        var ht_ft=heightft_input.text.toString().toBigDecimal()
-        var ht_in=heightin_input.text.toString().toBigDecimal()
-        var age=age_input.text.toString().toBigDecimal()
+        val wt=weight_input.text.toString().toBigDecimal()
+        val ht_ft=heightft_input.text.toString().toBigDecimal()
+        val ht_in=heightin_input.text.toString().toBigDecimal()
+        val age=age_input.text.toString().toBigDecimal()
 
         calculate_BMI_Male(wt,ht_ft,ht_in,age)
     }
     private fun take_input_BMI_Female_calculate(){
-        var wt=weight_input.text.toString().toBigDecimal()
-        var ht_ft=heightft_input.text.toString().toBigDecimal()
-        var ht_in=heightin_input.text.toString().toBigDecimal()
-        var age=age_input.text.toString().toBigDecimal()
+        val wt=weight_input.text.toString().toBigDecimal()
+        val ht_ft=heightft_input.text.toString().toBigDecimal()
+        val ht_in=heightin_input.text.toString().toBigDecimal()
+        val age=age_input.text.toString().toBigDecimal()
 
         calculate_BMI_Female(wt,ht_ft,ht_in,age)
     }
 
     private fun calculate_BMI_Female(wt: BigDecimal?, ht_ft:BigDecimal?,ht_in:BigDecimal?, age: BigDecimal?) {
-        var female_weight=wt
-        var female_height_ft=ht_ft
-        var female_height_in=ht_in
-        var female_age=age
+        val female_weight=wt
+        val female_height_ft=ht_ft
+        val female_height_in=ht_in
 
-        var heightincm= female_height_ft?.times(12.0.toBigDecimal())?.plus(female_height_in!!)
-        heightincm=heightincm?.times(2.54.toBigDecimal())
 
-        var female_height="".toBigDecimal()
-        var BMR=66.toBigDecimal() +(13.7.toBigDecimal() * female_weight!!) + (5.toBigDecimal() * heightincm!!) - (6.8.toBigDecimal() * female_age!!)
+        var heightinmeter= female_height_ft?.times(12.0.toBigDecimal())?.plus(female_height_in!!)
+        heightinmeter=heightinmeter?.times(2.54.toBigDecimal())
+        heightinmeter=heightinmeter?.div(100.0.toBigDecimal())
+        heightinmeter=heightinmeter?.times(heightinmeter)
+
+        val BMI=female_weight?.div(heightinmeter!!)
+        Log.d(TAG,"BMI calculated is $BMI")
     }
 
     private fun calculate_BMI_Male(wt: BigDecimal?, ht_ft:BigDecimal?,ht_in:BigDecimal?, age: BigDecimal?){
 //        For Men
-        var male_weight=wt
-        var male_height_ft=ht_ft
-        var male_height_in=ht_in
+        val male_weight=wt
+        val male_height_ft=ht_ft
+        val male_height_in=ht_in
         var male_age=age
-        var heightincm= male_height_ft?.times(12.0.toBigDecimal())?.plus(male_height_in!!)
-        heightincm=heightincm?.times(2.54.toBigDecimal())
-        val BMR=655.toBigDecimal() +(9.6.toBigDecimal() * male_weight!!) + (1.8.toBigDecimal() * heightincm!!) - (4.7.toBigDecimal() * male_age!!)
+//        male_weight=male_weight?.times(2.20462.toBigDecimal())
+        var heightinmeter= male_height_ft?.times(12.0.toBigDecimal())?.plus(male_height_in!!)
+        heightinmeter=heightinmeter?.times(2.54.toBigDecimal())
+        heightinmeter=heightinmeter?.div(100.0.toBigDecimal())
+        heightinmeter=heightinmeter?.times(heightinmeter)
+        val BMI=male_weight?.div(heightinmeter!!)
+//        val BMI=655.toBigDecimal() +(9.6.toBigDecimal() * male_weight!!) + (1.8.toBigDecimal() * heightinmeter!!) - (4.7.toBigDecimal() * male_age!!)
+        Log.d(TAG,"BMI calculated is $BMI")
+
+//        Display Categories
+/** Underweight = <18.5
+Normal weight = 18.5–24.9
+Overweight = 25–29.9
+Obesity = BMI of 30 or greater */
     }
 
+    private fun showRecommendations(BMI:BigDecimal?){
+        if (BMI!!<=18.5.toBigDecimal()){
+        Log.d(TAG,"Underweight")
+        }else if(BMI >18.5.toBigDecimal() && BMI <=24.9.toBigDecimal()){
+        Log.d(TAG,"Normal weight")
+        }else if(BMI>24.9.toBigDecimal() && BMI<=29.9.toBigDecimal()){
+            Log.d(TAG,"OverWeight")
+        }else{
+            Log.d(TAG,"Obesity")
+        }
+
+}
 }
 
 /** Monitor your health in your hands. */
