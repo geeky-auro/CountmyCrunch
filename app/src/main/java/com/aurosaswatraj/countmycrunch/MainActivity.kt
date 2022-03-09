@@ -110,6 +110,7 @@ class MainActivity : AppCompatActivity() {
         val BMI=male_weight?.div(heightinmeter!!)
 //        val BMI=655.toBigDecimal() +(9.6.toBigDecimal() * male_weight!!) + (1.8.toBigDecimal() * heightinmeter!!) - (4.7.toBigDecimal() * male_age!!)
         Log.d(TAG,"BMI calculated is $BMI")
+        showRecommendations(BMI)
 
 //        Display Categories
 /** Underweight = <18.5
