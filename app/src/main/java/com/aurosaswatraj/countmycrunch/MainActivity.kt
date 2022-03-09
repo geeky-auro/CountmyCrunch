@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private var gender="Male"
+//    TODO:Create a menu for Male and Female selection with color changes
 
     private fun submit_Button(){
         var listener=View.OnClickListener {
