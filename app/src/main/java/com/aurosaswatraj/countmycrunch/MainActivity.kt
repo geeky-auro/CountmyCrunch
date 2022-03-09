@@ -1,5 +1,6 @@
 package com.aurosaswatraj.countmycrunch
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         submit_Button()
+        genderSelection()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -24,15 +26,32 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
-    private var gender="Male"
-//    TODO:Create a menu for Male and Female selection with color changes
+    private var gender="male"
+
+    private fun genderSelection(){
+        btn_boy.setOnClickListener {
+            it.setBackgroundColor(Color.parseColor("#774E4E"))
+            btn_girl.setBackgroundColor(Color.parseColor("#9E7777"))
+            gender="male"
+            Log.d(TAG,"$gender")
+        }
+
+        btn_girl.setOnClickListener{
+            it.setBackgroundColor(Color.parseColor("#774E4E"))
+            btn_boy.setBackgroundColor(Color.parseColor("#9E7777"))
+            gender="female"
+            Log.d(TAG,"$gender")
+        }
+
+
+    }
 
     private fun submit_Button(){
 
         val listener=View.OnClickListener {
 
             when(gender){
-                "Male"->{
+                "male"->{
                         if (weight_input.text.toString().isNotEmpty() &&
                             heightin_input.text.toString().isNotEmpty() &&
                             age_input.text.toString().isNotEmpty() &&
@@ -45,7 +64,7 @@ class MainActivity : AppCompatActivity() {
 //                        Alternative can be shown is a error message
                         }
                 }
-                "Female"->{
+                "female"->{
                     if (weight_input.text.toString().isNotEmpty() &&
                         heightin_input.text.toString().isNotEmpty() &&
                         age_input.text.toString().isNotEmpty() &&
@@ -85,8 +104,6 @@ class MainActivity : AppCompatActivity() {
         val female_weight=wt
         val female_height_ft=ht_ft
         val female_height_in=ht_in
-
-
         var heightinmeter= female_height_ft?.times(12.0.toBigDecimal())?.plus(female_height_in!!)
         heightinmeter=heightinmeter?.times(2.54.toBigDecimal())
         heightinmeter=heightinmeter?.div(100.0.toBigDecimal())
@@ -94,6 +111,7 @@ class MainActivity : AppCompatActivity() {
 
         val BMI=female_weight?.div(heightinmeter!!)
         Log.d(TAG,"BMI calculated is $BMI")
+        showRecommendations(BMI)
     }
 
     private fun calculate_BMI_Male(wt: BigDecimal?, ht_ft:BigDecimal?,ht_in:BigDecimal?, age: BigDecimal?){
