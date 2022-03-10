@@ -67,7 +67,7 @@ class BMIFinder : Fragment() {
                     }
                     else{
 
-//                        Alternative can be shown is a error message
+//                        TODO:Alternative can be shown is a error message
                     }
                 }
                 "female"->{
@@ -80,7 +80,7 @@ class BMIFinder : Fragment() {
                     }
                     else{
 
-//                        Alternative can be shown is a error message
+//                        TODO:Alternative can be shown is a error message
                     }
                 }
             }
