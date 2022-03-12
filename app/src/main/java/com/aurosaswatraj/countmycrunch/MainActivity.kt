@@ -54,6 +54,8 @@ class MainActivity : AppCompatActivity() {
  * Weight Gain = 18-19 calories per #
  */
 
-/* https://www.fruityvice.com/
+/*
+https://www.themealdb.com/api.php
+https://www.fruityvice.com/
 https://github.com/surhud004/Foodish
 * */
