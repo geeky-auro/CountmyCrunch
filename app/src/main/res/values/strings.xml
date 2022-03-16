@@ -6,4 +6,5 @@
     <string name="height_in_ft">Height in ft</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Activity_level">Choose Activity Level</string>
 </resources>
