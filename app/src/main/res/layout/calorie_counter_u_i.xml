@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,6 +34,19 @@
                 app:strokeColor="#aaa"
                 app:strokeWidth="1dp">
 
+                <ImageButton
+                    android:id="@+id/btn_boy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#774E4E"
+                    android:clickable="true"
+                    android:contentDescription="Male"
+                    android:focusable="true"
+                    android:padding="20dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/male1"
+                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"></ImageButton>
+
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -48,6 +62,19 @@
                 app:cardElevation="10dp"
                 app:strokeColor="#aaa"
                 app:strokeWidth="1dp">
+
+                <ImageButton
+                    android:id="@+id/btn_girl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#774E4E"
+                    android:clickable="true"
+                    android:contentDescription="Male"
+                    android:focusable="true"
+                    android:padding="20dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/feamle1"
+                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"></ImageButton>
 
             </com.google.android.material.card.MaterialCardView>
 
@@ -144,9 +171,6 @@
             android:layout_margin="8dp"
            >
 
-            <!-- Inside text input layout add
-                  an auto complete text view
-                    and make its input type to none-->
             <AutoCompleteTextView
                 android:id="@+id/autoCompleteTextView"
                 android:layout_width="match_parent"
@@ -158,21 +182,26 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/relativelayout">
+
+            <!--Recycler View widget-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:scrollbars="horizontal"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+        </RelativeLayout>
+
+
     </LinearLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
