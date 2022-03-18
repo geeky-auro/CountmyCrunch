@@ -3,11 +3,11 @@ package com.aurosaswatraj.countmycrunch
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.aurosaswatraj.countmycrunch.CalorieCounter.FoodAdapter
+import com.aurosaswatraj.countmycrunch.CalorieCounter.FoodItems
 
 import kotlinx.android.synthetic.main.calorie_counter_u_i.*
 
@@ -15,11 +15,14 @@ import kotlinx.android.synthetic.main.calorie_counter_u_i.*
 private const val TAG="MainActivity"
 class MainActivity : AppCompatActivity() {
 
-
+    var food:ArrayList<FoodItems> =ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.calorie_counter_u_i)
+        initializeitems()
+        recyclerview.layoutManager=LinearLayoutManager(this,RecyclerView.HORIZONTAL,false)
+        recyclerview.adapter=FoodAdapter(food)
 
 //        https://www.geeksforgeeks.org/exposed-drop-down-menu-in-android/
 
@@ -33,6 +36,12 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
+    private fun initializeitems(){
+        food.add(FoodItems(R.drawable.ic_launcher_background,"Background"))
+        food.add(FoodItems(R.drawable.apple,"Background"))
+        food.add(FoodItems(R.drawable.ic_launcher_background,"Background"))
+        food.add(FoodItems(R.drawable.ic_launcher_background,"Background"))
+    }
 
 }
 
