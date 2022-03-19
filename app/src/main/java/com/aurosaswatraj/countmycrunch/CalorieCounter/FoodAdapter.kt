@@ -1,12 +1,16 @@
 package com.aurosaswatraj.countmycrunch.CalorieCounter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import de.hdodenhof.circleimageview.*
 import androidx.recyclerview.widget.RecyclerView
 import com.aurosaswatraj.countmycrunch.R
+
+private const val TAG="FoodAdapter"
 
 class FoodAdapter(val food:ArrayList<FoodItems>):RecyclerView.Adapter<FoodAdapter.ViewHolder>() {
 
@@ -21,6 +25,10 @@ class FoodAdapter(val food:ArrayList<FoodItems>):RecyclerView.Adapter<FoodAdapte
        var currentItem:FoodItems= food[position]
         holder.image.setImageResource(currentItem.getMimgae())
         holder.name.text = currentItem.getMtext()
+        holder.cardBtn.setOnClickListener {
+            Log.d(TAG,"Card Clicked and Calorie is ${currentItem.getMCalorie()}")
+        }
+
     }
 
     override fun getItemCount(): Int {
@@ -31,6 +39,7 @@ class FoodAdapter(val food:ArrayList<FoodItems>):RecyclerView.Adapter<FoodAdapte
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val image=itemView.findViewById<CircleImageView>(R.id.foodimage)
         val name=itemView.findViewById<TextView>(R.id.foodname)
+        val cardBtn=itemView.findViewById<CardView>(R.id.cardBtn)
     }
 
 }

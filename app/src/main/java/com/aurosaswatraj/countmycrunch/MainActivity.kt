@@ -37,10 +37,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initializeitems(){
-        food.add(FoodItems(R.drawable.ic_launcher_background,"Background"))
-        food.add(FoodItems(R.drawable.apple,"Background"))
-        food.add(FoodItems(R.drawable.ic_launcher_background,"Background"))
-        food.add(FoodItems(R.drawable.ic_launcher_background,"Background"))
+        food.add(FoodItems(R.drawable.ic_launcher_background,"Background",120.0))
+        food.add(FoodItems(R.drawable.apple,"Background",1221.0))
+        food.add(FoodItems(R.drawable.ic_launcher_background,"Background",122.5))
+        food.add(FoodItems(R.drawable.ic_launcher_background,"Background",120.0))
     }
 
 }
