@@ -73,7 +73,12 @@ class MainActivity : AppCompatActivity() {
         food.add(FoodItems(R.drawable.rice,"Rice",120.0))
         food.add(FoodItems(R.drawable.sandwich,"Sandwich",120.0))
         food.add(FoodItems(R.drawable.shrimp,"Shrimp,Cooked",120.0))
-        food.add(FoodItems(R.drawable.shrimp,"Strawberry",120.0))
+        food.add(FoodItems(R.drawable.strawberry,"Strawberry",120.0))
+        food.add(FoodItems(R.drawable.tofu,"Tofu",120.0))
+        food.add(FoodItems(R.drawable.tomato,"Tomato",120.0))
+        food.add(FoodItems(R.drawable.watermelon,"Watermelon",120.0))
+        food.add(FoodItems(R.drawable.yoghurt_low_fat,"Yogurt (Low-fat)",120.0))
+        food.add(FoodItems(R.drawable.yoghurt_non_fat,"Yogurt (non-fat)",120.0))
     }
 
 }
