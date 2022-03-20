@@ -2,10 +2,10 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cardBtn"
-    android:layout_width="wrap_content"
+    android:layout_width="120dp"
     android:layout_height="wrap_content"
     app:cardBackgroundColor="#C66C6C"
-    app:cardCornerRadius="20dp"
+    app:cardCornerRadius="30dp"
     android:layout_margin="8dp"
     >
 
@@ -13,18 +13,19 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:layout_gravity="center"
         android:padding="4dp"
         >
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
             android:id="@+id/foodimage"
-            android:layout_width="80dp"
+            android:layout_width="wrap_content"
             android:layout_height="80dp"
             android:layout_gravity="center"
             android:padding="5dp"
             android:src="@drawable/apple"
             app:layout_constraintStart_toStartOf="parent">
 
-        </de.hdodenhof.circleimageview.CircleImageView>
+        </ImageView>
 
         <TextView
             android:id="@+id/foodname"
@@ -34,7 +35,7 @@
             android:padding="4dp"
             android:textAlignment="center"
             android:textStyle="bold"
-            android:textSize="14dp"
+            android:textSize="20sp"
             android:fontFamily="cursive"
             android:textColor="@color/white"></TextView>
 

@@ -22,8 +22,8 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/materialCardView1"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:background="#F5E8C7"
@@ -42,7 +42,7 @@
                     android:clickable="true"
                     android:contentDescription="Male"
                     android:focusable="true"
-                    android:padding="20dp"
+                    android:padding="5dp"
                     android:scaleType="fitCenter"
                     android:src="@drawable/male1"
                     tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"></ImageButton>
@@ -51,8 +51,8 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/materialCardView2"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:background="#F5E8C7"
@@ -71,7 +71,7 @@
                     android:clickable="true"
                     android:contentDescription="Male"
                     android:focusable="true"
-                    android:padding="20dp"
+                    android:padding="5dp"
                     android:scaleType="fitCenter"
                     android:src="@drawable/feamle1"
                     tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"></ImageButton>
@@ -201,6 +201,8 @@
                 android:scrollbars="horizontal" />
 
         </RelativeLayout>
+
+
 
 
     </LinearLayout>

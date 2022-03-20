@@ -4,6 +4,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import de.hdodenhof.circleimageview.*
@@ -37,7 +38,7 @@ class FoodAdapter(val food:ArrayList<FoodItems>):RecyclerView.Adapter<FoodAdapte
 
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        val image=itemView.findViewById<CircleImageView>(R.id.foodimage)
+        val image=itemView.findViewById<ImageView>(R.id.foodimage)
         val name=itemView.findViewById<TextView>(R.id.foodname)
         val cardBtn=itemView.findViewById<CardView>(R.id.cardBtn)
     }
