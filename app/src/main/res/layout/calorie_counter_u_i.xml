@@ -89,14 +89,38 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/filledTextField0"
             android:layout_width="match_parent"
-            android:layout_margin="8dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/round"
+            android:hint="@string/string_age">
+
+            <!--this is the actual edit text which takes the input-->
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/age_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round"
+                android:inputType="numberDecimal"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/weight_filledText"
+            android:layout_width="match_parent"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
             android:layout_height="wrap_content"
             android:background="@drawable/round"
             android:hint="@string/string_weight">
 
             <!--this is the actual edit text which takes the input-->
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/age_input"
+                android:id="@+id/weight_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/round"
@@ -116,8 +140,6 @@
                 android:id="@+id/filledTextField1ft"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
-
                 android:layout_margin="8dp"
                 android:background="@drawable/round"
                 android:layout_weight="1"
@@ -202,7 +224,20 @@
 
         </RelativeLayout>
 
-
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/submit_button"
+            android:layout_marginTop="5dp"
+            android:layout_width="180dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/round_button"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:text="@string/calculate"
+            android:textColor="#ffffff"
+            android:textSize="23sp"
+            android:textStyle="bold" />
 
 
     </LinearLayout>
