@@ -8,4 +8,12 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Activity_level">Choose Activity Level</string>
     <string name="calculate">CALCULATE</string>
+
+    <string-array name="programming_languages">
+        <item>Java</item>
+        <item>Kotlin</item>
+        <item>Python</item>
+        <item>CPP</item>
+    </string-array>
+
 </resources>
