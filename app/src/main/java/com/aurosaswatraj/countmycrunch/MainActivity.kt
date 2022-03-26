@@ -1,8 +1,11 @@
 package com.aurosaswatraj.countmycrunch
 
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -16,6 +19,7 @@ private const val TAG="MainActivity"
 class MainActivity : AppCompatActivity() {
 
     var food:ArrayList<FoodItems> =ArrayList()
+    var selecteditem=""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +29,36 @@ class MainActivity : AppCompatActivity() {
         recyclerview.adapter=FoodAdapter(food)
 
 //        https://www.geeksforgeeks.org/exposed-drop-down-menu-in-android/
+
+        // get reference to the string array that we just created
+        val activityLevel = resources.getStringArray(R.array.Activity_Level)
+        // create an array adapter and pass the required parameter
+        // in our case pass the context, drop down layout , and array.
+        val arrayAdapter = ArrayAdapter(this, R.layout.dropdown_item, activityLevel)
+        // get reference to the autocomplete text view
+        val autocompleteTV = findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView)
+        autocompleteTV.setOnItemClickListener { parent, view, position, id ->
+            Log.d(TAG,"$position selected")
+            selecteditem = when(position){
+                0->{
+                    "Sedentary"
+                }
+                1->{
+                    "Lightly"
+                }
+                2->{
+                    "Moderate"
+                }
+                3->{
+                    "Active"
+                }
+                else->{
+                    "Moderate"
+                }
+            }
+        }
+        // set adapter to the autocomplete tv to the arrayAdapter
+        autocompleteTV.setAdapter(arrayAdapter)
 
 
     }

@@ -9,11 +9,11 @@
     <string name="Activity_level">Choose Activity Level</string>
     <string name="calculate">CALCULATE</string>
 
-    <string-array name="programming_languages">
-        <item>Java</item>
-        <item>Kotlin</item>
-        <item>Python</item>
-        <item>CPP</item>
+    <string-array name="Activity_Level">
+        <item>Sedentary(little or no exercise)</item>
+        <item>Light(exercise 1–3 times/week)</item>
+        <item>Moderate(exercise 4–5 times/week)</item>
+        <item>Active(intense exercise 6–7 times/week)</item>
     </string-array>
 
 </resources>
