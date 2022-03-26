@@ -4,6 +4,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
@@ -23,11 +24,20 @@ class FoodAdapter(val food:ArrayList<FoodItems>):RecyclerView.Adapter<FoodAdapte
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-       var currentItem:FoodItems= food[position]
+       val currentItem:FoodItems= food[position]
         holder.image.setImageResource(currentItem.getMimgae())
         holder.name.text = currentItem.getMtext()
+        var counter=0
         holder.cardBtn.setOnClickListener {
             Log.d(TAG,"Card Clicked and Calorie is ${currentItem.getMCalorie()}")
+        }
+        holder.addBtn.setOnClickListener {
+            counter++
+            holder.textcounter.text=counter.toString()
+        }
+        holder.subBtn.setOnClickListener {
+            counter--
+            holder.textcounter.text=counter.toString()
         }
 
     }
@@ -38,9 +48,13 @@ class FoodAdapter(val food:ArrayList<FoodItems>):RecyclerView.Adapter<FoodAdapte
 
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        val image=itemView.findViewById<ImageView>(R.id.foodimage)
-        val name=itemView.findViewById<TextView>(R.id.foodname)
-        val cardBtn=itemView.findViewById<CardView>(R.id.cardBtn)
+        val image: ImageView =itemView.findViewById(R.id.foodimage)
+        val name: TextView =itemView.findViewById(R.id.foodname)
+        val cardBtn: CardView =itemView.findViewById(R.id.cardBtn)
+        val addBtn: Button =itemView.findViewById(R.id.add_item_btn)
+        val subBtn: Button =itemView.findViewById(R.id.sub_item_btn)
+        val textcounter: TextView =itemView.findViewById(R.id.num_item_text)
+
     }
 
 }
