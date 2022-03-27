@@ -17,6 +17,8 @@ private const val TAG="FoodAdapter"
 class FoodAdapter(val food:ArrayList<FoodItems>):RecyclerView.Adapter<FoodAdapter.ViewHolder>() {
 
 
+    private var totalCalorie=0.0
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view= LayoutInflater.from(parent.context).inflate(R.layout.food_list_item,parent,false)
@@ -33,13 +35,19 @@ class FoodAdapter(val food:ArrayList<FoodItems>):RecyclerView.Adapter<FoodAdapte
         }
         holder.addBtn.setOnClickListener {
             counter++
+            totalCalorie+=currentItem.getMCalorie()
             holder.textcounter.text=counter.toString()
         }
         holder.subBtn.setOnClickListener {
             counter--
+            totalCalorie+=currentItem.getMCalorie()
             holder.textcounter.text=counter.toString()
         }
 
+    }
+
+    fun getCalorie():Double{
+        return totalCalorie
     }
 
     override fun getItemCount(): Int {

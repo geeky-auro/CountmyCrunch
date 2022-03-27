@@ -60,6 +60,11 @@ class MainActivity : AppCompatActivity() {
         // set adapter to the autocomplete tv to the arrayAdapter
         autocompleteTV.setAdapter(arrayAdapter)
 
+        //onClickListener....>!
+
+
+
+
 
     }
 
