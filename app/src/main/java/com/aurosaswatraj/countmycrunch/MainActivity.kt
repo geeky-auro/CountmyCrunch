@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.calorie_counter_u_i.*
 
 
 private const val TAG="MainActivity"
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(),FoodAdapter.onTaskClickListener {
 
     var food:ArrayList<FoodItems> =ArrayList()
     var selecteditem=""
@@ -25,8 +25,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.calorie_counter_u_i)
         initializeitems()
-        recyclerview.layoutManager=LinearLayoutManager(this,RecyclerView.HORIZONTAL,false)
-        recyclerview.adapter=FoodAdapter(food)
+        recyclerview.layoutManager=LinearLayoutManager(applicationContext,RecyclerView.HORIZONTAL,false)
+        recyclerview.adapter=FoodAdapter(food,this)
 
 //        https://www.geeksforgeeks.org/exposed-drop-down-menu-in-android/
 
@@ -61,7 +61,10 @@ class MainActivity : AppCompatActivity() {
         autocompleteTV.setAdapter(arrayAdapter)
 
         //onClickListener....>!
+        submit_button.setOnClickListener {
 
+//       https://stackoverflow.com/questions/43088902/how-to-get-sum-of-integer-value-from-recyclerview
+        }
 
 
 
@@ -118,6 +121,18 @@ class MainActivity : AppCompatActivity() {
         food.add(FoodItems(R.drawable.watermelon,"Watermelon",120.0))
         food.add(FoodItems(R.drawable.yoghurt_low_fat,"Yogurt (Low-fat)",120.0))
         food.add(FoodItems(R.drawable.yoghurt_non_fat,"Yogurt (non-fat)",120.0))
+    }
+
+    override fun onEditClick() {
+        TODO("Not yet implemented")
+    }
+
+    override fun onDeleteClick() {
+        TODO("Not yet implemented")
+    }
+
+    override fun onTaskLongClick() {
+        TODO("Not yet implemented")
     }
 
 }
