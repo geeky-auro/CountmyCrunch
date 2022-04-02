@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
+import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import androidx.appcompat.app.AppCompatActivity
@@ -26,7 +27,11 @@ class MainActivity : AppCompatActivity(),FoodAdapter.onTaskClickListener {
         setContentView(R.layout.calorie_counter_u_i)
         initializeitems()
         recyclerview.layoutManager=LinearLayoutManager(applicationContext,RecyclerView.HORIZONTAL,false)
-        recyclerview.adapter=FoodAdapter(food,this)
+        recyclerview.adapter=FoodAdapter(food,applicationContext,this)
+//        https://stackoverflow.com/questions/28296708/get-clicked-item-and-its-position-in-recyclerview?rq=1
+
+
+
 
 //        https://www.geeksforgeeks.org/exposed-drop-down-menu-in-android/
 
@@ -61,6 +66,18 @@ class MainActivity : AppCompatActivity(),FoodAdapter.onTaskClickListener {
         autocompleteTV.setAdapter(arrayAdapter)
 
         //onClickListener....>!
+
+
+
+
+
+
+
+
+
+
+
+
         submit_button.setOnClickListener {
 
 //       https://stackoverflow.com/questions/43088902/how-to-get-sum-of-integer-value-from-recyclerview
@@ -123,17 +140,10 @@ class MainActivity : AppCompatActivity(),FoodAdapter.onTaskClickListener {
         food.add(FoodItems(R.drawable.yoghurt_non_fat,"Yogurt (non-fat)",120.0))
     }
 
-    override fun onEditClick() {
+    override fun recyclerViewListClicked(v: View?, position: Int) {
         TODO("Not yet implemented")
     }
 
-    override fun onDeleteClick() {
-        TODO("Not yet implemented")
-    }
-
-    override fun onTaskLongClick() {
-        TODO("Not yet implemented")
-    }
 
 }
 
