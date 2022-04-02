@@ -1,6 +1,5 @@
 package com.aurosaswatraj.countmycrunch.CalorieCounter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +10,7 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.aurosaswatraj.countmycrunch.R
 import kotlinx.android.extensions.LayoutContainer
+import kotlinx.android.synthetic.main.food_list_item.view.*
 
 private const val TAG="FoodAdapter"
 class FoodViewHolder(override val containerView: View) :
@@ -21,9 +21,13 @@ class FoodViewHolder(override val containerView: View) :
     private val addBtn: Button =containerView.findViewById(R.id.add_item_btn)
     private val subBtn: Button =containerView.findViewById(R.id.sub_item_btn)
     private val textcounter: TextView =containerView.findViewById(R.id.num_item_text)
-    fun bind(listener: FoodAdapter.onTaskClickListener, currentItem: FoodItems){
+    fun bind( currentItem: FoodItems){
         image.setImageResource(currentItem.getMimgae())
         name.text = currentItem.getMtext()
+        textcounter.text=currentItem.getMnoOfItems().toString()
+
+
+
 //        var counter=0
 //
 //        cardBtn.setOnClickListener {
@@ -45,20 +49,7 @@ class FoodViewHolder(override val containerView: View) :
     }
     }
 
-class FoodAdapter(val food:ArrayList<FoodItems>,private val context: Context,private val listener:onTaskClickListener): RecyclerView.Adapter<FoodViewHolder>() {
-
-
-
-
-    interface onTaskClickListener{
-
-
-        fun recyclerViewListClicked(v: View?, position: Int)
-
-
-//      Now that we've defined the interface, we can pass in a reference to something that implements that interface,
-//      so that the adapter knows what to call.(Adding in the primary Constructor)
-    }
+class FoodAdapter(val food:ArrayList<FoodItems>,private val selectListener:SelectListener): RecyclerView.Adapter<FoodViewHolder>() {
 
 
 
@@ -85,7 +76,19 @@ class FoodAdapter(val food:ArrayList<FoodItems>,private val context: Context,pri
 
     override fun onBindViewHolder(holder: FoodViewHolder, position: Int) {
         val currentItem:FoodItems= food[position]
-        holder.bind(listener,currentItem)
+
+        holder.itemView.add_item_btn.setOnClickListener {
+
+//            holder.itemView.num_item_text.text= (holder.itemView.num_item_text.text.toString().toInt()+1).toString()
+            selectListener.onAddItemClicked(food[position],position)
+        }
+
+        holder.itemView.sub_item_btn.setOnClickListener {
+
+            selectListener.onSubItemClicked(food[position],position)
+        }
+
+        holder.bind(currentItem)
     }
 
 }

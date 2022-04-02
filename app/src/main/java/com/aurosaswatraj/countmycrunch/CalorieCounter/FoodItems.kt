@@ -1,6 +1,6 @@
 package com.aurosaswatraj.countmycrunch.CalorieCounter
 
-class FoodItems(val image:Int, val name:String,val calorie:Double) {
+class FoodItems(val image:Int, val name:String,val calorie:Double,var noOfItems:Int) {
 
     fun getMimgae(): Int {
         return image
@@ -11,6 +11,10 @@ class FoodItems(val image:Int, val name:String,val calorie:Double) {
     }
     fun getMCalorie():Double{
         return calorie
+    }
+
+    fun getMnoOfItems():Int{
+        return noOfItems
     }
 
 }

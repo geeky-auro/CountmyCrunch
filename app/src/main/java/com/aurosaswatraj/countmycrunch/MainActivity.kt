@@ -12,12 +12,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.aurosaswatraj.countmycrunch.CalorieCounter.FoodAdapter
 import com.aurosaswatraj.countmycrunch.CalorieCounter.FoodItems
+import com.aurosaswatraj.countmycrunch.CalorieCounter.SelectListener
 
 import kotlinx.android.synthetic.main.calorie_counter_u_i.*
 
 
 private const val TAG="MainActivity"
-class MainActivity : AppCompatActivity(),FoodAdapter.onTaskClickListener {
+class MainActivity : AppCompatActivity(), SelectListener {
 
     var food:ArrayList<FoodItems> =ArrayList()
     var selecteditem=""
@@ -26,8 +27,8 @@ class MainActivity : AppCompatActivity(),FoodAdapter.onTaskClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.calorie_counter_u_i)
         initializeitems()
-        recyclerview.layoutManager=LinearLayoutManager(applicationContext,RecyclerView.HORIZONTAL,false)
-        recyclerview.adapter=FoodAdapter(food,applicationContext,this)
+        recyclerview.layoutManager=LinearLayoutManager(applicationContext, RecyclerView.HORIZONTAL,false)
+        recyclerview.adapter=FoodAdapter(food,this)
 //        https://stackoverflow.com/questions/28296708/get-clicked-item-and-its-position-in-recyclerview?rq=1
 
 
@@ -96,52 +97,60 @@ class MainActivity : AppCompatActivity(),FoodAdapter.onTaskClickListener {
     }
 
     private fun initializeitems(){
-        food.add(FoodItems(R.drawable.apple,"Apple",120.0))
-        food.add(FoodItems(R.drawable.apple_cider,"Apple Cider",1221.0))
-        food.add(FoodItems(R.drawable.asparagus,"Asparagus",122.5))
-        food.add(FoodItems(R.drawable.bananas,"Banana",120.0))
-        food.add(FoodItems(R.drawable.beef,"Beef",120.0))
-        food.add(FoodItems(R.drawable.beer,"Beer",120.0))
-        food.add(FoodItems(R.drawable.white_bread,"White Bread",120.0))
-        food.add(FoodItems(R.drawable.broccoli,"Broccoli",120.0))
-        food.add(FoodItems(R.drawable.butter,"Butter",120.0))
-        food.add(FoodItems(R.drawable.caesar_salad,"Caesar Salad",120.0))
-        food.add(FoodItems(R.drawable.carrot,"Carrots",120.0))
-        food.add(FoodItems(R.drawable.cheeseburger,"Cheese Burger",120.0))
-        food.add(FoodItems(R.drawable.cooked_chicken,"Chicken Cooked",120.0))
-        food.add(FoodItems(R.drawable.coca_cola,"Coca-Cola",120.0))
-        food.add(FoodItems(R.drawable.corn,"Corn",120.0))
-        food.add(FoodItems(R.drawable.cucumber,"Cucumber",120.0))
-        food.add(FoodItems(R.drawable.dark_chocolate,"Dark Chocolate",120.0))
-        food.add(FoodItems(R.drawable.diet_coke,"Diet Coke",120.0))
-        food.add(FoodItems(R.drawable.egg,"Egg",120.0))
-        food.add(FoodItems(R.drawable.fish,"Fish",136.0))
-        food.add(FoodItems(R.drawable.catfish,"CatFish",136.0))
-        food.add(FoodItems(R.drawable.grapes,"Grapes",120.0))
-        food.add(FoodItems(R.drawable.hamburger,"Hamburger",120.0))
-        food.add(FoodItems(R.drawable.lettuce,"Lettuce",120.0))
-        food.add(FoodItems(R.drawable.milk,"Milk",120.0))
-        food.add(FoodItems(R.drawable.orange,"Orange",120.0))
-        food.add(FoodItems(R.drawable.orange_juice,"Orange Juice",120.0))
-        food.add(FoodItems(R.drawable.peach,"Peach",120.0))
-        food.add(FoodItems(R.drawable.pear,"Pear",120.0))
-        food.add(FoodItems(R.drawable.pineapple,"Pineapple",120.0))
-        food.add(FoodItems(R.drawable.pizza,"Pizza",120.0))
-        food.add(FoodItems(R.drawable.pork,"Pork",120.0))
-        food.add(FoodItems(R.drawable.potato,"Potato",120.0))
-        food.add(FoodItems(R.drawable.rice,"Rice",120.0))
-        food.add(FoodItems(R.drawable.sandwich,"Sandwich",120.0))
-        food.add(FoodItems(R.drawable.shrimp,"Shrimp,Cooked",120.0))
-        food.add(FoodItems(R.drawable.strawberry,"Strawberry",120.0))
-        food.add(FoodItems(R.drawable.tofu,"Tofu",120.0))
-        food.add(FoodItems(R.drawable.tomato,"Tomato",120.0))
-        food.add(FoodItems(R.drawable.watermelon,"Watermelon",120.0))
-        food.add(FoodItems(R.drawable.yoghurt_low_fat,"Yogurt (Low-fat)",120.0))
-        food.add(FoodItems(R.drawable.yoghurt_non_fat,"Yogurt (non-fat)",120.0))
+        food.add(FoodItems(R.drawable.apple,"Apple",120.0,0))
+        food.add(FoodItems(R.drawable.apple_cider,"Apple Cider",120.0,0))
+        food.add(FoodItems(R.drawable.asparagus,"Asparagus",122.5,0))
+        food.add(FoodItems(R.drawable.bananas,"Banana",120.0,0))
+        food.add(FoodItems(R.drawable.beef,"Beef",120.0,0))
+        food.add(FoodItems(R.drawable.beer,"Beer",120.0,0))
+        food.add(FoodItems(R.drawable.white_bread,"White Bread",120.0,0))
+        food.add(FoodItems(R.drawable.broccoli,"Broccoli",120.0,0))
+        food.add(FoodItems(R.drawable.butter,"Butter",120.0,0))
+        food.add(FoodItems(R.drawable.caesar_salad,"Caesar Salad",120.0,0))
+        food.add(FoodItems(R.drawable.carrot,"Carrots",120.0,0))
+        food.add(FoodItems(R.drawable.cheeseburger,"Cheese Burger",120.0,0))
+        food.add(FoodItems(R.drawable.cooked_chicken,"Chicken Cooked",120.0,0))
+        food.add(FoodItems(R.drawable.coca_cola,"Coca-Cola",120.0,0))
+        food.add(FoodItems(R.drawable.corn,"Corn",120.0,0))
+        food.add(FoodItems(R.drawable.cucumber,"Cucumber",120.0,0))
+        food.add(FoodItems(R.drawable.dark_chocolate,"Dark Chocolate",120.0,0))
+        food.add(FoodItems(R.drawable.diet_coke,"Diet Coke",120.0,0))
+        food.add(FoodItems(R.drawable.egg,"Egg",120.0,0))
+        food.add(FoodItems(R.drawable.fish,"Fish",136.0,0))
+        food.add(FoodItems(R.drawable.catfish,"CatFish",136.0,0))
+        food.add(FoodItems(R.drawable.grapes,"Grapes",120.0,0))
+        food.add(FoodItems(R.drawable.hamburger,"Hamburger",120.0,0))
+        food.add(FoodItems(R.drawable.lettuce,"Lettuce",120.0,0))
+        food.add(FoodItems(R.drawable.milk,"Milk",120.0,0))
+        food.add(FoodItems(R.drawable.orange,"Orange",120.0,0))
+        food.add(FoodItems(R.drawable.orange_juice,"Orange Juice",120.0,0))
+        food.add(FoodItems(R.drawable.peach,"Peach",120.0,0))
+        food.add(FoodItems(R.drawable.pear,"Pear",120.0,0))
+        food.add(FoodItems(R.drawable.pineapple,"Pineapple",120.0,0))
+        food.add(FoodItems(R.drawable.pizza,"Pizza",120.0,0))
+        food.add(FoodItems(R.drawable.pork,"Pork",120.0,0))
+        food.add(FoodItems(R.drawable.potato,"Potato",120.0,0))
+        food.add(FoodItems(R.drawable.rice,"Rice",120.0,0))
+        food.add(FoodItems(R.drawable.sandwich,"Sandwich",120.0,0))
+        food.add(FoodItems(R.drawable.shrimp,"Shrimp,Cooked",120.0,0))
+        food.add(FoodItems(R.drawable.strawberry,"Strawberry",120.0,0))
+        food.add(FoodItems(R.drawable.tofu,"Tofu",120.0,0))
+        food.add(FoodItems(R.drawable.tomato,"Tomato",120.0,0))
+        food.add(FoodItems(R.drawable.watermelon,"Watermelon",120.0,0))
+        food.add(FoodItems(R.drawable.yoghurt_low_fat,"Yogurt (Low-fat)",120.0,0))
+        food.add(FoodItems(R.drawable.yoghurt_non_fat,"Yogurt (non-fat)",120.0,0))
     }
 
-    override fun recyclerViewListClicked(v: View?, position: Int) {
-        TODO("Not yet implemented")
+    override fun onAddItemClicked(foodItems: FoodItems?, position: Int) {
+        Log.d("MainActivity","RecycleritemCliced sliced no of item included is ${food[position].noOfItems++}")
+        //food.add(position, FoodItems(food[position].getMimgae(),food[position].getMtext(),food[position].getMCalorie(),food[position].noOfItems++))
+        recyclerview.adapter?.notifyItemChanged(position)
+    }
+
+    override fun onSubItemClicked(foodItems: FoodItems?, position: Int) {
+        Log.d("MainActivity","RecycleritemCliced sliced no of item included is ${food[position].noOfItems--}")
+        //food.add(position, FoodItems(food[position].getMimgae(),food[position].getMtext(),food[position].getMCalorie(),food[position].noOfItems++))
+        recyclerview.adapter?.notifyItemChanged(position)
     }
 
 
