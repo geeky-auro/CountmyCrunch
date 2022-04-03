@@ -1,10 +1,13 @@
 package com.aurosaswatraj.countmycrunch
 
+import android.animation.ObjectAnimator
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
+import android.view.animation.BounceInterpolator
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +18,11 @@ import com.aurosaswatraj.countmycrunch.CalorieCounter.FoodItems
 import com.aurosaswatraj.countmycrunch.CalorieCounter.SelectListener
 
 import kotlinx.android.synthetic.main.calorie_counter_u_i.*
+import kotlinx.android.synthetic.main.calorie_counter_u_i.btn_boy
+import kotlinx.android.synthetic.main.calorie_counter_u_i.btn_girl
+import kotlinx.android.synthetic.main.calorie_counter_u_i.submit_button
+import kotlinx.android.synthetic.main.fragment_b_m_i_finder.*
+import java.math.BigDecimal
 
 
 private const val TAG="MainActivity"
@@ -23,8 +31,9 @@ class MainActivity : AppCompatActivity(), SelectListener {
     var food:ArrayList<FoodItems> =ArrayList()
 //    To select AMR from the dropdown
 //    TODO Variable to be cleared after Reset with the dropdown value
-    var selecteditem=""
-    var totCalorie=0.0
+    private var selecteditem=""
+    private var totCalorie=0.0
+    private var gender="male"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +51,84 @@ class MainActivity : AppCompatActivity(), SelectListener {
 
 
 
+    }
+
+    fun calculate_BMI_Female(wt: BigDecimal?, ht_ft: BigDecimal?, ht_in: BigDecimal?, age: BigDecimal?) {
+        val female_weight=wt
+        val female_height_ft=ht_ft
+        val female_height_in=ht_in
+        var heightinmeter= female_height_ft?.times(12.0.toBigDecimal())?.plus(female_height_in!!)
+        heightinmeter=heightinmeter?.times(2.54.toBigDecimal())
+        heightinmeter=heightinmeter?.div(100.0.toBigDecimal())
+        heightinmeter=heightinmeter?.times(heightinmeter)
+
+        val BMI=female_weight?.div(heightinmeter!!)
+
+//        showRecommendations(BMI)
+    }
+
+    fun calculate_BMI_Male(wt: BigDecimal?, ht_ft: BigDecimal?, ht_in: BigDecimal?, age: BigDecimal?){
+//        For Men
+        val male_weight=wt
+        val male_height_ft=ht_ft
+        val male_height_in=ht_in
+        var male_age=age
+//        male_weight=male_weight?.times(2.20462.toBigDecimal())
+        var heightinmeter= male_height_ft?.times(12.0.toBigDecimal())?.plus(male_height_in!!)
+        heightinmeter=heightinmeter?.times(2.54.toBigDecimal())
+        heightinmeter=heightinmeter?.div(100.0.toBigDecimal())
+        heightinmeter=heightinmeter?.times(heightinmeter)
+        val BMI=male_weight?.div(heightinmeter!!)
+//        val BMI=655.toBigDecimal() +(9.6.toBigDecimal() * male_weight!!) + (1.8.toBigDecimal() * heightinmeter!!) - (4.7.toBigDecimal() * male_age!!)
+
+//        showRecommendations(BMI)
+
+//        Display Categories
+        /** Underweight = <18.5
+        Normal weight = 18.5–24.9
+        Overweight = 25–29.9
+        Obesity = BMI of 30 or greater */
+    }
+
+
+
+    private fun genderSelection(){
+        btn_boy.setOnClickListener {
+            it.setBackgroundColor(Color.parseColor("#774E4E"))
+            btn_girl.setBackgroundColor(Color.parseColor("#9E7777"))
+            gender="male"
+
+//            viewModel?.goback(it,gender)
+        }
+
+        btn_girl.setOnClickListener{
+            it.setBackgroundColor(Color.parseColor("#774E4E"))
+            btn_boy.setBackgroundColor(Color.parseColor("#9E7777"))
+            gender="female"
+//            viewModel?.goback(it,gender)
+        }
+
+    }
+
+
+
+    fun goback(view: View?, gender:String?) {
+        when (gender) {
+            "male" -> {
+                val animY = ObjectAnimator.ofFloat(view, "translationX", 50f, 0f)
+                animY.duration = 500 //1sec
+                animY.interpolator = BounceInterpolator()
+                animY.repeatCount = 0
+                animY.start()
+            }
+            "female" -> {
+                val animY = ObjectAnimator.ofFloat(view, "translationX", -50f, 0f)
+                animY.duration = 500 //1sec
+                animY.interpolator = BounceInterpolator()
+                animY.repeatCount = 0
+                animY.start()
+            }
+        }
     }
 
 
