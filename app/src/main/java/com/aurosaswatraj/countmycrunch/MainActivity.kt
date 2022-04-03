@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity(), SelectListener {
 //    To select AMR from the dropdown
 //    TODO Variable to be cleared after Reset with the dropdown value
     var selecteditem=""
+    var totCalorie=0.0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,13 +35,24 @@ class MainActivity : AppCompatActivity(), SelectListener {
         selectAMR()
 
         submit_button.setOnClickListener {
-
+            Log.d(TAG,"Total Calorie Consumed as a whole is ${totalCalorieConsumed()}")
 //       https://stackoverflow.com/questions/43088902/how-to-get-sum-of-integer-value-from-recyclerview
         }
 
 
 
 
+    }
+
+
+    private fun totalCalorieConsumed():Double{
+       var counter=0
+        food.forEach {
+            totCalorie += food[counter].getMnoOfItems() * food[counter].getMCalorie()
+            counter++
+
+        }
+        return totCalorie
     }
 
     private fun selectAMR(){
@@ -132,6 +144,7 @@ class MainActivity : AppCompatActivity(), SelectListener {
     override fun onAddItemClicked(foodItems: FoodItems?, position: Int) {
         Log.d("MainActivity","RecycleritemCliced sliced no of item included is ${food[position].noOfItems++}")
         Log.d(TAG,"No of Items consisting is ${food[position].getMnoOfItems()}")
+
         //food.add(position, FoodItems(food[position].getMimgae(),food[position].getMtext(),food[position].getMCalorie(),food[position].noOfItems++))
         recyclerview.adapter?.notifyItemChanged(position)
     }
