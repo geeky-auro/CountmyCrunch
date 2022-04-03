@@ -1,12 +1,14 @@
 # CountMyCrunch
-<img align="left" src="https://img.icons8.com/fluency/240/000000/android-tablet.png"/>
-<img align="left" src="https://img.icons8.com/doodle/240/000000/android-studio--v3.png"/>
-<img align="left" src="https://img.icons8.com/doodle/240/000000/apple-jam.png"/>
-<img align="left" src="https://img.icons8.com/doodle/240/000000/bmi.png"/>
+<br>
+<img align="left" src="https://img.icons8.com/fluency/230/000000/android-tablet.png"/>
+<img align="left" src="https://img.icons8.com/doodle/230/000000/android-studio--v3.png"/>
+<img align="left" src="https://img.icons8.com/doodle/230/000000/apple-jam.png"/>
+<img align="left" src="https://img.icons8.com/doodle/230/000000/bmi.png"/>
+<br>
 <br>
 
-
 ## Overview
+
 Recent studies have reported that globally, more than 1.9 billion adults are overweight and 650 million are obese. Approximately 2.8 million deaths are reported as a result of being overweight or obese.  In India, abdominal obesity is one of the major risk factors for cardiovascular disease (CVDs). Various studies have shown that the prevalence of obesity among women was significantly higher as compared to men.
 
 ## Goals
