@@ -143,6 +143,7 @@ class MainActivity : AppCompatActivity(), SelectListener {
 
     override fun onAddItemClicked(foodItems: FoodItems?, position: Int) {
         Log.d("MainActivity","RecycleritemCliced sliced no of item included is ${food[position].noOfItems++}")
+        Log.d(TAG,"No of Items consisting is ${food[position].getMnoOfItems()}")
         //food.add(position, FoodItems(food[position].getMimgae(),food[position].getMtext(),food[position].getMCalorie(),food[position].noOfItems++))
         recyclerview.adapter?.notifyItemChanged(position)
     }
@@ -150,6 +151,7 @@ class MainActivity : AppCompatActivity(), SelectListener {
     override fun onSubItemClicked(foodItems: FoodItems?, position: Int) {
         Log.d("MainActivity","RecycleritemCliced sliced no of item included is ${food[position].noOfItems--}")
         //food.add(position, FoodItems(food[position].getMimgae(),food[position].getMtext(),food[position].getMCalorie(),food[position].noOfItems++))
+        Log.d(TAG,"No of Items consisting is ${food[position].getMnoOfItems()}")
         recyclerview.adapter?.notifyItemChanged(position)
     }
 
