@@ -21,6 +21,8 @@ private const val TAG="MainActivity"
 class MainActivity : AppCompatActivity(), SelectListener {
 
     var food:ArrayList<FoodItems> =ArrayList()
+//    To select AMR from the dropdown
+//    TODO Variable to be cleared after Reset with the dropdown value
     var selecteditem=""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,13 +31,19 @@ class MainActivity : AppCompatActivity(), SelectListener {
         initializeitems()
         recyclerview.layoutManager=LinearLayoutManager(applicationContext, RecyclerView.HORIZONTAL,false)
         recyclerview.adapter=FoodAdapter(food,this)
-//        https://stackoverflow.com/questions/28296708/get-clicked-item-and-its-position-in-recyclerview?rq=1
+        selectAMR()
+
+        submit_button.setOnClickListener {
+
+//       https://stackoverflow.com/questions/43088902/how-to-get-sum-of-integer-value-from-recyclerview
+        }
 
 
 
 
-//        https://www.geeksforgeeks.org/exposed-drop-down-menu-in-android/
+    }
 
+    private fun selectAMR(){
         // get reference to the string array that we just created
         val activityLevel = resources.getStringArray(R.array.Activity_Level)
         // create an array adapter and pass the required parameter
@@ -62,30 +70,10 @@ class MainActivity : AppCompatActivity(), SelectListener {
                     "Moderate"
                 }
             }
+            Log.d(TAG,"AMR selected is $selecteditem")
         }
         // set adapter to the autocomplete tv to the arrayAdapter
         autocompleteTV.setAdapter(arrayAdapter)
-
-        //onClickListener....>!
-
-
-
-
-
-
-
-
-
-
-
-
-        submit_button.setOnClickListener {
-
-//       https://stackoverflow.com/questions/43088902/how-to-get-sum-of-integer-value-from-recyclerview
-        }
-
-
-
 
     }
 
