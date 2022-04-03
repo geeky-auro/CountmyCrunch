@@ -78,13 +78,10 @@ class FoodAdapter(val food:ArrayList<FoodItems>,private val selectListener:Selec
         val currentItem:FoodItems= food[position]
 
         holder.itemView.add_item_btn.setOnClickListener {
-
-//            holder.itemView.num_item_text.text= (holder.itemView.num_item_text.text.toString().toInt()+1).toString()
             selectListener.onAddItemClicked(food[position],position)
         }
 
         holder.itemView.sub_item_btn.setOnClickListener {
-
             selectListener.onSubItemClicked(food[position],position)
         }
 
