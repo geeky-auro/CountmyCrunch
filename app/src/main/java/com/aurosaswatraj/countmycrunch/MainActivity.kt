@@ -51,6 +51,7 @@ class MainActivity : AppCompatActivity(), SelectListener {
 
 
 
+
     }
 
     fun calculate_BMR_Female(wt: BigDecimal?, ht_ft: BigDecimal?, ht_in: BigDecimal?, age: BigDecimal?) {
