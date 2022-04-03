@@ -53,33 +53,26 @@ class MainActivity : AppCompatActivity(), SelectListener {
 
     }
 
-    fun calculate_BMI_Female(wt: BigDecimal?, ht_ft: BigDecimal?, ht_in: BigDecimal?, age: BigDecimal?) {
+    fun calculate_BMR_Female(wt: BigDecimal?, ht_ft: BigDecimal?, ht_in: BigDecimal?, age: BigDecimal?) {
+        val female_age=age
         val female_weight=wt
         val female_height_ft=ht_ft
         val female_height_in=ht_in
-        var heightinmeter= female_height_ft?.times(12.0.toBigDecimal())?.plus(female_height_in!!)
-        heightinmeter=heightinmeter?.times(2.54.toBigDecimal())
-        heightinmeter=heightinmeter?.div(100.0.toBigDecimal())
-        heightinmeter=heightinmeter?.times(heightinmeter)
+        var heightinmeter= female_height_ft?.times(30.48.toBigDecimal())?.plus(female_height_in!!.times(2.54.toBigDecimal()))
 
-        val BMI=female_weight?.div(heightinmeter!!)
 
 //        showRecommendations(BMI)
     }
 
-    fun calculate_BMI_Male(wt: BigDecimal?, ht_ft: BigDecimal?, ht_in: BigDecimal?, age: BigDecimal?){
+    fun calculate_BMR_Male(wt: BigDecimal?, ht_ft: BigDecimal?, ht_in: BigDecimal?, age: BigDecimal?){
 //        For Men
         val male_weight=wt
         val male_height_ft=ht_ft
         val male_height_in=ht_in
         var male_age=age
-//        male_weight=male_weight?.times(2.20462.toBigDecimal())
-        var heightinmeter= male_height_ft?.times(12.0.toBigDecimal())?.plus(male_height_in!!)
-        heightinmeter=heightinmeter?.times(2.54.toBigDecimal())
-        heightinmeter=heightinmeter?.div(100.0.toBigDecimal())
-        heightinmeter=heightinmeter?.times(heightinmeter)
-        val BMI=male_weight?.div(heightinmeter!!)
-//        val BMI=655.toBigDecimal() +(9.6.toBigDecimal() * male_weight!!) + (1.8.toBigDecimal() * heightinmeter!!) - (4.7.toBigDecimal() * male_age!!)
+        var heightinmeter= male_height_ft?.times(30.48.toBigDecimal())?.plus(male_height_in!!.times(2.54.toBigDecimal()))
+
+
 
 //        showRecommendations(BMI)
 
