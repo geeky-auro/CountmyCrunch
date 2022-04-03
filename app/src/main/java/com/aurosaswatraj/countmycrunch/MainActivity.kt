@@ -58,8 +58,10 @@ class MainActivity : AppCompatActivity(), SelectListener {
         val female_weight=wt
         val female_height_ft=ht_ft
         val female_height_in=ht_in
-        var heightinmeter= female_height_ft?.times(30.48.toBigDecimal())?.plus(female_height_in!!.times(2.54.toBigDecimal()))
+        var heightincm= female_height_ft?.times(30.48.toBigDecimal())?.plus(female_height_in!!.times(2.54.toBigDecimal()))
 
+        var BMR: BigDecimal? =((female_weight?.times(9.563.toBigDecimal()))?.plus(heightincm!!.times(1.850.toBigDecimal()))?.subtract(female_age?.times(4.676.toBigDecimal())))
+        BMR=BMR?.plus(655.1.toBigDecimal())
 
 //        showRecommendations(BMI)
     }
@@ -70,8 +72,10 @@ class MainActivity : AppCompatActivity(), SelectListener {
         val male_height_ft=ht_ft
         val male_height_in=ht_in
         var male_age=age
-        var heightinmeter= male_height_ft?.times(30.48.toBigDecimal())?.plus(male_height_in!!.times(2.54.toBigDecimal()))
+        var heightincm= male_height_ft?.times(30.48.toBigDecimal())?.plus(male_height_in!!.times(2.54.toBigDecimal()))
 
+        var BMR: BigDecimal? =((male_weight?.times(13.75.toBigDecimal()))?.plus(heightincm!!.times(5.003.toBigDecimal()))?.subtract(male_age?.times(6.755.toBigDecimal())))
+        BMR=BMR?.plus(66.47.toBigDecimal())
 
 
 //        showRecommendations(BMI)
