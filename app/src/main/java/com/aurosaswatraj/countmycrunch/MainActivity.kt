@@ -45,13 +45,55 @@ class MainActivity : AppCompatActivity(), SelectListener {
 
         submit_button.setOnClickListener {
             Log.d(TAG,"Total Calorie Consumed as a whole is ${totalCalorieConsumed()}")
-//       https://stackoverflow.com/questions/43088902/how-to-get-sum-of-integer-value-from-recyclerview
+
+//            https://github.com/PatilShreyas/MaterialDialog-Android
+            when(gender){
+                "male"->{
+                    if (weight_inputi.text.toString().isNotEmpty() &&
+                        heightin_inputi.text.toString().isNotEmpty() &&
+                        age_inputi.text.toString().isNotEmpty() &&
+                        heightft_inputi.text.toString().isNotEmpty())
+                    {
+                        take_input_BMI_Male_calculate()
+                    }
+                    else{
+
+//                        TODO:Alternative can be shown is a error message
+                    }
+                }
+                "female"->{
+                    if (weight_inputi.text.toString().isNotEmpty() &&
+                        heightin_inputi.text.toString().isNotEmpty() &&
+                        age_inputi.text.toString().isNotEmpty() &&
+                        heightft_inputi.text.toString().isNotEmpty())
+                    {
+                        take_input_BMI_Female_calculate()
+                    }
+                    else{
+
+//                        TODO:Alternative can be shown is a error message
+                    }
+                }
+            }
         }
 
+    }
 
+    private fun take_input_BMI_Male_calculate(){
+        val wt=weight_input.text.toString().toBigDecimal()
+        val ht_ft=heightft_input.text.toString().toBigDecimal()
+        val ht_in=heightin_input.text.toString().toBigDecimal()
+        val age=age_input.text.toString().toBigDecimal()
 
+        calculate_BMR_Male(wt,ht_ft,ht_in,age)
+    }
+    private fun take_input_BMI_Female_calculate(){
+        val wt=weight_input.text.toString().toBigDecimal()
+        val ht_ft=heightft_input.text.toString().toBigDecimal()
+        val ht_in=heightin_input.text.toString().toBigDecimal()
+        val age=age_input.text.toString().toBigDecimal()
 
-
+        calculate_BMR_Female(wt,ht_ft,ht_in,age)
     }
 
     fun calculate_BMR_Female(wt: BigDecimal?, ht_ft: BigDecimal?, ht_in: BigDecimal?, age: BigDecimal?) {
@@ -63,6 +105,8 @@ class MainActivity : AppCompatActivity(), SelectListener {
 
         var BMR: BigDecimal? =((female_weight?.times(9.563.toBigDecimal()))?.plus(heightincm!!.times(1.850.toBigDecimal()))?.subtract(female_age?.times(4.676.toBigDecimal())))
         BMR=BMR?.plus(655.1.toBigDecimal())
+
+        calculate_AMR(BMR)
 
 
     }
@@ -91,7 +135,11 @@ class MainActivity : AppCompatActivity(), SelectListener {
         val Active =bmr?.multiply(1.725.toBigDecimal())
         val Very_active =bmr?.multiply(1.9.toBigDecimal())
 
-        Log.d(TAG,"")
+        Log.d(TAG,"Sedentary =$Sedentary")
+        Log.d(TAG,"Lightly active =$Lightly_active")
+        Log.d(TAG,"Moderately_active =$Moderately_active")
+        Log.d(TAG,"Active =$Active")
+        Log.d(TAG,"Very active =$Very_active")
     }
 
 

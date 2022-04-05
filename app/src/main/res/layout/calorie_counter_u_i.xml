@@ -102,7 +102,7 @@
 
             <!--this is the actual edit text which takes the input-->
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/age_input"
+                android:id="@+id/age_inputi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/round"
@@ -128,7 +128,7 @@
 
             <!--this is the actual edit text which takes the input-->
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/weight_input"
+                android:id="@+id/weight_inputi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/round"
@@ -162,7 +162,7 @@
 
                 <!--this is the actual edit text which takes the input-->
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/heightft_input"
+                    android:id="@+id/heightft_inputi"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/round"
@@ -187,7 +187,7 @@
 
                 <!--this is the actual edit text which takes the input-->
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/heightin_input"
+                    android:id="@+id/heightin_inputi"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/round"
