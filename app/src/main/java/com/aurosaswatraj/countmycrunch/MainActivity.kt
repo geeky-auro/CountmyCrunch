@@ -90,6 +90,8 @@ class MainActivity : AppCompatActivity(), SelectListener {
         val Moderately_active=bmr?.multiply(1.55.toBigDecimal())
         val Active =bmr?.multiply(1.725.toBigDecimal())
         val Very_active =bmr?.multiply(1.9.toBigDecimal())
+
+        Log.d(TAG,"")
     }
 
 
