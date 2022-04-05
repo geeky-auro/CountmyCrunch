@@ -173,6 +173,7 @@ class MainActivity : AppCompatActivity(), SelectListener {
                 }
             }
             Log.d(TAG,"AMR selected is $selecteditem")
+
         }
         // set adapter to the autocomplete tv to the arrayAdapter
         autocompleteTV.setAdapter(arrayAdapter)
