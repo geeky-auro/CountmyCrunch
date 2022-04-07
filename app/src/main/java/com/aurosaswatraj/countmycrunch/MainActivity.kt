@@ -82,18 +82,18 @@ class MainActivity : AppCompatActivity(), SelectListener {
     }
 
     private fun take_input_BMI_Male_calculate(){
-        val wt=weight_input.text.toString().toBigDecimal()
-        val ht_ft=heightft_input.text.toString().toBigDecimal()
-        val ht_in=heightin_input.text.toString().toBigDecimal()
-        val age=age_input.text.toString().toBigDecimal()
+        val wt=weight_inputi.text.toString().toBigDecimal()
+        val ht_ft=heightft_inputi.text.toString().toBigDecimal()
+        val ht_in=heightin_inputi.text.toString().toBigDecimal()
+        val age=age_inputi.text.toString().toBigDecimal()
 
         calculate_BMR_Male(wt,ht_ft,ht_in,age)
     }
     private fun take_input_BMI_Female_calculate(){
-        val wt=weight_input.text.toString().toBigDecimal()
-        val ht_ft=heightft_input.text.toString().toBigDecimal()
-        val ht_in=heightin_input.text.toString().toBigDecimal()
-        val age=age_input.text.toString().toBigDecimal()
+        val wt=weight_inputi.text.toString().toBigDecimal()
+        val ht_ft=heightft_inputi.text.toString().toBigDecimal()
+        val ht_in=heightin_inputi.text.toString().toBigDecimal()
+        val age=age_inputi.text.toString().toBigDecimal()
 
         calculate_BMR_Female(wt,ht_ft,ht_in,age)
     }
