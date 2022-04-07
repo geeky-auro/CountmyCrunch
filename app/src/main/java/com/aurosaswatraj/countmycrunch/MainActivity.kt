@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity(), SelectListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.calorie_counter_u_i)
+        genderSelection()
         initializeitems()
         recyclerview.layoutManager=LinearLayoutManager(applicationContext, RecyclerView.HORIZONTAL,false)
         recyclerview.adapter=FoodAdapter(food,this)
@@ -76,6 +77,7 @@ class MainActivity : AppCompatActivity(), SelectListener {
                 }
             }
         }
+
 
     }
 
