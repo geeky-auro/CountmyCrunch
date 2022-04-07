@@ -150,22 +150,23 @@ class MainActivity : AppCompatActivity(), SelectListener {
             it.setBackgroundColor(Color.parseColor("#774E4E"))
             btn_girl.setBackgroundColor(Color.parseColor("#9E7777"))
             gender="male"
-
-//            viewModel?.goback(it,gender)
+            genderAnim(it,gender)
+//            viewModel?.genderAnim(it,gender)
         }
 
         btn_girl.setOnClickListener{
             it.setBackgroundColor(Color.parseColor("#774E4E"))
             btn_boy.setBackgroundColor(Color.parseColor("#9E7777"))
             gender="female"
-//            viewModel?.goback(it,gender)
+            genderAnim(it,gender)
+//            viewModel?.genderAnim(it,gender)
         }
 
     }
 
 
 
-    fun goback(view: View?, gender:String?) {
+    fun genderAnim(view: View?, gender:String?) {
         when (gender) {
             "male" -> {
                 val animY = ObjectAnimator.ofFloat(view, "translationX", 50f, 0f)
