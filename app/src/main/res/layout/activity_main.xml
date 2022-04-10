@@ -13,6 +13,18 @@
         the height and width of the edit text-->
 
 
+<!--    <include layout="@layout/content_main" />-->
+
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_container_view"
+        android:name="com.aurosaswatraj.countmycrunch.CalorieCounter.Calorie_Calculator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 

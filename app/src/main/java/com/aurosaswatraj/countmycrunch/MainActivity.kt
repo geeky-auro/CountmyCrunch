@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.calorie_counter_u_i)
+        setContentView(R.layout.activity_main)
 
 
     }
@@ -42,9 +42,6 @@ class MainActivity : AppCompatActivity(){
         inflater.inflate(R.menu.buttom_nev_menu, menu)
         return true
     }
-
-
-
 
 
 

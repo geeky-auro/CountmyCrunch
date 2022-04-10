@@ -9,7 +9,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
 import java.math.BigDecimal
 private const val TAG="BMIViewModel"
-class BMIViewModel() : ViewModel() {
+class BMIViewModel : ViewModel() {
 //    Refer this: https://stackoverflow.com/questions/55914752/when-to-use-mutablelivedata-and-livedata
 
 

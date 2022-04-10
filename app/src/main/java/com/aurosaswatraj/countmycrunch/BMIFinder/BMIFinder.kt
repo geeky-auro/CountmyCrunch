@@ -21,7 +21,7 @@ private const val TAG = "BMIFinder"
  * Use the [BMIFinder.newInstance] factory method to
  * create an instance of this fragment.
  */
-class BMIFinder : Fragment() {
+class BMIFinder : Fragment(R.layout.fragment_b_m_i_finder) {
 
     var viewModel:BMIViewModel?=null
     private var gender="male"
@@ -29,6 +29,11 @@ class BMIFinder : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         submit_Button()
         genderSelection()
     }
@@ -110,13 +115,6 @@ class BMIFinder : Fragment() {
         super.onAttach(context)
         viewModel= ViewModelProvider(this).get(BMIViewModel::class.java)
 
-    }
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_b_m_i_finder, container, false)
     }
 
 
