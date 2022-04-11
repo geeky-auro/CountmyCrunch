@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="#d63031"
+            app:cardCornerRadius="100dp"
+            app:cardElevation="40dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="-5dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/fat"
+                    android:layout_marginBottom="-10dp"
+                    android:layout_gravity="center"
+                    ></ImageView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Result"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#000"
+                    android:fontFamily="cursive"
+                    android:textStyle="bold"
+                    android:textSize="60sp"
+                    android:padding="2dp"
+                    android:textAlignment="center">
+
+                </TextView>
+
+                <TextView
+                    android:layout_margin="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:text="BMI=0.0"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold">
+
+                </TextView>
+
+                <TextView
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textSize="22sp"
+                    android:text="Underweight"
+                    android:textAllCaps="true"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold">
+
+                </TextView>
+
+                <TextView
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textSize="22sp"
+                    android:text="Age:"
+                    android:textAllCaps="true"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold">
+
+                </TextView>
+
+                <TextView
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textSize="22sp"
+                    android:text="Weight:"
+                    android:textAllCaps="true"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold">
+
+                </TextView>
+
+                <TextView
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textSize="22sp"
+                    android:text="HEIGHT:"
+                    android:textAllCaps="true"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold">
+
+                </TextView>
+
+                <TextView
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textSize="25sp"
+                    android:text="BMI table for adults"
+                    android:textAllCaps="true"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="#000000"
+                    android:textStyle="bold">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/textface_table"
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textSize="25sp"
+                    android:text="BMI table for adults"
+                    android:textAllCaps="true"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold">
+
+                </TextView>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+
+</ScrollView>
