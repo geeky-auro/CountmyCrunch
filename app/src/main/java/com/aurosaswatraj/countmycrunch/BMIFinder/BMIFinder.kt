@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import com.aurosaswatraj.countmycrunch.Dialogs.ErrorDialogs
 import com.aurosaswatraj.countmycrunch.R
 import kotlinx.android.synthetic.main.fragment_b_m_i_finder.*
 
@@ -71,8 +72,23 @@ class BMIFinder : Fragment(R.layout.fragment_b_m_i_finder) {
                         take_input_BMI_Male_calculate()
                     }
                     else{
+                    var msg=""
+                    val dialog=ErrorDialogs(requireContext())
+                     if (weight_input.text.toString().isEmpty()){
+                         msg="\nPlease provide positive weight value."
+                     }
+                        if (heightin_input.text.toString().isEmpty()){
+                            msg=msg.plus("\nPlease provide positive height in inches value.")
+                        }
 
-//                        TODO:Alternative can be shown is a error message
+                        if (age_input.text.toString().isEmpty()){
+                            msg=msg.plus("\nPlease provide an age between 5 and 100.")
+                        }
+
+                        if (heightft_input.text.toString().isEmpty()){
+                            msg=msg.plus("\nPlease provide positive height in Foot value.")
+                        }
+                        dialog.showErrorMesg(msg)
                     }
                 }
                 "female"->{
@@ -85,7 +101,23 @@ class BMIFinder : Fragment(R.layout.fragment_b_m_i_finder) {
                     }
                     else{
 
-//                        TODO:Alternative can be shown is a error message
+                        var msg=""
+                        val dialog=ErrorDialogs(requireContext())
+                        if (weight_input.text.toString().isEmpty()){
+                            msg="\nPlease provide positive weight value."
+                        }
+                        if (heightin_input.text.toString().isEmpty()){
+                            msg=msg.plus("\nPlease provide positive height in inches value.")
+                        }
+
+                        if (age_input.text.toString().isEmpty()){
+                            msg=msg.plus("\nPlease provide an age between 5 and 100.")
+                        }
+
+                        if (heightft_input.text.toString().isEmpty()){
+                            msg=msg.plus("\nPlease provide positive height in Foot value.")
+                        }
+                        dialog.showErrorMesg(msg)
                     }
                 }
             }

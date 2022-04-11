@@ -135,10 +135,7 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
         submit_button.setOnClickListener {
             Log.d(TAG,"Total Calorie Consumed as a whole is ${totalCalorieConsumed()}")
 
-            val wt=weight_inputi.text.toString().toBigDecimal()
-            val ht_ft=heightft_inputi.text.toString().toBigDecimal()
-            val ht_in=heightin_inputi.text.toString().toBigDecimal()
-            val age=age_inputi.text.toString().toBigDecimal()
+
 //            https://github.com/PatilShreyas/MaterialDialog-Android
             when(gender){
                 "male"->{
@@ -147,6 +144,10 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
                         age_inputi.text.toString().isNotEmpty() &&
                         heightft_inputi.text.toString().isNotEmpty())
                     {
+                        val wt=weight_inputi.text.toString().toBigDecimal()
+                        val ht_ft=heightft_inputi.text.toString().toBigDecimal()
+                        val ht_in=heightin_inputi.text.toString().toBigDecimal()
+                        val age=age_inputi.text.toString().toBigDecimal()
 
                         take_input_BMI_Male_calculate(wt,ht_ft,ht_in,age)
                     }
@@ -161,6 +162,10 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
                         age_inputi.text.toString().isNotEmpty() &&
                         heightft_inputi.text.toString().isNotEmpty())
                     {
+                        val wt=weight_inputi.text.toString().toBigDecimal()
+                        val ht_ft=heightft_inputi.text.toString().toBigDecimal()
+                        val ht_in=heightin_inputi.text.toString().toBigDecimal()
+                        val age=age_inputi.text.toString().toBigDecimal()
                         take_input_BMI_Female_calculate(wt,ht_ft,ht_in,age)
                     }
                     else{
