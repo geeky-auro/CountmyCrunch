@@ -1,16 +1,18 @@
 package com.aurosaswatraj.countmycrunch.BMIFinder
 
+
 import android.app.AlertDialog
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
 import android.view.View
 import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.aurosaswatraj.countmycrunch.R
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.thecode.aestheticdialogs.*
 import kotlinx.android.synthetic.main.calorie_counter_u_i.*
 import kotlinx.android.synthetic.main.fragment_b_m_i_finder.*
 import kotlinx.android.synthetic.main.fragment_b_m_i_finder.btn_boy
@@ -78,29 +80,26 @@ class BMIFinder : Fragment(R.layout.fragment_b_m_i_finder) {
                     }
                     else{
                     var msg=""
-                     if (weight_input.text.toString().isEmpty()){
-                         msg=msg.plus("\nPlease provide positive weight value.")
-                     }
+                        if (weight_input.text.toString().isEmpty()){
+                            msg="\nPlease provide positive weight value."
+                            weight_input.error="Empty Weight Field"
+                        }
                         if (heightin_input.text.toString().isEmpty()){
                             msg=msg.plus("\nPlease provide positive height in inches value.")
+                            heightin_input.error="Empty Inch Field"
                         }
 
                         if (age_input.text.toString().isEmpty()){
                             msg=msg.plus("\nPlease provide an age between 5 and 100.")
+                            age_input.error="Empty Age Field"
                         }
 
                         if (heightft_input.text.toString().isEmpty()){
                             msg=msg.plus("\nPlease provide positive height in Foot value.")
+                            heightft_input.error="Empty Foot Field"
                         }
-                        MaterialAlertDialogBuilder(requireContext())
-                            .setTitle("Please provide appropriate details!")
-                            .setIcon(R.drawable.man)
-                            .setCancelable(true)
-                            .setMessage(msg)
-                            .setPositiveButton("Alrigt!") { dialog, which ->
-                                dialog.dismiss()
-                            }.setPositiveButtonIcon(resources.getDrawable(R.drawable.like))
-                            .show()
+//
+                        ErrorDialog()
                     }
                 }
                 "female"->{
@@ -116,27 +115,23 @@ class BMIFinder : Fragment(R.layout.fragment_b_m_i_finder) {
                         var msg=""
                         if (weight_input.text.toString().isEmpty()){
                             msg="\nPlease provide positive weight value."
+                            weight_input.error="Empty Weight Field"
                         }
                         if (heightin_input.text.toString().isEmpty()){
                             msg=msg.plus("\nPlease provide positive height in inches value.")
+                            heightin_input.error="Empty Inch Field"
                         }
 
                         if (age_input.text.toString().isEmpty()){
                             msg=msg.plus("\nPlease provide an age between 5 and 100.")
+                            age_input.error="Empty Age Field"
                         }
 
                         if (heightft_input.text.toString().isEmpty()){
                             msg=msg.plus("\nPlease provide positive height in Foot value.")
+                            heightft_input.error="Empty Foot Field"
                         }
-                        MaterialAlertDialogBuilder(requireContext())
-                            .setIcon(R.drawable.woman)
-                            .setTitle("Please provide appropriate details!")
-                            .setCancelable(true)
-                            .setMessage(msg)
-                            .setPositiveButton("Alrigt!") { dialog, which ->
-                                dialog.dismiss()
-                            }.setPositiveButtonIcon(resources.getDrawable(R.drawable.like))
-                            .show()
+                        ErrorDialog()
                     }
                 }
             }
@@ -170,6 +165,23 @@ class BMIFinder : Fragment(R.layout.fragment_b_m_i_finder) {
 
     }
 
+    fun ErrorDialog(){
+        AestheticDialog.Builder(requireActivity(), DialogStyle.FLAT, DialogType.ERROR)
+            .setTitle("ERROR!")
+            .setMessage("Please provide appropriate details!")
+            .setCancelable(true)
+            .setDarkMode(true)
+            .setGravity(Gravity.CENTER)
+            .setAnimation(DialogAnimation.SHRINK)
+            .setOnClickListener(object : OnDialogClickListener {
+                override fun onClick(dialog: AestheticDialog.Builder) {
+                    dialog.dismiss()
+                    //actions...
+                }
+            })
+            .show()
+    }
+
 
     fun customAlertDialogi(BMI:BigDecimal?) {
         val alertDialog: AlertDialog = AlertDialog.Builder(requireContext()).create()
@@ -177,17 +189,17 @@ class BMIFinder : Fragment(R.layout.fragment_b_m_i_finder) {
         alertDialog.setCancelable(false)
         val AGE: TextView = view?.findViewById<View>(R.id.BMIAge) as TextView
         AGE.text=AGE.text.toString().plus(age_input.text.toString())
-        val HEIGHT: TextView = view?.findViewById<View>(R.id.BMIHeight) as TextView
+        val HEIGHT: TextView = view.findViewById<View>(R.id.BMIHeight) as TextView
         HEIGHT.text=HEIGHT.text.toString().plus(heightft_input.text.toString()+"ft "+heightin_input.text.toString()+"in")
-        val STATUS: TextView = view?.findViewById<View>(R.id.BMIStatus) as TextView
+        val STATUS: TextView = view.findViewById<View>(R.id.BMIStatus) as TextView
         STATUS.text=viewModel?.showRecommendations(BMI)
-        val WEIGHT: TextView = view?.findViewById<View>(R.id.BMIWeight) as TextView
+        val WEIGHT: TextView = view.findViewById<View>(R.id.BMIWeight) as TextView
         WEIGHT.text=WEIGHT.text.toString().plus(weight_input.text.toString()+"Kg")
-        val BMICALCULLATED: TextView = view?.findViewById<View>(R.id.BMICalculate) as TextView
+        val BMICALCULLATED: TextView = view.findViewById<View>(R.id.BMICalculate) as TextView
         BMICALCULLATED.text=BMICALCULLATED.text.toString().plus("$BMI")
-        val SAVE = view?.findViewById<View>(R.id.save_btn) as Button
+        val SAVE = view.findViewById<View>(R.id.save_btn) as Button
         SAVE.setOnClickListener { alertDialog.dismiss() }
-        val OK = view?.findViewById<View>(R.id.OK_btn) as Button
+        val OK = view.findViewById<View>(R.id.OK_btn) as Button
         OK.setOnClickListener { alertDialog.dismiss() }
         alertDialog.setView(view)
         alertDialog.show()
