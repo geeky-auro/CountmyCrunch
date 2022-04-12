@@ -192,8 +192,6 @@ class BMIFinder : Fragment(R.layout.fragment_b_m_i_finder) {
         alertDialog.setView(view)
         alertDialog.show()
 
-
-
     }
 
 
