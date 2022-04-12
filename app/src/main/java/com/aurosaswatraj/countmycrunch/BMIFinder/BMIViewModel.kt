@@ -13,7 +13,7 @@ class BMIViewModel : ViewModel() {
 //    Refer this: https://stackoverflow.com/questions/55914752/when-to-use-mutablelivedata-and-livedata
 
 
-     fun calculate_BMI_Female(wt: BigDecimal?, ht_ft: BigDecimal?, ht_in: BigDecimal?, age: BigDecimal?) {
+     fun calculate_BMI_Female(wt: BigDecimal?, ht_ft: BigDecimal?, ht_in: BigDecimal?, age: BigDecimal?): BigDecimal? {
         val female_weight=wt
         val female_height_ft=ht_ft
         val female_height_in=ht_in
@@ -25,9 +25,11 @@ class BMIViewModel : ViewModel() {
         val BMI=female_weight?.div(heightinmeter!!)
         Log.d(TAG,"BMI calculated is $BMI")
         showRecommendations(BMI)
+
+         return BMI
     }
 
-     fun calculate_BMI_Male(wt: BigDecimal?, ht_ft: BigDecimal?, ht_in: BigDecimal?, age: BigDecimal?){
+     fun calculate_BMI_Male(wt: BigDecimal?, ht_ft: BigDecimal?, ht_in: BigDecimal?, age: BigDecimal?): BigDecimal? {
 //        For Men
         val male_weight=wt
         val male_height_ft=ht_ft
@@ -44,6 +46,8 @@ class BMIViewModel : ViewModel() {
         Log.d(TAG,"BMI calculated is $BMI")
         showRecommendations(BMI)
 
+         return BMI
+
 //        Display Categories
         /** Underweight = <18.5
         Normal weight = 18.5–24.9
@@ -51,7 +55,7 @@ class BMIViewModel : ViewModel() {
         Obesity = BMI of 30 or greater */
     }
 
-     fun showRecommendations(BMI: BigDecimal?){
+     fun showRecommendations(BMI: BigDecimal?): String {
          var BMIResult=""
         if (BMI!!<=18.5.toBigDecimal()){
             BMIResult="Underweight"
@@ -77,9 +81,14 @@ class BMIViewModel : ViewModel() {
                  "Obese Class II for BMI range 35-40\n" +
                  "Obese Class III > for BMI range 40\n"
 
+
+
          Log.d(TAG,BMIResult+"\n"+HeadTitle+permanentMsg)
+         return BMIResult
 
     }
+
+
 
     //    Enhancements
 

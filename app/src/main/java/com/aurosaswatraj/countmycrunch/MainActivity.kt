@@ -1,28 +1,10 @@
 package com.aurosaswatraj.countmycrunch
 
-import android.animation.ObjectAnimator
-import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
-import android.view.View
-import android.view.animation.BounceInterpolator
-import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.aurosaswatraj.countmycrunch.CalorieCounter.FoodAdapter
-import com.aurosaswatraj.countmycrunch.CalorieCounter.FoodItems
-import com.aurosaswatraj.countmycrunch.CalorieCounter.SelectListener
 
-import kotlinx.android.synthetic.main.calorie_counter_u_i.*
-import kotlinx.android.synthetic.main.calorie_counter_u_i.btn_boy
-import kotlinx.android.synthetic.main.calorie_counter_u_i.btn_girl
-import kotlinx.android.synthetic.main.calorie_counter_u_i.submit_button
-import kotlinx.android.synthetic.main.fragment_b_m_i_finder.*
-import java.math.BigDecimal
 
 
 private const val TAG="MainActivity"
@@ -34,7 +16,10 @@ class MainActivity : AppCompatActivity(){
         setContentView(R.layout.activity_main)
 
 
+
+
     }
+
 
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -42,6 +27,8 @@ class MainActivity : AppCompatActivity(){
         inflater.inflate(R.menu.buttom_nev_menu, menu)
         return true
     }
+
+
 
 
 

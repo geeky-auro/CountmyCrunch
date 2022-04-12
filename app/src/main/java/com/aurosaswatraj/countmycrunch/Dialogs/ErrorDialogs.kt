@@ -4,18 +4,16 @@ import android.content.Context
 import android.graphics.Color
 import com.example.flatdialoglibrary.dialog.FlatDialog
 
-class ErrorDialogs(context: Context) {
+class ErrorDialogs {
 
-    val context=context
-
-    fun showErrorMesg(textMsg:String){
-        val flatDialog = FlatDialog(context)
+    fun showErrorMesg(textMsg:String, context: Context){
+        var flatDialog = FlatDialog(context)
         flatDialog.setTitle("Please provide appropriate details!")
-            .setSubtitle("$textMsg")
-            .setSecondButtonText("Alright")
+            .setSubtitle(textMsg)
+            .setFirstButtonText("Alright")
             .setBackgroundColor(Color.parseColor("#d63031"))
-            .setSecondButtonColor(Color.parseColor("#ff7675"))
-            .withSecondButtonListner {
+            .setFirstButtonColor(Color.parseColor("#ff7675"))
+            .withFirstButtonListner {
                 flatDialog.dismiss()
             }
             .show()
