@@ -35,11 +35,12 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
 
     private var ActivityLevel = arrayOf("Sedentary(little or no exercise)", "Light(exercise 1–3 times/week)", "Moderate(exercise 4–5 times/week)", "Active(intense exercise 6–7 times/week)")
 
-    private var food:ArrayList<FoodItems> =ArrayList()
+
     //    To select AMR from the dropdown
     //    TODO Variable to be cleared after Reset with the dropdown value
     private var selecteditem=""
     private var gender="male"
+    private var food:ArrayList<FoodItems> =ArrayList()
 
     var viewModel: CalorieCounterViewModel?=null
 
