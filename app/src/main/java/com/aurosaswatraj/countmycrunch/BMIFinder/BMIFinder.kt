@@ -11,6 +11,7 @@ import android.view.View
 import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.aurosaswatraj.countmycrunch.Dialogs.ErrorDialog
 import com.aurosaswatraj.countmycrunch.R
 import com.thecode.aestheticdialogs.*
 import kotlinx.android.synthetic.main.calorie_counter_u_i.*
@@ -34,11 +35,7 @@ class BMIFinder : Fragment(R.layout.fragment_b_m_i_finder) {
     var viewModel:BMIViewModel?=null
     private var gender="male"
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
 
-
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -69,6 +66,7 @@ class BMIFinder : Fragment(R.layout.fragment_b_m_i_finder) {
 
         val listener=View.OnClickListener {
 
+            var errorDialog=ErrorDialog(requireActivity())
             when(gender){
                 "male"->{
                     if (weight_input.text.toString().isNotEmpty() &&
@@ -99,7 +97,7 @@ class BMIFinder : Fragment(R.layout.fragment_b_m_i_finder) {
                             heightft_input.error="Empty Foot Field"
                         }
 //
-                        ErrorDialog()
+                        errorDialog.ErrorDialog()
                     }
                 }
                 "female"->{
@@ -131,7 +129,7 @@ class BMIFinder : Fragment(R.layout.fragment_b_m_i_finder) {
                             msg=msg.plus("\nPlease provide positive height in Foot value.")
                             heightft_input.error="Empty Foot Field"
                         }
-                        ErrorDialog()
+                        errorDialog.ErrorDialog()
                     }
                 }
             }
@@ -164,24 +162,6 @@ class BMIFinder : Fragment(R.layout.fragment_b_m_i_finder) {
         viewModel= ViewModelProvider(this).get(BMIViewModel::class.java)
 
     }
-
-    fun ErrorDialog(){
-        AestheticDialog.Builder(requireActivity(), DialogStyle.FLAT, DialogType.ERROR)
-            .setTitle("ERROR!")
-            .setMessage("Please provide appropriate details!")
-            .setCancelable(true)
-            .setDarkMode(true)
-            .setGravity(Gravity.CENTER)
-            .setAnimation(DialogAnimation.SHRINK)
-            .setOnClickListener(object : OnDialogClickListener {
-                override fun onClick(dialog: AestheticDialog.Builder) {
-                    dialog.dismiss()
-                    //actions...
-                }
-            })
-            .show()
-    }
-
 
     fun customAlertDialogi(BMI:BigDecimal?) {
         val alertDialog: AlertDialog = AlertDialog.Builder(requireContext()).create()
