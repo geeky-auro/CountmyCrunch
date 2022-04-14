@@ -1,22 +1,18 @@
 package com.aurosaswatraj.countmycrunch.CalorieCounter
 
-import android.animation.ObjectAnimator
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.view.animation.BounceInterpolator
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Spinner
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.aurosaswatraj.countmycrunch.BMIFinder.BMIViewModel
 import com.aurosaswatraj.countmycrunch.Dialogs.ErrorDialog
 import com.aurosaswatraj.countmycrunch.R
 import kotlinx.android.synthetic.main.calorie_counter_u_i.*
@@ -213,6 +209,13 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
                     }
                 }
             }
+
+            val fragment: Fragment = CalorieOutputFragment()
+            val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+            fragmentTransaction.replace(R.id.fragment_container_view, fragment)
+            fragmentTransaction.addToBackStack(null)
+            fragmentTransaction.commit()
         }
 
     }

@@ -1,108 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5E8C7"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:background="#F5E8C7">
 
 
+    <LinearLayout
+        android:id="@+id/L1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:id="@+id/L1"
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="#F5E8C7"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardCornerRadius="60dp"
+            app:cardElevation="10dp"
+            app:strokeColor="#aaa"
+            app:strokeWidth="1dp"
+            tools:ignore="DuplicateClickableBoundsCheck">
+
+            <ImageButton
+                android:id="@+id/btn_boy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#774E4E"
+                android:clickable="true"
+                android:contentDescription="Male"
+                android:focusable="true"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/male1"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"></ImageButton>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="#F5E8C7"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardCornerRadius="60dp"
+            app:cardElevation="10dp"
+            app:strokeColor="#aaa"
+            app:strokeWidth="1dp"
+            tools:ignore="DuplicateClickableBoundsCheck">
+
+            <ImageButton
+                android:id="@+id/btn_girl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#774E4E"
+                android:clickable="true"
+                android:contentDescription="Male"
+                android:focusable="true"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/feamle1"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"></ImageButton>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/L1"></View>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/filledTextField0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/round"
+        android:hint="@string/string_age"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view">
+
+        <!--this is the actual edit text which takes the input-->
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/age_inputi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:weightSum="2"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent">
+            android:background="@drawable/round"
+            android:inputType="numberDecimal"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/materialCardView1"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="#F5E8C7"
-                android:clickable="true"
-                android:focusable="true"
-                app:cardCornerRadius="60dp"
-                app:cardElevation="10dp"
-                app:strokeColor="#aaa"
-                app:strokeWidth="1dp">
+    </com.google.android.material.textfield.TextInputLayout>
 
-                <ImageButton
-                    android:id="@+id/btn_boy"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="#774E4E"
-                    android:clickable="true"
-                    android:contentDescription="Male"
-                    android:focusable="true"
-                    android:padding="5dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/male1"
-                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"></ImageButton>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/weight_filledText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/round"
+        android:hint="@string/string_weight"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filledTextField0">
 
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/materialCardView2"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="#F5E8C7"
-                android:clickable="true"
-                android:focusable="true"
-                app:cardCornerRadius="60dp"
-                app:cardElevation="10dp"
-                app:strokeColor="#aaa"
-                app:strokeWidth="1dp">
-
-                <ImageButton
-                    android:id="@+id/btn_girl"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="#774E4E"
-                    android:clickable="true"
-                    android:contentDescription="Male"
-                    android:focusable="true"
-                    android:padding="5dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/feamle1"
-                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"></ImageButton>
-
-            </com.google.android.material.card.MaterialCardView>
-
-        </LinearLayout>
-
-
-        <View
-            android:id="@+id/view"
+        <!--this is the actual edit text which takes the input-->
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/weight_inputi"
             android:layout_width="match_parent"
-            android:layout_height="5dp"
-            app:layout_constraintTop_toBottomOf="@+id/L1"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"></View>
+            android:layout_height="wrap_content"
+            android:background="@drawable/round"
+            android:inputType="numberDecimal"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:id="@+id/L2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weight_filledText">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/filledTextField0"
-            app:layout_constraintTop_toBottomOf="@+id/view"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
+            android:id="@+id/filledTextField1ft"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
-            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
             android:background="@drawable/round"
-            android:hint="@string/string_age">
+            android:hint="@string/height_in_ft">
 
             <!--this is the actual edit text which takes the input-->
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/age_inputi"
+                android:id="@+id/heightft_inputi"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/round"
+                android:inputType="number"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--            -->
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/filledTextField1in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:layout_weight="1"
+            android:background="@drawable/round"
+            android:hint="@string/inches">
+
+            <!--this is the actual edit text which takes the input-->
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/heightin_inputi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/round"
@@ -112,95 +198,10 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/weight_filledText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/filledTextField0"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/round"
-            android:hint="@string/string_weight">
 
-            <!--this is the actual edit text which takes the input-->
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/weight_inputi"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/round"
-                android:inputType="numberDecimal"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+    </LinearLayout>
 
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <LinearLayout
-            android:id="@+id/L2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/weight_filledText"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent">
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/filledTextField1ft"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="32dp"
-                android:layout_weight="1"
-                android:background="@drawable/round"
-                android:hint="@string/height_in_ft">
-
-                <!--this is the actual edit text which takes the input-->
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/heightft_inputi"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/round"
-                    android:inputType="number"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-<!--            -->
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/filledTextField1in"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="32dp"
-                android:layout_weight="1"
-                android:background="@drawable/round"
-                android:hint="@string/inches">
-
-                <!--this is the actual edit text which takes the input-->
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/heightin_inputi"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/round"
-                    android:inputType="numberDecimal"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-        </LinearLayout>
-
-        <!--Create a TextInputLayout and choose the style,
+    <!--Create a TextInputLayout and choose the style,
         for now we are choosing the OutlinedBox ExposedDropdownMenu   -->
 
 
@@ -208,9 +209,9 @@
         android:id="@+id/L3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/L2"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/L2">
 
         <Spinner
             android:id="@+id/Spinner"
@@ -242,8 +243,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:scrollbars="horizontal"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustResize"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
     </RelativeLayout>
 
@@ -253,7 +254,7 @@
         android:layout_width="180dp"
         android:layout_height="70dp"
         android:layout_gravity="center"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/round_button"
         android:minWidth="48dp"
         android:minHeight="48dp"
@@ -261,9 +262,8 @@
         android:textColor="#ffffff"
         android:textSize="23sp"
         android:textStyle="bold"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativelayout" />
 
 

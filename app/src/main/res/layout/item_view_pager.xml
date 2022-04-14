@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CCC20F">
+
+    <LinearLayout
+        android:id="@+id/insideView"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:background="#CCC20F"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/mtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textColor="#0E1012"
+            android:fontFamily="sans-serif-black"
+            android:padding="2dp"
+            android:text="Sample Data"
+            android:textAlignment="center"
+            android:background="#ffa801"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/insideView"
+            app:layout_constraintStart_toStartOf="@+id/insideView"
+            app:layout_constraintTop_toTopOf="@+id/insideView" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@+id/insideView"
+            app:cardBackgroundColor="#F4EE35"
+            android:layout_margin="14dp"
+            android:clickable="false"
+            android:padding="2dp"
+            app:cardElevation="20sp"
+            app:strokeColor="@color/black"
+            app:strokeWidth="0sp"
+            app:shapeAppearance="@style/ShapeAppearance.MaterialComponents.SmallComponent"
+            app:layout_constraintStart_toStartOf="@+id/insideView"
+            app:layout_constraintTop_toBottomOf="@+id/mtitle">
+
+
+            <TextView
+                android:id="@+id/mFoodDisplay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:padding="2dp"
+                android:text="Dataset"
+                android:textAlignment="center"
+                android:textColor="#1E1E1E"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/insideView"
+                app:layout_constraintStart_toStartOf="@+id/insideView"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+        <TextView
+            android:id="@+id/swipeNext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:layout_margin="16dp"
+            android:padding="2dp"
+            android:layout_gravity="end"
+            android:text="Swipe Next"
+            android:textAlignment="viewEnd"
+            android:textColor="#121212"
+            android:textSize="14.5sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/insideView"
+            app:layout_constraintEnd_toEndOf="@+id/insideView"
+            app:layout_constraintStart_toStartOf="@+id/insideView" />
+
+
+    </LinearLayout>
+
+
+
+
+</ScrollView>
