@@ -66,7 +66,7 @@ class BMIFinder : Fragment(R.layout.fragment_b_m_i_finder) {
 
         val listener=View.OnClickListener {
 
-            var errorDialog=ErrorDialog(requireActivity())
+            val errorDialog=ErrorDialog(requireActivity())
             when(gender){
                 "male"->{
                     if (weight_input.text.toString().isNotEmpty() &&
@@ -79,22 +79,22 @@ class BMIFinder : Fragment(R.layout.fragment_b_m_i_finder) {
                     else{
                     var msg=""
                         if (weight_input.text.toString().isEmpty()){
-                            msg="\nPlease provide positive weight value."
-                            weight_input.error="Empty Weight Field"
+                            msg="Please provide positive weight value."
+                            weight_input.error=msg
                         }
                         if (heightin_input.text.toString().isEmpty()){
-                            msg=msg.plus("\nPlease provide positive height in inches value.")
-                            heightin_input.error="Empty Inch Field"
+                            msg=("Please provide positive height in inches value.")
+                            heightin_input.error=msg
                         }
 
                         if (age_input.text.toString().isEmpty()){
-                            msg=msg.plus("\nPlease provide an age between 5 and 100.")
-                            age_input.error="Empty Age Field"
+                            msg=("Please provide an age between 5 and 100.")
+                            age_input.error=msg
                         }
 
                         if (heightft_input.text.toString().isEmpty()){
-                            msg=msg.plus("\nPlease provide positive height in Foot value.")
-                            heightft_input.error="Empty Foot Field"
+                            msg=("Please provide positive height in Foot value.")
+                            heightft_input.error=msg
                         }
 //
                         errorDialog.ErrorDialog()
@@ -112,22 +112,22 @@ class BMIFinder : Fragment(R.layout.fragment_b_m_i_finder) {
 
                         var msg=""
                         if (weight_input.text.toString().isEmpty()){
-                            msg="\nPlease provide positive weight value."
-                            weight_input.error="Empty Weight Field"
+                            msg="Please provide positive weight value."
+                            weight_input.error=msg
                         }
                         if (heightin_input.text.toString().isEmpty()){
-                            msg=msg.plus("\nPlease provide positive height in inches value.")
-                            heightin_input.error="Empty Inch Field"
+                            msg=("Please provide positive height in inches value.")
+                            heightin_input.error=msg
                         }
 
                         if (age_input.text.toString().isEmpty()){
-                            msg=msg.plus("\nPlease provide an age between 5 and 100.")
-                            age_input.error="Empty Age Field"
+                            msg=("Please provide an age between 5 and 100.")
+                            age_input.error=msg
                         }
 
                         if (heightft_input.text.toString().isEmpty()){
-                            msg=msg.plus("\nPlease provide positive height in Foot value.")
-                            heightft_input.error="Empty Foot Field"
+                            msg=("\nPlease provide positive height in Foot value.")
+                            heightft_input.error=msg
                         }
                         errorDialog.ErrorDialog()
                     }

@@ -17,6 +17,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.aurosaswatraj.countmycrunch.BMIFinder.BMIViewModel
+import com.aurosaswatraj.countmycrunch.Dialogs.ErrorDialog
 import com.aurosaswatraj.countmycrunch.R
 import kotlinx.android.synthetic.main.calorie_counter_u_i.*
 import java.math.BigDecimal
@@ -134,7 +135,7 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
 
         submit_button.setOnClickListener {
             Log.d(TAG,"Total Calorie Consumed as a whole is ${totalCalorieConsumed()}")
-
+            val errorDialog= ErrorDialog(requireActivity())
 
 //            https://github.com/PatilShreyas/MaterialDialog-Android
             when(gender){
@@ -153,7 +154,26 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
                     }
                     else{
 
-//                        TODO:Alternative can be shown is a error message
+                       var msg=""
+                        if (weight_inputi.text.toString().isEmpty()){
+                            msg="Please provide positive weight value."
+                            weight_inputi.error=msg
+                        }
+                        if (heightin_inputi.text.toString().isEmpty()){
+                            msg=("Please provide positive height in inches value.")
+                            heightin_inputi.error=msg
+                        }
+
+                        if (age_inputi.text.toString().isEmpty()){
+                            msg=("Please provide an age between 5 and 100.")
+                            age_inputi.error=msg
+                        }
+
+                        if (heightft_inputi.text.toString().isEmpty()){
+                            msg=("\nPlease provide positive height in Foot value.")
+                            heightft_inputi.error=msg
+                        }
+                        errorDialog.ErrorDialog()
                     }
                 }
                 "female"->{
@@ -169,8 +189,26 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
                         take_input_BMI_Female_calculate(wt,ht_ft,ht_in,age)
                     }
                     else{
+                        var msg=""
+                        if (weight_inputi.text.toString().isEmpty()){
+                            msg="Please provide positive weight value."
+                            weight_inputi.error=msg
+                        }
+                        if (heightin_inputi.text.toString().isEmpty()){
+                            msg=("Please provide positive height in inches value.")
+                            heightin_inputi.error=msg
+                        }
 
-//                        TODO:Alternative can be shown is a error message
+                        if (age_inputi.text.toString().isEmpty()){
+                            msg=("Please provide an age between 5 and 100.")
+                            age_inputi.error=msg
+                        }
+
+                        if (heightft_inputi.text.toString().isEmpty()){
+                            msg=("\nPlease provide positive height in Foot value.")
+                            heightft_inputi.error=msg
+                        }
+                        errorDialog.ErrorDialog()
                     }
                 }
             }
