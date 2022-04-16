@@ -21,12 +21,12 @@ class CalorieOutputFragment : Fragment(R.layout.fragment_calorie_output) {
 
 
     private var listData=ArrayList<CalorieData>()
-
+//    private var adapter:ViewPagerAdapter?=null
 
     fun updateEditText(data: ArrayList<CalorieData>) {
         Log.d(TAG,"In OutputFragment $data")
         listData=data
-
+//        adapter=ViewPagerAdapter(data)
     }
 
 
@@ -35,7 +35,6 @@ class CalorieOutputFragment : Fragment(R.layout.fragment_calorie_output) {
         Log.d(TAG,"onCreateView Started")
         Log.d(TAG,"onCreateView List Data:$listData")
         val adapter=ViewPagerAdapter(listData)
-        Log.d(TAG,"$adapter")
         viewPager.adapter=adapter
 
     }
