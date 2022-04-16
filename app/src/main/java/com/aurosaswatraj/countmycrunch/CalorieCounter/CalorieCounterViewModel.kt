@@ -13,7 +13,7 @@ private const val TAG="CalorieCounterVM"
 
 class CalorieCounterViewModel: ViewModel() {
 
-    fun calculate_BMR_Female(wt: BigDecimal?, ht_ft: BigDecimal?, ht_in: BigDecimal?, age: BigDecimal?) {
+    fun calculate_BMR_Female(wt: BigDecimal?, ht_ft: BigDecimal?, ht_in: BigDecimal?, age: BigDecimal?): String {
         val female_age=age
         val female_weight=wt
         val female_height_ft=ht_ft
@@ -23,7 +23,7 @@ class CalorieCounterViewModel: ViewModel() {
         var BMR: BigDecimal? =((female_weight?.times(9.563.toBigDecimal()))?.plus(heightincm!!.times(1.850.toBigDecimal()))?.subtract(female_age?.times(4.676.toBigDecimal())))
         BMR=BMR?.plus(655.1.toBigDecimal())
 
-        calculate_AMR(BMR)
+        return calculate_AMR(BMR)
 
 
     }
@@ -93,7 +93,7 @@ class CalorieCounterViewModel: ViewModel() {
         food.add(FoodItems(R.drawable.yoghurt_non_fat,"Yogurt (non-fat)",110.0,0))
     }
 
-    fun calculate_BMR_Male(wt: BigDecimal?, ht_ft: BigDecimal?, ht_in: BigDecimal?, age: BigDecimal?){
+    fun calculate_BMR_Male(wt: BigDecimal?, ht_ft: BigDecimal?, ht_in: BigDecimal?, age: BigDecimal?): String {
 //        For Men
         val male_weight=wt
         val male_height_ft=ht_ft
@@ -105,12 +105,12 @@ class CalorieCounterViewModel: ViewModel() {
         BMR=BMR?.plus(66.47.toBigDecimal())
 
 
-        calculate_AMR(BMR)
+        return calculate_AMR(BMR)
 
 
     }
 
-    private fun calculate_AMR(bmr: BigDecimal?) {
+    private fun calculate_AMR(bmr: BigDecimal?): String {
         val Sedentary=bmr?.multiply(1.2.toBigDecimal())
         val Lightly_active=bmr?.multiply(1.375.toBigDecimal())
         val Moderately_active=bmr?.multiply(1.55.toBigDecimal())
@@ -122,6 +122,17 @@ class CalorieCounterViewModel: ViewModel() {
         Log.d(TAG,"Moderately_active =$Moderately_active")
         Log.d(TAG,"Active =$Active")
         Log.d(TAG,"Very active =$Very_active")
+
+        var estimates="""
+            Sedentary =$Sedentary
+            Lightly active =$Lightly_active
+            Moderately_active =$Moderately_active
+            Active =$Active
+            Very active =$Very_active
+        """.trimIndent()
+
+        return estimates
+
     }
 
 

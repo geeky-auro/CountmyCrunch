@@ -26,28 +26,29 @@ private const val TAG="Calorie_Calculator"
  * A simple [Fragment] subclass.
  * Use the [Calorie_Calculator.newInstance] factory method to
  * create an instance of this fragment.
+ *
+ *
  */
-class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListener,AdapterView.OnItemSelectedListener   {
+
+interface FragmentCalorieOutput {
+    fun onOutputSent(data: ArrayList<CalorieData>)
+}
+
+class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListener,AdapterView.OnItemSelectedListener,FragmentCalorieOutput{
 
     private var ActivityLevel = arrayOf("Sedentary(little or no exercise)", "Light(exercise 1–3 times/week)", "Moderate(exercise 4–5 times/week)", "Active(intense exercise 6–7 times/week)")
 
+    private var listener: FragmentCalorieOutput? = null
+    private var fragmentB: CalorieOutputFragment? = null
 
     //    To select AMR from the dropdown
     //    TODO Variable to be cleared after Reset with the dropdown value
     private var selecteditem=""
     private var gender="male"
     private var food:ArrayList<FoodItems> =ArrayList()
+    private var data:ArrayList<CalorieData> = ArrayList()
 
     var viewModel: CalorieCounterViewModel?=null
-
-
-    private fun take_input_BMI_Male_calculate(wt: BigDecimal,ht_ft: BigDecimal,ht_in: BigDecimal,age: BigDecimal) {
-        viewModel?.calculate_BMR_Male(wt,ht_ft,ht_in,age)
-    }
-    private fun take_input_BMI_Female_calculate( wt: BigDecimal,ht_ft: BigDecimal,ht_in: BigDecimal,age: BigDecimal){
-         viewModel?.calculate_BMR_Female(wt,ht_ft,ht_in,age)
-    }
-
 
 
 
@@ -95,7 +96,10 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        fragmentB = CalorieOutputFragment()
         viewModel?.initializeitems(food)
+
+
         recyclerview.layoutManager=LinearLayoutManager(view.context, RecyclerView.HORIZONTAL,false)
         recyclerview.adapter=FoodAdapter(food,this)
 
@@ -133,7 +137,7 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
         submit_button.setOnClickListener {
             Log.d(TAG,"Total Calorie Consumed as a whole is ${totalCalorieConsumed()}")
             val errorDialog= ErrorDialog(requireActivity())
-
+            data.add(0,CalorieData("Total Calorie Consumed",totalFoodConsumed(),"Swipe Next>>"))
 //            https://github.com/PatilShreyas/MaterialDialog-Android
             when(gender){
                 "male"->{
@@ -206,19 +210,31 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
                             heightft_inputi.error=msg
                         }
                         errorDialog.ErrorDialog()
+
                     }
                 }
             }
 
-            val fragment: Fragment = CalorieOutputFragment()
-            val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
-            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-            fragmentTransaction.replace(R.id.fragment_container_view, fragment)
-            fragmentTransaction.addToBackStack(null)
-            fragmentTransaction.commit()
+
+            Log.d(TAG,"List Data:$data")
+            Log.d(TAG,"List Data Size:${data.size}")
+            listener?.onOutputSent(data)
+            switchFragements(data)
+
+
         }
 
     }
+
+    private fun take_input_BMI_Male_calculate(wt: BigDecimal,ht_ft: BigDecimal,ht_in: BigDecimal,age: BigDecimal) {
+        val calculatedData=viewModel?.calculate_BMR_Male(wt,ht_ft,ht_in,age)
+        data.add(CalorieData("Estimated Daily Calorie Needs",calculatedData!!,""))
+    }
+    private fun take_input_BMI_Female_calculate( wt: BigDecimal,ht_ft: BigDecimal,ht_in: BigDecimal,age: BigDecimal){
+        val calculatedData=viewModel?.calculate_BMR_Female(wt,ht_ft,ht_in,age)
+        data.add(CalorieData("Estimated Daily Calorie Needs",calculatedData!!,""))
+    }
+
 
 
     private fun totalCalorieConsumed():Double{
@@ -232,10 +248,56 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
         return totCalorie
     }
 
+    private fun totalFoodConsumed():String{
+        var counter=0
+        var foodData = ""
+        food.forEach {
+            if (food[counter].getMnoOfItems()>0){
+                foodData=foodData.plus(food[counter].name+":X"+food[counter].getMnoOfItems()+"\n")
+            }
+            counter++
+
+        }
+        return foodData
+    }
+
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
         viewModel= ViewModelProvider(this).get(CalorieCounterViewModel::class.java)
+        listener = if (context is FragmentCalorieOutput) {
+            context
+        } else {
+            throw RuntimeException("$context must implement FragmentAListener")
+        }
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        listener=null
+    }
+
+
+    private fun switchFragements(data: ArrayList<CalorieData>) {
+
+//        var result=Bundle()
+//        result.putParcelable("Example List",CalPareceable(
+//            data[0].Disptitle, data[0].mfoodDisplay,
+//            data[0].swipeNext))
+//        result.putParcelable("Example List",CalPareceable(
+//            data[1].Disptitle, data[1].mfoodDisplay,
+//            data[1].swipeNext))
+//        https://stackoverflow.com/questions/39867847/android-passing-arraylistmodel-to-fragment-from-activity
+        val fragment: Fragment = CalorieOutputFragment()
+        val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+        val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.fragment_container_view, fragment)
+        fragmentTransaction.addToBackStack(null)
+        fragmentTransaction.commit()
+    }
+
+    override fun onOutputSent(data: ArrayList<CalorieData>) {
+        fragmentB?.updateEditText(data)
     }
 
 

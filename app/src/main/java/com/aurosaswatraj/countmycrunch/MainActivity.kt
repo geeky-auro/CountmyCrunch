@@ -1,22 +1,27 @@
 package com.aurosaswatraj.countmycrunch
 
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import androidx.appcompat.app.AppCompatActivity
-
+import com.aurosaswatraj.countmycrunch.CalorieCounter.CalorieData
+import com.aurosaswatraj.countmycrunch.CalorieCounter.CalorieOutputFragment
+import com.aurosaswatraj.countmycrunch.CalorieCounter.Calorie_Calculator
+import com.aurosaswatraj.countmycrunch.CalorieCounter.FragmentCalorieOutput
 
 
 private const val TAG="MainActivity"
-class MainActivity : AppCompatActivity(){
+class MainActivity : AppCompatActivity(),FragmentCalorieOutput{
 
+    var fragmentB:CalorieOutputFragment?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
 
-
+        fragmentB=CalorieOutputFragment()
 
     }
 
@@ -28,8 +33,11 @@ class MainActivity : AppCompatActivity(){
         return true
     }
 
+    override fun onOutputSent(data: ArrayList<CalorieData>) {
 
-
+        Log.d(TAG,"Data in MainActivity is $data")
+        fragmentB?.updateEditText(data)
+    }
 
 
 }
@@ -40,6 +48,9 @@ class MainActivity : AppCompatActivity(){
  * Maintenance = 15-16 calories per #
  * Weight Gain = 18-19 calories per #
  */
+
+//Pass Data between Fragments; https://www.youtube.com/watch?v=i22INe14JUc&ab_channel=CodinginFlow
+
 
 /*
 https://www.themealdb.com/api.php

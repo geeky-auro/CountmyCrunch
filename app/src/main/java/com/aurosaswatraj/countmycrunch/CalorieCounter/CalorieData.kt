@@ -15,6 +15,10 @@ class CalorieData(var Disptitle:String,var mfoodDisplay:String,var swipeNext:Str
         return swipeNext
     }
 
+    override fun toString(): String {
+        return "CalorieData(${getTitle()},${getFoodDisplay()},${getswipeNext()})"
+    }
+
 
 
 

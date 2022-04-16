@@ -20,9 +20,9 @@ class ViewPagerAdapter(val image: List<CalorieData>):
 
     override fun onBindViewHolder(holder: ViewPagerViewHolder, position: Int) {
         val curImage=image[position]
-        holder.itemView.mtitle.text=curImage.Disptitle
-        holder.itemView.mFoodDisplay.text=curImage.mfoodDisplay
-        holder.itemView.swipeNext.text=curImage.swipeNext
+        holder.itemView.mtitle.text=curImage.getTitle()
+        holder.itemView.mFoodDisplay.text=curImage.getFoodDisplay()
+        holder.itemView.swipeNext.text=curImage.getswipeNext()
     }
 
     override fun getItemCount(): Int {
