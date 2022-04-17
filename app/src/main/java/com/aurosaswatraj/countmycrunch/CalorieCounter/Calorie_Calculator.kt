@@ -146,7 +146,7 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
         submit_button.setOnClickListener {
             Log.d(TAG,"Total Calorie Consumed as a whole is ${totalCalorieConsumed()}")
             val errorDialog= ErrorDialog(requireActivity())
-            data.add(0,CalorieData("Total Calorie Consumed",totalFoodConsumed(),"Swipe Next>>"))
+            data.add(0,CalorieData("Total Calorie Consumed",totalFoodConsumed()+"\n"+"Total Calorie:${totalCalorieConsumed()}","Swipe Next>>"))
 //            https://github.com/PatilShreyas/MaterialDialog-Android
             when(gender){
                 "male"->{
@@ -249,7 +249,6 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
         val cancel=view?.findViewById<MaterialButton>(R.id.cance_btn)
         val save=view?.findViewById<MaterialButton>(R.id.save_bitn)
         cancel?.setOnClickListener {
-
             alertDialog.dismiss()
         }
         save?.setOnClickListener {
@@ -297,7 +296,7 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
             counter++
         }
         recyclerview.adapter?.notifyDataSetChanged()
-        var counter1=0
+        val counter1=0
         data.forEach {
             data[counter1].Disptitle=""
             data[counter1].mfoodDisplay=""
