@@ -1,5 +1,6 @@
 package com.aurosaswatraj.countmycrunch.CalorieCounter
 
+import android.app.AlertDialog
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
@@ -7,15 +8,23 @@ import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.ViewPager2
 import com.aurosaswatraj.countmycrunch.Dialogs.ErrorDialog
 import com.aurosaswatraj.countmycrunch.R
+import com.google.android.material.button.MaterialButton
 import kotlinx.android.synthetic.main.calorie_counter_u_i.*
+import kotlinx.android.synthetic.main.calorie_counter_u_i.btn_boy
+import kotlinx.android.synthetic.main.calorie_counter_u_i.btn_girl
+import kotlinx.android.synthetic.main.calorie_counter_u_i.submit_button
+import kotlinx.android.synthetic.main.fragment_b_m_i_finder.*
 import java.math.BigDecimal
 
 
@@ -152,6 +161,7 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
                         val age=age_inputi.text.toString().toBigDecimal()
 
                         take_input_BMI_Male_calculate(wt,ht_ft,ht_in,age)
+                        showoutputDialog(data)
                     }
                     else{
 
@@ -188,6 +198,7 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
                         val ht_in=heightin_inputi.text.toString().toBigDecimal()
                         val age=age_inputi.text.toString().toBigDecimal()
                         take_input_BMI_Female_calculate(wt,ht_ft,ht_in,age)
+                        showoutputDialog(data)
                     }
                     else{
                         var msg=""
@@ -218,11 +229,42 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
 
             Log.d(TAG,"List Data:$data")
             Log.d(TAG,"List Data Size:${data.size}")
-            listener?.onOutputSent(data)
-            switchFragements(data)
+
+
+//            listener?.onOutputSent(data)
+//            switchFragements(data)
 
 
         }
+
+    }
+
+    private fun showoutputDialog(data: ArrayList<CalorieData>) {
+        val alertDialog: AlertDialog = AlertDialog.Builder(requireContext()).create()
+        val view: View? = requireActivity().getLayoutInflater().inflate(R.layout.fragment_calorie_output, null)
+        alertDialog.setCancelable(false)
+        val viewpager=view?.findViewById<ViewPager2>(R.id.viewPager)
+        val adapter=ViewPagerAdapter(data)
+        viewpager?.adapter=adapter
+        val cancel=view?.findViewById<MaterialButton>(R.id.cance_btn)
+        val save=view?.findViewById<MaterialButton>(R.id.save_bitn)
+        cancel?.setOnClickListener {
+
+            alertDialog.dismiss()
+        }
+        save?.setOnClickListener {
+            resetvariables()
+            btn_boy.setBackgroundColor(Color.parseColor("#774E4E"))
+            btn_girl.setBackgroundColor(Color.parseColor("#774E4E"))
+            weight_inputi.setText("")
+            heightin_inputi.setText("")
+            age_inputi.setText("")
+            heightft_inputi.setText("")
+            gender="male"
+            alertDialog.dismiss()
+        }
+        alertDialog.setView(view)
+        alertDialog.show()
 
     }
 
@@ -246,6 +288,22 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
 
         }
         return totCalorie
+    }
+
+    private fun resetvariables(){
+        var counter=0
+        food.forEach {
+            food[counter].noOfItems=0
+            counter++
+        }
+        recyclerview.adapter?.notifyDataSetChanged()
+        var counter1=0
+        data.forEach {
+            data[counter1].Disptitle=""
+            data[counter1].mfoodDisplay=""
+            data[counter1].swipeNext=""
+        }
+
     }
 
     private fun totalFoodConsumed():String{

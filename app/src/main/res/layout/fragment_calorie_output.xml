@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#CCC20F"
+    android:background="#703B3B"
     tools:context=".CalorieCounter.CalorieOutputFragment">
 
     <androidx.viewpager2.widget.ViewPager2
@@ -30,14 +30,16 @@
 
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/save_bitn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/Widget.AppCompat.Button.Colored"
             android:text="SAVE"
             android:layout_weight="1"
             android:textAllCaps="true"
-            app:elevation="20sp"
-            app:backgroundTint="#ED7744"
+            android:textStyle="bold"
+            app:elevation="50sp"
+            app:backgroundTint="#C1582B"
             app:strokeColor="#f5cd79"
             app:strokeWidth="2sp"
             android:layout_margin="8dp"
@@ -47,14 +49,16 @@
         </com.google.android.material.button.MaterialButton>
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/cance_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/Widget.AppCompat.Button.Colored"
             android:text="CANCEL"
             android:textAllCaps="true"
+            android:textStyle="bold"
             android:layout_weight="1"
-            app:elevation="20sp"
-            app:backgroundTint="#F4B395"
+            app:elevation="50sp"
+            app:backgroundTint="#E1A88E"
             app:strokeColor="#f5cd79"
             app:strokeWidth="2sp"
             android:layout_margin="8dp"

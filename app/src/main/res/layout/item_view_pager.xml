@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CCC20F">
+    android:background="#703B3B">
 
     <LinearLayout
         android:id="@+id/insideView"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:background="#CCC20F"
+        android:background="#703B3B"
         android:orientation="vertical">
 
         <TextView
@@ -17,13 +17,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:textColor="#0E1012"
+            android:textColor="#FFFFFF"
             android:fontFamily="sans-serif-black"
             android:padding="2dp"
             android:text="Sample Data"
             android:textAlignment="center"
-            android:background="#ffa801"
-            android:textSize="25sp"
+            android:background="#A15151"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/insideView"
             app:layout_constraintStart_toStartOf="@+id/insideView"
@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="@+id/insideView"
-            app:cardBackgroundColor="#F4EE35"
+            app:cardBackgroundColor="#E1AC8F"
             android:layout_margin="14dp"
             android:clickable="false"
             android:padding="2dp"
@@ -54,7 +54,7 @@
                 android:text="Dataset"
                 android:textAlignment="center"
                 android:textColor="#1E1E1E"
-                android:textSize="25sp"
+                android:textSize="22sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@+id/insideView"
                 app:layout_constraintStart_toStartOf="@+id/insideView"
@@ -76,8 +76,8 @@
             android:layout_gravity="end"
             android:text="Swipe Next"
             android:textAlignment="viewEnd"
-            android:textColor="#121212"
-            android:textSize="14.5sp"
+            android:textColor="#FFFFFF"
+            android:textSize="15.5sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/insideView"
             app:layout_constraintEnd_toEndOf="@+id/insideView"
