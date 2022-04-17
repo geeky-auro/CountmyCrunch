@@ -252,7 +252,7 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
             alertDialog.dismiss()
         }
         save?.setOnClickListener {
-            resetvariables()
+
             btn_boy.setBackgroundColor(Color.parseColor("#774E4E"))
             btn_girl.setBackgroundColor(Color.parseColor("#774E4E"))
             weight_inputi.setText("")
