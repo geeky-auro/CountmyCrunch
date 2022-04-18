@@ -252,7 +252,8 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
             alertDialog.dismiss()
         }
         save?.setOnClickListener {
-            viewModel?.initializeitems(food)
+//            viewModel?.initializeitems(food)
+            resetvariables()
             btn_boy.setBackgroundColor(Color.parseColor("#774E4E"))
             btn_girl.setBackgroundColor(Color.parseColor("#774E4E"))
             weight_inputi.setText("")
@@ -291,17 +292,10 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
 
     private fun resetvariables(){
         var counter=0
-        food.forEach {
-            food[counter].noOfItems=0
-            counter++
-        }
+        food.clear()
+        viewModel?.initializeitems(food)
         recyclerview.adapter?.notifyDataSetChanged()
-        val counter1=0
-        data.forEach {
-            data[counter1].Disptitle=""
-            data[counter1].mfoodDisplay=""
-            data[counter1].swipeNext=""
-        }
+        data.clear()
 
     }
 
