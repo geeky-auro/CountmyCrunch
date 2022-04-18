@@ -142,7 +142,6 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
             viewModel?.genderAnim(it,gender)
         }
 
-
         submit_button.setOnClickListener {
             Log.d(TAG,"Total Calorie Consumed as a whole is ${totalCalorieConsumed()}")
             val errorDialog= ErrorDialog(requireActivity())
@@ -229,10 +228,6 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
 
             Log.d(TAG,"List Data:$data")
             Log.d(TAG,"List Data Size:${data.size}")
-
-
-
-
 
         }
 
