@@ -147,7 +147,7 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
             Log.d(TAG,"Total Calorie Consumed as a whole is ${totalCalorieConsumed()}")
             val errorDialog= ErrorDialog(requireActivity())
             data.add(0,CalorieData("Total Calorie Consumed",totalFoodConsumed()+"\n"+"Total Calorie:${totalCalorieConsumed()}","Swipe Next>>"))
-//            https://github.com/PatilShreyas/MaterialDialog-Android
+
             when(gender){
                 "male"->{
                     if (weight_inputi.text.toString().isNotEmpty() &&
@@ -231,8 +231,7 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
             Log.d(TAG,"List Data Size:${data.size}")
 
 
-//            listener?.onOutputSent(data)
-//            switchFragements(data)
+
 
 
         }
@@ -252,7 +251,6 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
             alertDialog.dismiss()
         }
         save?.setOnClickListener {
-//            viewModel?.initializeitems(food)
             resetvariables()
             btn_boy.setBackgroundColor(Color.parseColor("#774E4E"))
             btn_girl.setBackgroundColor(Color.parseColor("#774E4E"))
@@ -291,7 +289,6 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
     }
 
     private fun resetvariables(){
-        var counter=0
         food.clear()
         viewModel?.initializeitems(food)
         recyclerview.adapter?.notifyDataSetChanged()
