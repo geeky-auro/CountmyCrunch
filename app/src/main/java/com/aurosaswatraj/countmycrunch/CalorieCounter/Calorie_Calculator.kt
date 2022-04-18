@@ -27,9 +27,7 @@ import kotlinx.android.synthetic.main.calorie_counter_u_i.submit_button
 import kotlinx.android.synthetic.main.fragment_b_m_i_finder.*
 import java.math.BigDecimal
 
-
 private const val TAG="Calorie_Calculator"
-
 
 /**
  * A simple [Fragment] subclass.
