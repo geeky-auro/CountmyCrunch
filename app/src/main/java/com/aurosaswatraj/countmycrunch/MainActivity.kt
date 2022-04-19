@@ -5,10 +5,13 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import com.aurosaswatraj.countmycrunch.BMIFinder.BMIFinder
 import com.aurosaswatraj.countmycrunch.CalorieCounter.CalorieData
 import com.aurosaswatraj.countmycrunch.CalorieCounter.CalorieOutputFragment
 import com.aurosaswatraj.countmycrunch.CalorieCounter.Calorie_Calculator
 import com.aurosaswatraj.countmycrunch.CalorieCounter.FragmentCalorieOutput
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 private const val TAG="MainActivity"
@@ -19,9 +22,24 @@ class MainActivity : AppCompatActivity(),FragmentCalorieOutput{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
         fragmentB=CalorieOutputFragment()
+
+        bottomNavigationView.setOnItemSelectedListener {
+            var selectedFragment:Fragment?=null
+            val id: Int = it.itemId
+            when (id) {
+                R.id.BMI1->{selectedFragment=BMIFinder()
+                }
+                R.id.CALORIE1->{selectedFragment=Calorie_Calculator()
+                }
+                R.id.TRACKER1->{selectedFragment=BMIFinder()
+                }
+            }
+            supportFragmentManager.beginTransaction().replace(R.id.fragment_container_view,
+            selectedFragment!!).commit()
+             true
+        }
+
 
     }
 

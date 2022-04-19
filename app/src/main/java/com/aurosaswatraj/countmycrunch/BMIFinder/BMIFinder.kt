@@ -75,6 +75,9 @@ class BMIFinder : Fragment(R.layout.fragment_b_m_i_finder) {
                         heightft_input.text.toString().isNotEmpty())
                     {
                         take_input_BMI_Male_calculate()
+//                        Male:56.2 kg + 1.41 kg per inch over 5 feet
+//                        Female:53.1 kg + 1.36 kg per inch over 5 feet
+//
                     }
                     else{
                     var msg=""
@@ -144,7 +147,7 @@ class BMIFinder : Fragment(R.layout.fragment_b_m_i_finder) {
         val ht_in=heightin_input.text.toString().toBigDecimal()
         val age=age_input.text.toString().toBigDecimal()
 
-        var BMI=viewModel?.calculate_BMI_Male(wt,ht_ft,ht_in,age)
+        val BMI=viewModel?.calculate_BMI_Male(wt,ht_ft,ht_in,age)
         customAlertDialogi(BMI)
     }
     private fun take_input_BMI_Female_calculate(){
@@ -153,7 +156,7 @@ class BMIFinder : Fragment(R.layout.fragment_b_m_i_finder) {
         val ht_in=heightin_input.text.toString().toBigDecimal()
         val age=age_input.text.toString().toBigDecimal()
 
-        var BMI=viewModel?.calculate_BMI_Female(wt,ht_ft,ht_in,age)
+        val BMI=viewModel?.calculate_BMI_Female(wt,ht_ft,ht_in,age)
         customAlertDialogi(BMI)
     }
 

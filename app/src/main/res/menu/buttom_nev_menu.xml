@@ -3,15 +3,16 @@
 
     <item
         android:id="@+id/BMI1"
-        android:title="Item"
+        android:title="BMI"
+        android:icon="@drawable/ic_bmi_24"
         android:visible="true"></item>
-    <item android:title="Item"
-          android:id="@+id/BMI2"></item>
-    <item android:title="Item"
-          android:id="@+id/BMI3"
-          android:visible="true"></item>
-    <item android:title="Item"
-          android:id="@+id/BMI4"
+    <item android:title="Calorie"
+          android:id="@+id/CALORIE1"
+        android:icon="@drawable/ic_calorie_24"
+        android:visible="true"></item>
+    <item android:title="Tracker"
+        android:icon="@drawable/ic_calendar_today_24"
+          android:id="@+id/TRACKER1"
           android:visible="true"></item>
 
 </menu>
