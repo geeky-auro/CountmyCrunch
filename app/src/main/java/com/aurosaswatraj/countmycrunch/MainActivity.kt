@@ -1,7 +1,9 @@
 package com.aurosaswatraj.countmycrunch
 
+
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
 import android.view.Menu
 import android.view.MenuInflater
 import androidx.appcompat.app.AppCompatActivity
@@ -11,19 +13,32 @@ import com.aurosaswatraj.countmycrunch.CalorieCounter.CalorieData
 import com.aurosaswatraj.countmycrunch.CalorieCounter.CalorieOutputFragment
 import com.aurosaswatraj.countmycrunch.CalorieCounter.Calorie_Calculator
 import com.aurosaswatraj.countmycrunch.CalorieCounter.FragmentCalorieOutput
+import com.thecode.aestheticdialogs.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 
 private const val TAG="MainActivity"
 class MainActivity : AppCompatActivity(),FragmentCalorieOutput{
 
-    var fragmentB:CalorieOutputFragment?=null
+    private var fragmentB:CalorieOutputFragment?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         fragmentB=CalorieOutputFragment()
 
+            if(savedInstanceState==null){
+                supportFragmentManager.beginTransaction().replace(R.id.fragment_container_view,
+                    BMIFinder()).commit()
+            }
+
+        bottomNaviView()
+
+
+
+    }
+
+    private fun bottomNaviView(){
         bottomNavigationView.setOnItemSelectedListener {
             var selectedFragment:Fragment?=null
             val id: Int = it.itemId
@@ -32,14 +47,30 @@ class MainActivity : AppCompatActivity(),FragmentCalorieOutput{
                 }
                 R.id.CALORIE1->{selectedFragment=Calorie_Calculator()
                 }
-                R.id.TRACKER1->{selectedFragment=BMIFinder()
+                R.id.TRACKER1->{
+
+                    AestheticDialog.Builder(this, DialogStyle.FLAT, DialogType.INFO)
+                        .setTitle("Work in Progress")
+                        .setMessage("Will be Shortly Prepared to Work!")
+                        .setCancelable(true)
+                        .setDarkMode(true)
+                        .setGravity(Gravity.CENTER)
+                        .setAnimation(DialogAnimation.SHRINK)
+                        .setOnClickListener(object : OnDialogClickListener {
+                            override fun onClick(dialog: AestheticDialog.Builder) {
+                                selectedFragment=BMIFinder()
+                                dialog.dismiss()
+                                //actions...
+                            }
+                        })
+                        .show()
+                    selectedFragment=BMIFinder()
                 }
             }
             supportFragmentManager.beginTransaction().replace(R.id.fragment_container_view,
-            selectedFragment!!).commit()
-             true
+                selectedFragment!!).commit()
+            true
         }
-
 
     }
 
