@@ -61,8 +61,7 @@ class MainActivity : AppCompatActivity(),FragmentCalorieOutput{
     private fun bottomNaviView(){
         bottomNavigationView.setOnItemSelectedListener {
             var selectedFragment:Fragment?=null
-            val id: Int = it.itemId
-            when (id) {
+            when (it.itemId) {
                 R.id.BMI1->{selectedFragment=BMIFinder()
                 }
                 R.id.CALORIE1->{selectedFragment=Calorie_Calculator()
