@@ -35,13 +35,11 @@ class UserManual : AppCompatActivity() {
             .setCancelable(true)
         dialog.show()
 
-        web.setWebViewClient(object : WebViewClient() {
-
-
+        web.webViewClient = object : WebViewClient() {
             override fun onPageFinished(view: WebView, url: String) {
                 dialog.dismiss()
             }
-        })
+        }
         DONEi.setOnClickListener {
             val i = Intent(applicationContext, MainActivity::class.java)
             startActivity(i)
