@@ -36,7 +36,10 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     def lifecycle_version='2.1.0-alpha02'
     // ViewModel and LiveData
+    implementation 'com.github.marcoscgdev:DialogSheet:2.1.2'
+    implementation 'com.crowdfire.cfalertdialog:cfalertdialog:1.1.0'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.github.Shashank02051997:FancyAlertDialog-Android:0.2'
     implementation 'io.github.amrdeveloper:lottiedialog:1.0.0'
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
     implementation 'androidx.core:core-ktx:1.7.0'

@@ -1,12 +1,14 @@
 package com.aurosaswatraj.countmycrunch
 
 
-import android.content.Intent
+
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
 import android.view.Menu
 import android.view.MenuInflater
+
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.aurosaswatraj.countmycrunch.BMIFinder.BMIFinder
@@ -14,7 +16,10 @@ import com.aurosaswatraj.countmycrunch.CalorieCounter.CalorieData
 import com.aurosaswatraj.countmycrunch.CalorieCounter.CalorieOutputFragment
 import com.aurosaswatraj.countmycrunch.CalorieCounter.Calorie_Calculator
 import com.aurosaswatraj.countmycrunch.CalorieCounter.FragmentCalorieOutput
-import com.aurosaswatraj.countmycrunch.manuals.UserManual
+import com.aurosaswatraj.countmycrunch.Dialogs.UserManualDialog
+import com.crowdfire.cfalertdialog.CFAlertDialog
+import com.marcoscg.dialogsheet.DialogSheet
+
 import com.thecode.aestheticdialogs.*
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -29,23 +34,7 @@ class MainActivity : AppCompatActivity(),FragmentCalorieOutput{
         setContentView(R.layout.activity_main)
         fragmentB=CalorieOutputFragment()
 
-        AestheticDialog.Builder(this, DialogStyle.FLAT, DialogType.INFO)
-            .setTitle("User guide")
-            .setMessage("User Manual of Calorie Counter")
-            .setCancelable(true)
-            .setDarkMode(true)
-            .setGravity(Gravity.CENTER)
-            .setAnimation(DialogAnimation.SHRINK)
-            .setOnClickListener(object : OnDialogClickListener {
-                override fun onClick(dialog: AestheticDialog.Builder) {
-                    val i = Intent(applicationContext, UserManual::class.java)
-                    startActivity(i)
-                    finish()
-                    dialog.dismiss()
-                    //actions...
-                }
-            })
-            .show()
+        UserManualDialog().showDialog(this)
 
             if(savedInstanceState==null){
                 supportFragmentManager.beginTransaction().replace(R.id.fragment_container_view,
@@ -60,34 +49,39 @@ class MainActivity : AppCompatActivity(),FragmentCalorieOutput{
 
     private fun bottomNaviView(){
         bottomNavigationView.setOnItemSelectedListener {
-            var selectedFragment:Fragment?=null
+            val selectedFragment:Fragment?
             when (it.itemId) {
                 R.id.BMI1->{selectedFragment=BMIFinder()
+                    supportFragmentManager.beginTransaction().replace(R.id.fragment_container_view,
+                        selectedFragment
+                    ).commit()
                 }
                 R.id.CALORIE1->{selectedFragment=Calorie_Calculator()
+                    supportFragmentManager.beginTransaction().replace(R.id.fragment_container_view,
+                        selectedFragment
+                    ).commit()
                 }
                 R.id.TRACKER1->{
 
+
                     AestheticDialog.Builder(this, DialogStyle.FLAT, DialogType.WARNING)
-                        .setTitle("Work in Progress")
-                        .setMessage("Will be Shortly Prepared to Work!")
+                        .setTitle("Coming Soon")
+                        .setMessage("Work in Progress!")
                         .setCancelable(true)
                         .setDarkMode(true)
                         .setGravity(Gravity.CENTER)
                         .setAnimation(DialogAnimation.SHRINK)
                         .setOnClickListener(object : OnDialogClickListener {
                             override fun onClick(dialog: AestheticDialog.Builder) {
-                                selectedFragment=BMIFinder()
                                 dialog.dismiss()
                                 //actions...
                             }
                         })
                         .show()
-                    selectedFragment=BMIFinder()
+
                 }
             }
-            supportFragmentManager.beginTransaction().replace(R.id.fragment_container_view,
-                selectedFragment!!).commit()
+
             true
         }
 
