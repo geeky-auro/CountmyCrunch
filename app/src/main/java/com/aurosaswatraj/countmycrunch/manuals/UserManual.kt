@@ -1,7 +1,6 @@
 package com.aurosaswatraj.countmycrunch.manuals
 
-import android.content.DialogInterface
-import android.content.DialogInterface.OnShowListener
+
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -29,7 +28,7 @@ class UserManual : AppCompatActivity() {
         // onPageFinished and override Url loading.
 
         val dialog: LottieDialog = LottieDialog(this)
-            .setAnimationFromUrl("https://assets6.lottiefiles.com/packages/lf20_6yhhrbk6.json")
+            .setAnimation(R.raw.loadng)
             .setAnimationRepeatCount(LottieDialog.INFINITE)
             .setAutoPlayAnimation(true)
             .setDialogBackground(Color.WHITE)
@@ -37,6 +36,8 @@ class UserManual : AppCompatActivity() {
         dialog.show()
 
         web.setWebViewClient(object : WebViewClient() {
+
+
             override fun onPageFinished(view: WebView, url: String) {
                 dialog.dismiss()
             }
