@@ -1,14 +1,16 @@
 package com.aurosaswatraj.countmycrunch.manuals
 
+import android.content.DialogInterface
+import android.content.DialogInterface.OnShowListener
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
-import android.view.Gravity
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
+import com.amrdeveloper.lottiedialog.LottieDialog
 import com.aurosaswatraj.countmycrunch.MainActivity
 import com.aurosaswatraj.countmycrunch.R
-import com.thecode.aestheticdialogs.*
 import kotlinx.android.synthetic.main.activity_user_manual.*
 
 
@@ -26,11 +28,17 @@ class UserManual : AppCompatActivity() {
         // WebViewClient allows you to handle
         // onPageFinished and override Url loading.
 
-
+        val dialog: LottieDialog = LottieDialog(this)
+            .setAnimationFromUrl("https://assets6.lottiefiles.com/packages/lf20_6yhhrbk6.json")
+            .setAnimationRepeatCount(LottieDialog.INFINITE)
+            .setAutoPlayAnimation(true)
+            .setDialogBackground(Color.WHITE)
+            .setCancelable(true)
+        dialog.show()
 
         web.setWebViewClient(object : WebViewClient() {
             override fun onPageFinished(view: WebView, url: String) {
-
+                dialog.dismiss()
             }
         })
         DONEi.setOnClickListener {
