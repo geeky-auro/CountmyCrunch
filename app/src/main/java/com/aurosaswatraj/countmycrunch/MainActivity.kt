@@ -2,7 +2,6 @@ package com.aurosaswatraj.countmycrunch
 
 
 
-import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
@@ -17,8 +16,6 @@ import com.aurosaswatraj.countmycrunch.CalorieCounter.CalorieOutputFragment
 import com.aurosaswatraj.countmycrunch.CalorieCounter.Calorie_Calculator
 import com.aurosaswatraj.countmycrunch.CalorieCounter.FragmentCalorieOutput
 import com.aurosaswatraj.countmycrunch.Dialogs.UserManualDialog
-import com.crowdfire.cfalertdialog.CFAlertDialog
-import com.marcoscg.dialogsheet.DialogSheet
 
 import com.thecode.aestheticdialogs.*
 import kotlinx.android.synthetic.main.activity_main.*
@@ -32,19 +29,27 @@ class MainActivity : AppCompatActivity(),FragmentCalorieOutput{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        initialInitialization(savedInstanceState)
+
+
+    }
+
+
+
+
+
+
+    private fun initialInitialization(savedInstanceState: Bundle?) {
         fragmentB=CalorieOutputFragment()
 
         UserManualDialog().showDialog(this)
 
-            if(savedInstanceState==null){
-                supportFragmentManager.beginTransaction().replace(R.id.fragment_container_view,
-                    BMIFinder()).commit()
-            }
+        if(savedInstanceState==null){
+            supportFragmentManager.beginTransaction().replace(R.id.fragment_container_view,
+                BMIFinder()).commit()
+        }
 
         bottomNaviView()
-
-
-
     }
 
     private fun bottomNaviView(){
