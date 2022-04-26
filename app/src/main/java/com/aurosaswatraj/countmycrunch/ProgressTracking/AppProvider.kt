@@ -4,6 +4,7 @@ import android.content.ContentProvider
 import android.content.ContentValues
 import android.content.UriMatcher
 import android.database.Cursor
+import android.database.SQLException
 import android.database.sqlite.SQLiteQueryBuilder
 import android.net.Uri
 import android.util.Log
@@ -109,12 +110,49 @@ class AppProvider:ContentProvider(){
         }
     }
 
-    override fun insert(p0: Uri, p1: ContentValues?): Uri? {
-        TODO("Not yet implemented")
+    override fun insert(uri: Uri, values: ContentValues?): Uri? {
+        Log.d(TAG, "insert called with uri $uri")
+//        The code for the matched node (added using addURI), or -1 if there is no matched node.
+        val match = uriMatcher.match(uri)
+        //        matcher is used to decide what matcher has been passed.>!
+        Log.d(TAG, "insert match is $match")
+        val recordId: Long
+        val returnUri: Uri
+        when(match){
+            TRACKS->{
+                val db =
+                    AppDatabase.getInstance(context!!).writableDatabase // Our database in "TaskTimer.db"
+                recordId = db.insert(TrackContract.TABLE_NAME, null, values)
+                if (recordId != -1L) {
+                    returnUri = TrackContract.buildUriFromId(recordId)
+                } else {
+                    throw SQLException("Failed to insert,Uri was $uri")
+                }
+            }
+            else -> {
+                throw java.lang.IllegalArgumentException("Unknown uri:$uri")
+            }
+        }
+        if (recordId > 0) {
+            // something was inserted
+            Log.d(TAG, "insert: Setting notifyChange with $uri")
+            context?.contentResolver?.notifyChange(uri, null)
+        }
+
+        Log.d(TAG, "Existing insert,returning $returnUri")
+        return returnUri
     }
 
-    override fun delete(p0: Uri, p1: String?, p2: Array<out String>?): Int {
-        TODO("Not yet implemented")
+    override fun delete(uri: Uri, selection: String?, selectionArgs: Array<out String>?): Int {
+        Log.d(TAG, "delete called with uri $uri")
+        val match = uriMatcher.match(uri)
+        //        matcher is used to decide what matcher has been passed.>!
+        Log.d(TAG, "delete match is $match")
+
+//        Database to count how many rows were updated?
+        var count: Int
+//        Database to know the selection criteria
+        var selectionCriteria: String
     }
 
     override fun update(p0: Uri, p1: ContentValues?, p2: String?, p3: Array<out String>?): Int {
