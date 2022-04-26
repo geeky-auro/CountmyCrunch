@@ -52,21 +52,35 @@ class AppProvider:ContentProvider(){
 
 
     override fun onCreate(): Boolean {
-        TODO("Not yet implemented")
+        /**        We cannot create our database instance as it can only be accessed by getInstance method*/
+        return true
     }
+
+
+
 
     override fun query(
-        p0: Uri,
-        p1: Array<out String>?,
-        p2: String?,
-        p3: Array<out String>?,
-        p4: String?
+        uri: Uri,
+        projection: Array<out String>?,
+        selection: String?,
+        selectionArgs: Array<out String>?,
+        sortOrder: String?
     ): Cursor? {
-        TODO("Not yet implemented")
+        Log.d(TAG, "query called with uri $uri")
     }
 
-    override fun getType(p0: Uri): String? {
-        TODO("Not yet implemented")
+    override fun getType(uri: Uri): String? {
+        //      getType Function is used returning MIME Types..!
+        val match = uriMatcher.match(uri)
+
+//        matcher is used to decide what matcher has been passed.>!
+        return when (match) {
+            TRACKS -> TrackContract.CONTENT_TYPE
+
+            TRACKS_ID -> TrackContract.CONTENT_ITEM_TYPE
+
+            else -> throw IllegalArgumentException("unknown Uri: $uri")
+        }
     }
 
     override fun insert(p0: Uri, p1: ContentValues?): Uri? {
