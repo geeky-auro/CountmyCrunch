@@ -187,7 +187,96 @@ class AppProvider:ContentProvider(){
     }
 
     override fun update(uri: Uri, values: ContentValues?, selection: String?, selectionArgs: Array<out String>?): Int {
-        TODO("Not yet implemented")
+        Log.d(TAG, "update called with uri $uri")
+        val match = uriMatcher.match(uri)
+        //        matcher is used to decide what matcher has been passed.>!
+        Log.d(TAG, "update match is $match")
+
+//        Database to count how many rows were updated?
+        var count: Int
+//        Database to know the selection criteria
+        var selectionCriteria: String
+
+        when (match) {
+//            performing Update against the whole table..!
+            TRACKS -> {
+                val db = AppDatabase.getInstance(context!!).writableDatabase
+                count = db.update(TrackContract.TABLE_NAME, values, selection, selectionArgs)
+            }
+//            Performing the update on a single row..!
+            TRACKS_ID -> {
+                val db = AppDatabase.getInstance(context!!).writableDatabase
+                val id = TrackContract.getId(uri)
+                selectionCriteria = "${TrackContract.Columns.ID} = $id"
+
+                if (selection != null && selection.isNotEmpty()) {
+                    selectionCriteria += " AND ($selection)"
+                }
+
+                count =
+                    db.update(TrackContract.TABLE_NAME, values, selectionCriteria, selectionArgs)
+            }
+
+            else->{ throw IllegalArgumentException("Unknown URI:$uri")}
+        }
+
+
+        if (count > 0) {
+//            Something was Updated
+            Log.d(TAG, "Update :Setting notifyChange with $uri ")
+//            call the ContextResolver to notify the change,
+            context?.contentResolver?.notifyChange(uri, null)
+        }
+
+        Log.d(TAG, "Exiting update function returning count...! :$count")
+        return count
+
+
     }
 
 }
+
+
+
+/*For Creating Content Provider: https://developer.android.com/guide/topics/providers/content-provider-creating */
+
+/** A summary of the queryBuilder.query constructor
+ * queryBuilder >> "SELECT ______ FROM Tasks WHERE (id = 'taskId')" //taskId is a Long
+db >> reference to our database to query from
+projection >> "col, col, col, ..." An Array of columns that should be included for each row retrieved
+selection >> "WHERE col = value" selection specifies the criteria for selecting rows
+selectionArgs >> replaces placeholders in the selection clause
+groupBy >> "GROUP BY col, col, ..." combines data for rows with identical values in all included columns
+having >> "HAVING condition" eg: 'COUNT(_id) <10'. Adds a condition to the GROUP BY results
+sortOrder >> "ORDER BY col, col,..." Orders the rows by a their value in a column/columns
+
+The output with constructor elements, and output in an example instance below from a match of TASKS_ID
+----------------------------------------------------
+SELECT   projection    FROM Tasks WHERE (_id = 'taskId') ORDER BY sortOrder
+SELECT Name, SortOrder FROM Tasks WHERE (_id = '1')      ORDER BY SortOrder */
+
+//Cursor Constructor..!
+
+/** In the case of our cursor constructor:
+
+val cursor = queryBuilder.query(db, projection, selection, selectionArgs, null, null, sortOrder)
+
+- db was created in our query(){...} code.
+
+- (at this point) projection was coded into our cursor's contentResolver in MainActivity and passed in the query() constructor.
+
+- selection is null and not used (instead added via our when(match) directly into queryBuilder).
+
+- selectionArgs is null and not used.
+
+- groupBy was hardcoded as null.
+
+- having was hardcoded as null.
+
+- (at this point) sortOrder was coded into our cursor's contentResolver in MainActivity and passed in the query() constructor.
+
+
+This creates a new cursor, and is returned to create the cursor in MainActivity, and subsequently used.
+ * */
+
+/**Note:Selection doesn't include the WHERE keyword, it's a list of columns.  selectionArgs provides the values for those columns.  Together, the two are used to create the WHERE clause.*/
