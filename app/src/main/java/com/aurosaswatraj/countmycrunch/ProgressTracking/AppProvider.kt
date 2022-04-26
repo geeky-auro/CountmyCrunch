@@ -186,7 +186,7 @@ class AppProvider:ContentProvider(){
         return count
     }
 
-    override fun update(p0: Uri, p1: ContentValues?, p2: String?, p3: Array<out String>?): Int {
+    override fun update(uri: Uri, values: ContentValues?, selection: String?, selectionArgs: Array<out String>?): Int {
         TODO("Not yet implemented")
     }
 
