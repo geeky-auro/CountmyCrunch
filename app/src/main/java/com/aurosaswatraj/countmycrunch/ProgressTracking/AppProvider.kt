@@ -4,6 +4,7 @@ import android.content.ContentProvider
 import android.content.ContentValues
 import android.content.UriMatcher
 import android.database.Cursor
+import android.database.sqlite.SQLiteQueryBuilder
 import android.net.Uri
 import android.util.Log
 
@@ -67,6 +68,31 @@ class AppProvider:ContentProvider(){
         sortOrder: String?
     ): Cursor? {
         Log.d(TAG, "query called with uri $uri")
+        val match = uriMatcher.match(uri)
+        //        matcher is used to decide what matcher has been passed.>!
+        Log.d(TAG, "query match is $match")
+//        use a query builder to build the query that will be executed by the database
+        val queryBuilder = SQLiteQueryBuilder()
+//        Copy paste the code..!
+        when (match) {
+            TRACKS -> queryBuilder.tables = TrackContract.TABLE_NAME // SELECT ______ FROM Tasks
+
+            TRACKS_ID -> {
+                queryBuilder.tables = TrackContract.TABLE_NAME // SELECT _____ FROM Tasks
+                val taskId = TrackContract.getId(uri) // Long of our taskId. E.g. 1
+                queryBuilder.appendWhere("${TrackContract.Columns.ID} = ") // SELECT ______ FROM Tasks WHERE (_id =)      // <-- change method
+                queryBuilder.appendWhereEscapeString("$taskId") // SELECT ______ FROM Tasks WHERE (id = 'taskId')
+            }
+            //queryBuilder.appendWhereEscapeString() is used to append values not append entire where clause
+            else -> throw IllegalArgumentException("Unknown URI: $uri")
+        }
+        val db=AppDatabase.getInstance(context!!).readableDatabase // Our database in "TaskTimer.db"
+
+        val cursor =
+            queryBuilder.query(db, projection, selection, selectionArgs, null, null, sortOrder)
+        Log.d(TAG, "query: rows in returned cursor = ${cursor.count}") // TODO remove this line
+
+        return cursor
     }
 
     override fun getType(uri: Uri): String? {

@@ -21,6 +21,7 @@ object TrackContract {
         const val TRACK_AGE="Age"
         const val TRACK_HEIGHT="Height"
         const val TRACK_AMT_CONSUMED="Amt_Consumed"
+        const val TRACK_WEIGHT="Weight"
         const val TRACK_REQUIRED_CONSUMED="Required"
         const val TRACK_DATE="Date"
         const val TRACK_SORT_ORDER="SortOrder"
