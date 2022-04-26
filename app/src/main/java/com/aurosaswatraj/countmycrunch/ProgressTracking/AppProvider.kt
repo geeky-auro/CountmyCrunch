@@ -153,6 +153,37 @@ class AppProvider:ContentProvider(){
         var count: Int
 //        Database to know the selection criteria
         var selectionCriteria: String
+
+        when (match) {
+//            performing Update against the whole table..!
+            TRACKS -> {
+                val db = AppDatabase.getInstance(context!!).writableDatabase
+                count = db.delete(TrackContract.TABLE_NAME, selection, selectionArgs)
+            }
+//            Performing the update on a single row..!
+            TRACKS_ID -> {
+                val db = AppDatabase.getInstance(context!!).writableDatabase
+                val id = TrackContract.getId(uri)
+                selectionCriteria = "${TrackContract.Columns.ID} = $id"
+
+                if (selection != null && selection.isNotEmpty()) {
+                    selectionCriteria += " AND ($selection)"
+                }
+
+                count = db.delete(TrackContract.TABLE_NAME, selectionCriteria, selectionArgs)
+            }
+
+            else->{ throw IllegalArgumentException("Unknown URI:$uri")}
+        }
+
+        if (count > 0) {
+            // something was deleted
+            Log.d(TAG, "delete: Setting notifyChange with $uri")
+            context?.contentResolver?.notifyChange(uri, null)
+        }
+
+        Log.d(TAG, "Exiting delete, returning $count")
+        return count
     }
 
     override fun update(p0: Uri, p1: ContentValues?, p2: String?, p3: Array<out String>?): Int {
