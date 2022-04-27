@@ -162,4 +162,41 @@ class TrackViewModel(application: Application): AndroidViewModel(application) {
 
     }
 
+
+    fun deleteTask(taskId:Long) {
+
+//        In Kotlin thread{function}- a thread can be instantiated and executed simply
+//        More Info: https://www.baeldung.com/kotlin/threads-coroutines#kotlin-extension
+
+        thread {
+
+            getApplication<Application>().contentResolver?.delete(
+                TrackContract.buildUriFromId(taskId), null, null)
+            /** We'll pass in the ID of the task to delete, and call the ContentResolver's delete function to perform the deletion.
+            Our ContentProvider will take care of deleting an individual task, if its ID is provided in the URI.
+            The buildURIFromId function that we added to the TasksContract class,
+            will return a URI with the ID appended.
+            Because we're providing the ID, we don't need to use the last two parameters;
+            the where clause and selection args.
+            We just build up the URI from the ID of the task that's been passed to the function,
+            then call the delete function of the Content resolver.
+            The onDeleteClick function in MainActivityFragment will then call the ViewModel's delete task function,
+            to tell the ViewModel to delete the task.*/
+            /** We'll pass in the ID of the task to delete, and call the ContentResolver's delete function to perform the deletion.
+            Our ContentProvider will take care of deleting an individual task, if its ID is provided in the URI.
+            The buildURIFromId function that we added to the TasksContract class,
+            will return a URI with the ID appended.
+            Because we're providing the ID, we don't need to use the last two parameters;
+            the where clause and selection args.
+            We just build up the URI from the ID of the task that's been passed to the function,
+            then call the delete function of the Content resolver.
+            The onDeleteClick function in MainActivityFragment will then call the ViewModel's delete task function,
+            to tell the ViewModel to delete the task.*/
+        }
+    }
+
+    override fun onCleared() {
+        Log.d(TAG, "onCleared: called")
+        getApplication<Application>().contentResolver.unregisterContentObserver(contentObserver)
+    }
 }
