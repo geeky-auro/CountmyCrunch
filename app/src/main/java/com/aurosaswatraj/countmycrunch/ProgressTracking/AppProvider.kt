@@ -150,7 +150,7 @@ class AppProvider:ContentProvider(){
         Log.d(TAG, "delete match is $match")
 
 //        Database to count how many rows were updated?
-        var count: Int
+        val count: Int
 //        Database to know the selection criteria
         var selectionCriteria: String
 
