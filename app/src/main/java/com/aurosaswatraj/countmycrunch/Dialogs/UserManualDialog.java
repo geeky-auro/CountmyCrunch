@@ -19,15 +19,15 @@ public class UserManualDialog {
                 .setMessage("What is CountMyCrunch All about..! Let’s Know more about the insights of our application.")
                 .setDialogBackgroundColor(Color.parseColor("#DEBA9D"))
                 .addButton("BMI Calculator", -1, Color.parseColor("#774E4E"), CFAlertDialog.CFAlertActionStyle.POSITIVE, CFAlertDialog.CFAlertActionAlignment.JUSTIFIED, (dialog, which) -> {
-                    String strName = null;
+                    String strName = "https://medium.com/@aurosaswatraj/simulation-of-arduino-projects-using-proteus-design-suite-c0063a0c10ab";
 //                    TODO:URL Need to be changed
-                    i.putExtra("https://medium.com/@aurosaswatraj/user-manual-of-calorie-counter-972df34a8009", strName);
+                    i.putExtra("STRING_I_NEED", strName);
                     context.startActivity(i);
                     dialog.dismiss();
                 })
                 .addButton("Calorie Counter", -1, Color.parseColor("#774E4E"), CFAlertDialog.CFAlertActionStyle.POSITIVE, CFAlertDialog.CFAlertActionAlignment.JUSTIFIED, (dialog, which) -> {
-                    String strName = null;
-                    i.putExtra("https://medium.com/@aurosaswatraj/user-manual-of-calorie-counter-972df34a8009", strName);
+                    String strName = "https://medium.com/@aurosaswatraj/user-manual-of-calorie-counter-972df34a8009";
+                    i.putExtra("STRING_I_NEED", strName);
                     context.startActivity(i);
                     dialog.dismiss();
                 })

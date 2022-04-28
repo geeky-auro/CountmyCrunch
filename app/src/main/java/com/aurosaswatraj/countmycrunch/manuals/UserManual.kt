@@ -17,11 +17,15 @@ class UserManual : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_manual)
-
+        var newString:String? = if (savedInstanceState == null) {
+            intent.extras?.getString("STRING_I_NEED")
+        } else {
+            savedInstanceState.getSerializable("STRING_I_NEED") as String?
+        }
 
 //        Need to customize the url according to the set button
 
-        web.loadUrl("https://medium.com/@aurosaswatraj/user-manual-of-calorie-counter-972df34a8009")
+        web.loadUrl(newString!!)
         web.settings.javaScriptEnabled = true
 
         // WebViewClient allows you to handle
