@@ -24,6 +24,7 @@ public class UserManualDialog {
                     context.startActivity(i);
                     dialog.dismiss();
                 })
+
                 .addButton("Calorie Counter", -1, Color.parseColor("#774E4E"), CFAlertDialog.CFAlertActionStyle.POSITIVE, CFAlertDialog.CFAlertActionAlignment.JUSTIFIED, (dialog, which) -> {
                     String strName = "https://medium.com/@aurosaswatraj/user-manual-of-calorie-counter-972df34a8009";
                     i.putExtra("STRING_I_NEED", strName);
