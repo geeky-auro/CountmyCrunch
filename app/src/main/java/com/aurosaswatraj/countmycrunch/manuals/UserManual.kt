@@ -18,6 +18,9 @@ class UserManual : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_manual)
 
+
+//        Need to customize the url according to the set button
+
         web.loadUrl("https://medium.com/@aurosaswatraj/user-manual-of-calorie-counter-972df34a8009")
         web.settings.javaScriptEnabled = true
 
