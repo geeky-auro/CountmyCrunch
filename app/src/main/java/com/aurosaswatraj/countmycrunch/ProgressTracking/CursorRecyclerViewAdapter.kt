@@ -23,7 +23,6 @@ class CursorRecyclerViewAdapter {
     interface onTaskClickListener{
         fun onEditClick(task:Track)
         fun onDeleteClick(task:Track)
-        fun onTaskLongClick(task:Track)
 //      Now that we've defined the interface, we can pass in a reference to something that implements that interface,
 //      so that the adapter knows what to call.(Adding in the primary Constructor)
     }
