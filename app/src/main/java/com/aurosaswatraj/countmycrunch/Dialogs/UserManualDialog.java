@@ -9,6 +9,7 @@ import com.crowdfire.cfalertdialog.CFAlertDialog;
 
 public class UserManualDialog {
 
+
      public void showDialog(Context context){
         // Create Alert using Builder
          Intent i =new Intent(context, UserManual.class);
