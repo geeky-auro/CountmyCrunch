@@ -19,7 +19,7 @@ class TaskViewHolder(override val containerView: View) :
 
     fun bind(task:Track,listener :CursorRecyclerViewAdapter.onTaskClickListener){
 
-    }
+         }
     }
 
 
