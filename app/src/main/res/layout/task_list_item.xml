@@ -8,40 +8,166 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardElevation="40dp"
-        android:padding="4dp"
-        android:backgroundTint="#EEEEEE"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardBackgroundColor="#130f40"
+        app:cardCornerRadius="20sp"
+        app:cardElevation="40sp"
+        android:clickable="false"
+        app:cardMaxElevation="40dp"
+        android:layout_margin="8dp"
+        >
+
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp">
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:id="@+id/constraintView">
+
 
 
             <TextView
-                android:id="@+id/tli_name"
-                android:layout_width="0dp"
+                android:id="@+id/tli_gender"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:textColor="@color/black"
-                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="@+id/constraintView"
+                app:layout_constraintStart_toStartOf="@+id/constraintView"
+                app:layout_constraintTop_toTopOf="@+id/constraintView"
+                android:text="Gender:"
+                android:textSize="17sp"
                 android:textStyle="bold"
+                android:textColor="@color/white"
+                android:padding="4dp"
+                android:layout_margin="8dp"
+                ></TextView>
 
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="Task Timer Application" />
+            <TextView
+                android:id="@+id/tli_age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/constraintView"
+                app:layout_constraintStart_toStartOf="@+id/constraintView"
+                app:layout_constraintTop_toBottomOf="@id/tli_gender"
+                android:text="Age:"
+                android:textAllCaps="false"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="@color/md_white_1000"
+                android:padding="4dp"
+                android:layout_margin="8dp"
+                ></TextView>
+
+            <TextView
+                android:id="@+id/tli_weight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/constraintView"
+                app:layout_constraintStart_toStartOf="@+id/constraintView"
+                app:layout_constraintTop_toBottomOf="@id/tli_age"
+                android:text="Weight:"
+                android:textAllCaps="false"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="@color/md_white_1000"
+                android:padding="4dp"
+                android:layout_margin="8dp"
+                ></TextView>
+
+            <TextView
+                android:id="@+id/tli_height"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/constraintView"
+                app:layout_constraintStart_toStartOf="@+id/constraintView"
+                app:layout_constraintTop_toBottomOf="@id/tli_weight"
+                android:text="Height:"
+                android:textAllCaps="false"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="@color/md_white_1000"
+                android:padding="4dp"
+                android:layout_margin="8dp"
+                ></TextView>
+
+            <TextView
+                android:id="@+id/tli_amt_consumed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/constraintView"
+                app:layout_constraintStart_toStartOf="@+id/constraintView"
+                app:layout_constraintTop_toBottomOf="@id/tli_height"
+                android:text="Total Calorie Consumed:"
+                android:textAllCaps="false"
+                android:textSize="16.5sp"
+                android:textStyle="bold"
+                android:textColor="@color/md_white_1000"
+                android:padding="4dp"
+                android:layout_margin="8dp"
+                ></TextView>
 
 
+            <TextView
+                android:id="@+id/tli_required_consumed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/constraintView"
+                app:layout_constraintStart_toStartOf="@+id/constraintView"
+                app:layout_constraintTop_toBottomOf="@id/tli_amt_consumed"
+                android:text="Required Calorie Consumed:"
+                android:textAllCaps="false"
+                android:textSize="16.5sp"
+                android:textStyle="bold"
+                android:textColor="@color/md_white_1000"
+                android:padding="4dp"
+                android:layout_margin="8dp"
+                ></TextView>
 
+            <TextView
+                android:id="@+id/tli_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/constraintView"
+                app:layout_constraintStart_toStartOf="@+id/constraintView"
+                app:layout_constraintTop_toBottomOf="@id/tli_required_consumed"
+                android:text="Date:"
+                android:textAllCaps="false"
+                android:textSize="16.5sp"
+                android:textStyle="bold"
+                android:textColor="@color/md_white_1000"
+                android:padding="4dp"
+                android:layout_margin="8dp"
+                ></TextView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/tli_delete_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tli_date"
+                app:layout_constraintStart_toStartOf="@id/constraintView"
+                app:layout_constraintEnd_toEndOf="@id/constraintView"
+                android:layout_margin="8dp"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                app:backgroundTint="#30336b"
+                android:text="@string/delete"
+                app:icon="@drawable/ic_baseline_delete_sweep_24"
+                app:elevation="50dp"
+                app:cornerRadius="30dp"
+                app:strokeWidth="2.5sp"
+                app:strokeColor="#4834d4"
+                >
+
+            </com.google.android.material.button.MaterialButton>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
     </androidx.cardview.widget.CardView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!-- Color Reference:https://flatuicolors.com/palette/au-->

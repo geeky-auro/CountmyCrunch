@@ -11,6 +11,7 @@
     <string name="minus">-</string>
     <string name="plus">+</string>
     <string name="bmi_table_for_adults">BMI table for adults</string>
+    <string name="delete">Delete</string>
 
     <string-array name="Activity_Level">
         <item>Sedentary(little or no exercise)</item>
