@@ -58,7 +58,7 @@ class CursorRecyclerViewAdapter(private var cursor: Cursor?, private val listene
             holder.itemView.tli_weight.text=holder.itemView.tli_weight.toString().plus("Null")
             holder.itemView.tli_amt_consumed.text=holder.itemView.tli_amt_consumed.toString().plus("Null")
             holder.itemView.tli_required_consumed.text=holder.itemView.tli_required_consumed.toString().plus("Null")
-            holder.itemView.tli_required_consumed.text=holder.itemView.tli_required_consumed.toString().plus("Null")
+            holder.itemView.tli_date.text=holder.itemView.tli_date.toString().plus("Null")
 
         }
     }
