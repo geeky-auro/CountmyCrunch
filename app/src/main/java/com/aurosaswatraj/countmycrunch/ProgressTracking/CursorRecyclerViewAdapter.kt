@@ -1,5 +1,7 @@
 package com.aurosaswatraj.countmycrunch.ProgressTracking
 
+import android.R.layout
+import android.database.Cursor
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +9,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.aurosaswatraj.countmycrunch.R
 import kotlinx.android.extensions.LayoutContainer
-
+import kotlinx.android.synthetic.main.task_list_item.*
+import kotlinx.android.synthetic.main.task_list_item.view.*
 
 private const val TAG = "CursorRecyclerViewAdapt"
 
@@ -19,12 +22,15 @@ class TaskViewHolder(override val containerView: View) :
 
     fun bind(task:Track,listener :CursorRecyclerViewAdapter.onTaskClickListener){
 
+
+
+
          }
     }
 
 
 
-class CursorRecyclerViewAdapter:RecyclerView.Adapter<TaskViewHolder>() {
+class CursorRecyclerViewAdapter(private var cursor: Cursor?, private val listener:onTaskClickListener):RecyclerView.Adapter<TaskViewHolder>() {
 
     interface onTaskClickListener{
         fun onEditClick(task:Track)
@@ -41,7 +47,20 @@ class CursorRecyclerViewAdapter:RecyclerView.Adapter<TaskViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        Log.d(TAG, "onBindViewHolder starts.!")
+        val cursor = cursor //avoid smartcasts
+
+        if (cursor == null || cursor.count == 0) {
+            Log.d(TAG, "onBindViewHolder:providing instructions")
+            holder.itemView.tli_gender.text=holder.itemView.tli_gender.toString().plus("Null")
+            holder.itemView.tli_age.text=holder.itemView.tli_age.toString().plus("Null")
+            holder.itemView.tli_height.text=holder.itemView.tli_height.toString().plus("Null")
+            holder.itemView.tli_weight.text=holder.itemView.tli_weight.toString().plus("Null")
+            holder.itemView.tli_amt_consumed.text=holder.itemView.tli_amt_consumed.toString().plus("Null")
+            holder.itemView.tli_required_consumed.text=holder.itemView.tli_required_consumed.toString().plus("Null")
+            holder.itemView.tli_required_consumed.text=holder.itemView.tli_required_consumed.toString().plus("Null")
+
+        }
     }
 
     override fun getItemCount(): Int {
