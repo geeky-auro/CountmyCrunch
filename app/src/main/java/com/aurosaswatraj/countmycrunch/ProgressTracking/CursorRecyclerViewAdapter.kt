@@ -1,18 +1,15 @@
 package com.aurosaswatraj.countmycrunch.ProgressTracking
 
-import android.R.layout
 import android.database.Cursor
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.aurosaswatraj.countmycrunch.R
 import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.task_list_item.*
 import kotlinx.android.synthetic.main.task_list_item.view.*
 
 private const val TAG = "CursorRecyclerViewAdapt"
