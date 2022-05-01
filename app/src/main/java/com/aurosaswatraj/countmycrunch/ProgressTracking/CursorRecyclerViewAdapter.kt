@@ -61,10 +61,39 @@ class CursorRecyclerViewAdapter(private var cursor: Cursor?, private val listene
             holder.itemView.tli_date.text=holder.itemView.tli_date.toString().plus("Null")
 
         }
+        else{
+//            THere is some data /records available.>!
+            if (!cursor.moveToPosition(position)) {
+                throw IllegalStateException("Couldn't move to the position $position")
+            }
+//            Create a task object from the data in the cursor
+            val task=Track(
+                cursor.getString(cursor.getColumnIndexOrThrow(TrackContract.Columns.TRACK_GENDER)),
+                cursor.getInt(cursor.getColumnIndexOrThrow(TrackContract.Columns.TRACK_AGE)),
+                cursor.getString(cursor.getColumnIndexOrThrow(TrackContract.Columns.TRACK_HEIGHT)),
+                cursor.getInt(cursor.getColumnIndexOrThrow(TrackContract.Columns.TRACK_WEIGHT)),
+                cursor.getString(cursor.getColumnIndexOrThrow(TrackContract.Columns.TRACK_AMT_CONSUMED)).toBigDecimal(),
+                cursor.getString(cursor.getColumnIndexOrThrow(TrackContract.Columns.TRACK_REQUIRED_CONSUMED)).toBigDecimal(),
+                cursor.getString(cursor.getColumnIndexOrThrow(TrackContract.Columns.TRACK_DATE)),
+                cursor.getInt(cursor.getColumnIndexOrThrow(TrackContract.Columns.TRACK_SORT_ORDER))
+            )
+
+            task.id = cursor.getLong(cursor.getColumnIndexOrThrow(TrackContract.Columns.ID))
+
+            holder.bind(task,listener)
+        }
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+
+        val cursor = cursor
+        val count = if (cursor == null || cursor.count == 0) {
+            1 //because we populate single viewholder with instructions
+        } else {
+            cursor.count
+        }
+        Log.d(TAG, "Returning $count")
+        return count
     }
 
 }
