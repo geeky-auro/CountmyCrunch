@@ -1,9 +1,8 @@
 # CountMyCrunch
 <br>
 <img align="left" src="https://img.icons8.com/fluency/230/000000/android-tablet.png"/>
-<img align="left" src="https://img.icons8.com/doodle/230/000000/android-studio--v3.png"/>
-<img align="left" src="https://img.icons8.com/doodle/230/000000/apple-jam.png"/>
-<img align="left" src="https://img.icons8.com/doodle/230/000000/bmi.png"/>
+<img align="center" src="https://img.icons8.com/doodle/230/000000/android-studio--v3.png"/>
+
 <br>
 <br>
 
