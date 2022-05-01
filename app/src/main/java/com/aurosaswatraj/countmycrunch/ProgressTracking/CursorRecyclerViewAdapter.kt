@@ -6,6 +6,9 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.aurosaswatraj.countmycrunch.R
 import kotlinx.android.extensions.LayoutContainer
@@ -20,7 +23,33 @@ class TaskViewHolder(override val containerView: View) :
 //    MainActivityFragment will implement the functions in the interface,
 //    and we can be sure that it contains the functions that we're going to call.
 
+    private val gender: TextView =containerView.findViewById(R.id.tli_gender)
+    private val age: TextView =containerView.findViewById(R.id.tli_age)
+    private val height: TextView =containerView.findViewById(R.id.tli_height)
+    private val weight: TextView =containerView.findViewById(R.id.tli_weight)
+    private val amt_consumed: TextView =containerView.findViewById(R.id.tli_amt_consumed)
+    private val amt_required: TextView =containerView.findViewById(R.id.tli_required_consumed)
+    private val date: TextView =containerView.findViewById(R.id.tli_date)
+    private val delBtn:Button=containerView.findViewById(R.id.tli_delete_btn)
+
     fun bind(task:Track,listener :CursorRecyclerViewAdapter.onTaskClickListener){
+
+//           we can pass a reference to it, to our ViewHolder.
+//           The ViewHolder will then call the appropriate functions on the listener,
+//           and it will do that in its onClick functions.
+
+        gender.text=task.gender
+        age.text=task.age.toString()
+        height.text=task.height
+        weight.text=task.Weight.toString()
+        amt_consumed.text=task.amt_Consumed.toEngineeringString()
+        amt_required.text=task.required_Consumed.toEngineeringString()
+        date.text=task.date
+
+        delBtn.setOnClickListener {
+            listener.onDeleteClick(task)
+        }
+
 
 
 
