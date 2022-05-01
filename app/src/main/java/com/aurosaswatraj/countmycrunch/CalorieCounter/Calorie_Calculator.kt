@@ -18,6 +18,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.aurosaswatraj.countmycrunch.Dialogs.ErrorDialog
+import com.aurosaswatraj.countmycrunch.ProgressTracking.Track
+import com.aurosaswatraj.countmycrunch.ProgressTracking.TrackViewModel
 import com.aurosaswatraj.countmycrunch.R
 import com.google.android.material.button.MaterialButton
 import kotlinx.android.synthetic.main.calorie_counter_u_i.*
@@ -36,6 +38,8 @@ private const val TAG="Calorie_Calculator"
  *
  *
  */
+
+private const val ARG_TASK = "task"
 
 interface FragmentCalorieOutput {
     fun onOutputSent(data: ArrayList<CalorieData>)
@@ -58,6 +62,24 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
     var viewModel: CalorieCounterViewModel?=null
 
 
+    private var task: Track? = null
+    private var listener1: OnSaveClicked? = null
+
+    interface OnSaveClicked {
+
+    }
+
+    //    View Model variable declaration
+    private val viewModeli by lazy {
+        // ViewModelProviders.of(activity!!).get(TaskTimerViewModel::class.java)
+        ViewModelProvider(this).get(TrackViewModel::class.java)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Log.d(TAG, "onCreate: Starts")
+        task = arguments?.getParcelable(ARG_TASK)
+    }
 
     override fun onAddItemClicked(foodItems: FoodItems?, position: Int) {
         Log.d("MainActivity","RecycleritemCliced sliced no of item included is ${food[position].noOfItems++}")
