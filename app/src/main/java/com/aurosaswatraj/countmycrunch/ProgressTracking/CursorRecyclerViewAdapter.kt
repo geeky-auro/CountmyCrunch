@@ -50,10 +50,8 @@ class TaskViewHolder(override val containerView: View) :
             listener.onDeleteClick(task)
         }
 
-
-
-
-
+//We'll pass in the task, because ultimately we'll want to provide the task details
+//        to whatever is listening for the buttons to be tapped.
          }
     }
 
