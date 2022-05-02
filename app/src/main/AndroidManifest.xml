@@ -24,6 +24,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+
+        <!--        Register up your Content Provider Here!-->
+        <provider
+            android:authorities="com.aurosaswatraj.countmycrunch.ProgressTracking.provider"
+            android:name="com.aurosaswatraj.countmycrunch.ProgressTracking.AppProvider"
+
+            android:exported="false"
+            ></provider>
+        <!--        Exported stands for can the content provider be accessed by other applications.,.!-->
+        <!--        Other options for provider:https://developer.android.com/guide/topics/manifest/provider-element -->
     </application>
 
 </manifest>
