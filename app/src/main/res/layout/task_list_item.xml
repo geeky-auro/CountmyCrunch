@@ -5,161 +5,162 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+
+    <ImageView
+        android:id="@+id/tinycircle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_circle_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ImageView>
+
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="4dp"
+        android:clickable="false"
         app:cardBackgroundColor="#130f40"
         app:cardCornerRadius="20sp"
         app:cardElevation="40sp"
-        android:clickable="false"
         app:cardMaxElevation="40dp"
-        android:layout_margin="8dp"
-        >
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tinycircle">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="8dp"
-            android:id="@+id/constraintView">
-
+            android:layout_margin="8dp">
 
 
             <TextView
                 android:id="@+id/tli_gender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="@+id/constraintView"
-                app:layout_constraintStart_toStartOf="@+id/constraintView"
-                app:layout_constraintTop_toTopOf="@+id/constraintView"
+                android:layout_margin="8dp"
+                android:padding="4dp"
                 android:text="Gender:"
+                android:textColor="@color/white"
                 android:textSize="17sp"
                 android:textStyle="bold"
-                android:textColor="@color/white"
-                android:padding="4dp"
-                android:layout_margin="8dp"
-                ></TextView>
+                app:layout_constraintEnd_toEndOf="@+id/constraintView"
+                app:layout_constraintStart_toStartOf="@+id/constraintView"
+                app:layout_constraintTop_toTopOf="@+id/constraintView"></TextView>
 
             <TextView
                 android:id="@+id/tli_age"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="@+id/constraintView"
-                app:layout_constraintStart_toStartOf="@+id/constraintView"
-                app:layout_constraintTop_toBottomOf="@id/tli_gender"
+                android:layout_margin="8dp"
+                android:padding="4dp"
                 android:text="Age:"
                 android:textAllCaps="false"
+                android:textColor="@color/md_white_1000"
                 android:textSize="17sp"
                 android:textStyle="bold"
-                android:textColor="@color/md_white_1000"
-                android:padding="4dp"
-                android:layout_margin="8dp"
-                ></TextView>
+                app:layout_constraintEnd_toEndOf="@+id/constraintView"
+                app:layout_constraintStart_toStartOf="@+id/constraintView"
+                app:layout_constraintTop_toBottomOf="@id/tli_gender"></TextView>
 
             <TextView
                 android:id="@+id/tli_weight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="@+id/constraintView"
-                app:layout_constraintStart_toStartOf="@+id/constraintView"
-                app:layout_constraintTop_toBottomOf="@id/tli_age"
+                android:layout_margin="8dp"
+                android:padding="4dp"
                 android:text="Weight:"
                 android:textAllCaps="false"
+                android:textColor="@color/md_white_1000"
                 android:textSize="17sp"
                 android:textStyle="bold"
-                android:textColor="@color/md_white_1000"
-                android:padding="4dp"
-                android:layout_margin="8dp"
-                ></TextView>
+                app:layout_constraintEnd_toEndOf="@+id/constraintView"
+                app:layout_constraintStart_toStartOf="@+id/constraintView"
+                app:layout_constraintTop_toBottomOf="@id/tli_age"></TextView>
 
             <TextView
                 android:id="@+id/tli_height"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="@+id/constraintView"
-                app:layout_constraintStart_toStartOf="@+id/constraintView"
-                app:layout_constraintTop_toBottomOf="@id/tli_weight"
+                android:layout_margin="8dp"
+                android:padding="4dp"
                 android:text="Height:"
                 android:textAllCaps="false"
+                android:textColor="@color/md_white_1000"
                 android:textSize="17sp"
                 android:textStyle="bold"
-                android:textColor="@color/md_white_1000"
-                android:padding="4dp"
-                android:layout_margin="8dp"
-                ></TextView>
+                app:layout_constraintEnd_toEndOf="@+id/constraintView"
+                app:layout_constraintStart_toStartOf="@+id/constraintView"
+                app:layout_constraintTop_toBottomOf="@id/tli_weight"></TextView>
 
             <TextView
                 android:id="@+id/tli_amt_consumed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="@+id/constraintView"
-                app:layout_constraintStart_toStartOf="@+id/constraintView"
-                app:layout_constraintTop_toBottomOf="@id/tli_height"
+                android:layout_margin="8dp"
+                android:padding="4dp"
                 android:text="Total Calorie Consumed:"
                 android:textAllCaps="false"
+                android:textColor="@color/md_white_1000"
                 android:textSize="16.5sp"
                 android:textStyle="bold"
-                android:textColor="@color/md_white_1000"
-                android:padding="4dp"
-                android:layout_margin="8dp"
-                ></TextView>
+                app:layout_constraintEnd_toEndOf="@+id/constraintView"
+                app:layout_constraintStart_toStartOf="@+id/constraintView"
+                app:layout_constraintTop_toBottomOf="@id/tli_height"></TextView>
 
 
             <TextView
                 android:id="@+id/tli_required_consumed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="@+id/constraintView"
-                app:layout_constraintStart_toStartOf="@+id/constraintView"
-                app:layout_constraintTop_toBottomOf="@id/tli_amt_consumed"
+                android:layout_margin="8dp"
+                android:padding="4dp"
                 android:text="Required Calorie Consumed:"
                 android:textAllCaps="false"
+                android:textColor="@color/md_white_1000"
                 android:textSize="16.5sp"
                 android:textStyle="bold"
-                android:textColor="@color/md_white_1000"
-                android:padding="4dp"
-                android:layout_margin="8dp"
-                ></TextView>
+                app:layout_constraintEnd_toEndOf="@+id/constraintView"
+                app:layout_constraintStart_toStartOf="@+id/constraintView"
+                app:layout_constraintTop_toBottomOf="@id/tli_amt_consumed"></TextView>
 
             <TextView
                 android:id="@+id/tli_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="@+id/constraintView"
-                app:layout_constraintStart_toStartOf="@+id/constraintView"
-                app:layout_constraintTop_toBottomOf="@id/tli_required_consumed"
+                android:layout_margin="8dp"
+                android:padding="4dp"
                 android:text="Date:"
                 android:textAllCaps="false"
+                android:textColor="@color/md_white_1000"
                 android:textSize="16.5sp"
                 android:textStyle="bold"
-                android:textColor="@color/md_white_1000"
-                android:padding="4dp"
-                android:layout_margin="8dp"
-                ></TextView>
+                app:layout_constraintEnd_toEndOf="@+id/constraintView"
+                app:layout_constraintStart_toStartOf="@+id/constraintView"
+                app:layout_constraintTop_toBottomOf="@id/tli_required_consumed"></TextView>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/tli_delete_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/tli_date"
-                app:layout_constraintStart_toStartOf="@id/constraintView"
-                app:layout_constraintEnd_toEndOf="@id/constraintView"
                 android:layout_margin="8dp"
+                android:text="@string/delete"
+                android:textColor="@color/white"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:textColor="@color/white"
                 app:backgroundTint="#30336b"
-                android:text="@string/delete"
-                app:icon="@drawable/ic_baseline_delete_sweep_24"
-                app:elevation="50dp"
                 app:cornerRadius="30dp"
-                app:strokeWidth="2.5sp"
+                app:elevation="50dp"
+                app:icon="@drawable/ic_baseline_delete_sweep_24"
+                app:layout_constraintEnd_toEndOf="@id/constraintView"
+                app:layout_constraintStart_toStartOf="@id/constraintView"
+                app:layout_constraintTop_toBottomOf="@id/tli_date"
                 app:strokeColor="#4834d4"
-                >
+                app:strokeWidth="2.5sp">
 
             </com.google.android.material.button.MaterialButton>
 
