@@ -23,7 +23,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 
 private const val TAG="MainActivity"
-class MainActivity : AppCompatActivity(),FragmentCalorieOutput{
+class MainActivity : AppCompatActivity(),FragmentCalorieOutput,Calorie_Calculator.OnSaveClicked{
 
     private var fragmentB:CalorieOutputFragment?=null
     private var mTwoPane = false
@@ -37,6 +37,8 @@ class MainActivity : AppCompatActivity(),FragmentCalorieOutput{
 
 
     }
+
+
 
     private fun taskEditRequest(task: Track?){
 
@@ -112,6 +114,10 @@ class MainActivity : AppCompatActivity(),FragmentCalorieOutput{
 
         Log.d(TAG,"Data in MainActivity is $data")
         fragmentB?.updateEditText(data)
+    }
+
+    override fun onSaveClicked() {
+        TODO("Not yet implemented")
     }
 
 

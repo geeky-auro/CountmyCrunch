@@ -8,8 +8,6 @@ import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
@@ -28,6 +26,10 @@ import kotlinx.android.synthetic.main.calorie_counter_u_i.btn_girl
 import kotlinx.android.synthetic.main.calorie_counter_u_i.submit_button
 import kotlinx.android.synthetic.main.fragment_b_m_i_finder.*
 import java.math.BigDecimal
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 private const val TAG="Calorie_Calculator"
 
@@ -66,7 +68,7 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
     private var listener1: OnSaveClicked? = null
 
     interface OnSaveClicked {
-
+        fun onSaveClicked()
     }
 
     //    View Model variable declaration
@@ -137,7 +139,7 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
 
         Spinner.onItemSelectedListener = this
 
-        //Creating the ArrayAdapter instance having the ActivityLevel list
+
         //Creating the ArrayAdapter instance having the ActivityLevel list
         val adapter = activity?.let {
             ArrayAdapter(it,R.layout.dropdown_item,ActivityLevel)
@@ -253,6 +255,55 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
 
     }
 
+
+
+    private fun taskfromUI() : Track{
+
+//        At the moment the saveTask function is using values from the EditText widgets in the layout.
+//        Thats where we come to need taskfromUI function
+
+        val date = Date()
+        val formatter = SimpleDateFormat("dd/MM/yy")
+        val str: String = formatter.format(date)
+//        To get the value of SortOrder
+        val sorOrder=0
+//        we'll make our new task, assign it an ID, and then return it.
+        val newTask=Track(gender,age_inputi.text.toString().toInt(),
+            heightft_inputi.text.toString()+" "+heightin_inputi.text.toString(),
+            weight_inputi.text.toString().toInt(),
+            totalCalorieConsumed().toBigDecimal(),
+            viewModel!!.requiredCalorie(weight_inputi.text.toString().toBigDecimal()
+                ,heightft_inputi.text.toString().toBigDecimal(),
+                        heightft_inputi.text.toString().toBigDecimal(),age_inputi.text.toString().toBigDecimal(),gender,selecteditem),str,sorOrder)
+        newTask.id=task?.id?:0
+//        I used the Elvis operator (?:) on the above line, to assign the value 0 if the fragment's task is null.
+        return newTask
+    }
+
+
+
+    private fun saveTask(){
+//        Create a newTask Object with the details to be saved, then
+//        Call the viewmodel's saveTask function to save it
+//        Task is now a data class , so we can compare the new details with the original task,
+//        and only save if they are different.
+
+
+//        We'll create our new Task object, and we'll get the values from our EditText widgets.
+        val newTask=taskfromUI()
+//        Then we'll check to see if it's the same task that we were given, when the fragment was created.(the task that we are editing)
+//       We can compare two task instances, because a data class provides an equals function for us.
+        if (newTask != task){
+            Log.d(TAG,"saveTask, saving task , id is ${newTask.id}")
+//            We will call the save task function in the viewmodel
+            task=viewModeli.saveTask(newTask)
+        }
+    }
+
+
+
+
+
     private fun showoutputDialog(data: ArrayList<CalorieData>) {
         val alertDialog: AlertDialog = AlertDialog.Builder(requireContext()).create()
         val view: View? = requireActivity().getLayoutInflater().inflate(R.layout.fragment_calorie_output, null)
@@ -275,6 +326,9 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
             heightft_inputi.setText("")
             gender="male"
             alertDialog.dismiss()
+//            Code for saving
+            saveTask()
+            listener1?.onSaveClicked()
         }
         alertDialog.setView(view)
         alertDialog.show()
@@ -333,6 +387,16 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
         } else {
             throw RuntimeException("$context must implement FragmentAListener")
         }
+        if (context is OnSaveClicked) {
+            listener1 = context
+        } else {
+            throw RuntimeException("$context Must implement OnSaveClicked")
+        }
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
     }
 
     override fun onDetach() {
@@ -341,23 +405,7 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
     }
 
 
-    private fun switchFragements(data: ArrayList<CalorieData>) {
 
-//        var result=Bundle()
-//        result.putParcelable("Example List",CalPareceable(
-//            data[0].Disptitle, data[0].mfoodDisplay,
-//            data[0].swipeNext))
-//        result.putParcelable("Example List",CalPareceable(
-//            data[1].Disptitle, data[1].mfoodDisplay,
-//            data[1].swipeNext))
-//        https://stackoverflow.com/questions/39867847/android-passing-arraylistmodel-to-fragment-from-activity
-        val fragment: Fragment = CalorieOutputFragment()
-        val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
-        val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.fragment_container_view, fragment)
-        fragmentTransaction.addToBackStack(null)
-        fragmentTransaction.commit()
-    }
 
     override fun onOutputSent(data: ArrayList<CalorieData>) {
         fragmentB?.updateEditText(data)
