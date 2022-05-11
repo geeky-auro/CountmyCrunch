@@ -28,7 +28,8 @@
         app:cardMaxElevation="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tinycircle">
+        app:layout_constraintTop_toBottomOf="@+id/tinycircle"
+        android:layout_marginBottom="10dp">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
