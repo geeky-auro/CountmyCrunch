@@ -335,6 +335,8 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
             alertDialog.dismiss()
         }
         save?.setOnClickListener {
+            saveTask()
+            listener1?.onSaveClicked()
             resetvariables()
             btn_boy.setBackgroundColor(Color.parseColor("#774E4E"))
             btn_girl.setBackgroundColor(Color.parseColor("#774E4E"))
@@ -345,8 +347,7 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
             gender="male"
             alertDialog.dismiss()
 //            Code for saving
-            saveTask()
-            listener1?.onSaveClicked()
+
         }
         alertDialog.setView(view)
         alertDialog.show()
