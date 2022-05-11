@@ -120,7 +120,7 @@ class TrackViewModel(application: Application): AndroidViewModel(application) {
 //        To store values some where we use contentvalues
         val values= ContentValues()
 
-        if (task.age!=0 || task.Weight!=0 || task.height.isNotEmpty() || task.amt_Consumed.toDouble()!=0.0
+        if (task.age.isNotEmpty() || task.Weight.isNotEmpty() || task.height.isNotEmpty() || task.amt_Consumed.toDouble()!=0.0
             || task.required_Consumed.toDouble()!=0.0){
 //            Dont save a task with no name
             values.put(TrackContract.Columns.TRACK_GENDER,task.gender)

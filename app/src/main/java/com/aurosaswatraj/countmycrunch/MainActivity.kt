@@ -16,6 +16,7 @@ import com.aurosaswatraj.countmycrunch.CalorieCounter.CalorieOutputFragment
 import com.aurosaswatraj.countmycrunch.CalorieCounter.Calorie_Calculator
 import com.aurosaswatraj.countmycrunch.CalorieCounter.FragmentCalorieOutput
 import com.aurosaswatraj.countmycrunch.Dialogs.UserManualDialog
+import com.aurosaswatraj.countmycrunch.ProgressTracking.MainActivityFragment
 import com.aurosaswatraj.countmycrunch.ProgressTracking.Track
 
 import com.thecode.aestheticdialogs.*
@@ -79,27 +80,34 @@ class MainActivity : AppCompatActivity(),FragmentCalorieOutput,Calorie_Calculato
                 R.id.TRACKER1->{
 
 
-                    AestheticDialog.Builder(this, DialogStyle.FLAT, DialogType.WARNING)
-                        .setTitle("Coming Soon")
-                        .setMessage("Work in Progress!")
-                        .setCancelable(true)
-                        .setDarkMode(true)
-                        .setGravity(Gravity.CENTER)
-                        .setAnimation(DialogAnimation.SHRINK)
-                        .setOnClickListener(object : OnDialogClickListener {
-                            override fun onClick(dialog: AestheticDialog.Builder) {
-                                dialog.dismiss()
-                                //actions...
-                            }
-                        })
-                        .show()
-
+//                    cominGsoon()
+                selectedFragment=MainActivityFragment()
+                    supportFragmentManager.beginTransaction().replace(R.id.fragment_container_view,selectedFragment)
+                        .commit()
+             
                 }
             }
 
             true
         }
 
+    }
+
+    private fun cominGsoon(){
+        AestheticDialog.Builder(this, DialogStyle.FLAT, DialogType.WARNING)
+            .setTitle("Coming Soon")
+            .setMessage("Work in Progress!")
+            .setCancelable(true)
+            .setDarkMode(true)
+            .setGravity(Gravity.CENTER)
+            .setAnimation(DialogAnimation.SHRINK)
+            .setOnClickListener(object : OnDialogClickListener {
+                override fun onClick(dialog: AestheticDialog.Builder) {
+                    dialog.dismiss()
+                    //actions...
+                }
+            })
+            .show()
     }
 
 
@@ -118,7 +126,7 @@ class MainActivity : AppCompatActivity(),FragmentCalorieOutput,Calorie_Calculato
     }
 
     override fun onSaveClicked() {
-        TODO("Not yet implemented")
+
     }
 
 

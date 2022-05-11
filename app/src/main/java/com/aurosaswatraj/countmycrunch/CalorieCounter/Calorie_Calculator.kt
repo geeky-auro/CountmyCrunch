@@ -9,8 +9,6 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -268,17 +266,35 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
 //        To get the value of SortOrder
         val sorOrder=0
 //        we'll make our new task, assign it an ID, and then return it.
-        val newTask=Track(gender,age_inputi.text.toString().toInt(),
+        val newTask=Track(gender,age_inputi.text.toString(),
             heightft_inputi.text.toString()+" "+heightin_inputi.text.toString(),
-            weight_inputi.text.toString().toInt(),
-            totalCalorieConsumed().toBigDecimal(),
-            viewModel!!.requiredCalorie(weight_inputi.text.toString().toBigDecimal()
-                ,heightft_inputi.text.toString().toBigDecimal(),
-                        heightft_inputi.text.toString().toBigDecimal(),age_inputi.text.toString().toBigDecimal(),gender,selecteditem),str,sorOrder)
+            weight_inputi.text.toString(),
+                totalCalorieConsumed().toBigDecimal(),
+                  "0.0"
+
+         ,str,sorOrder)
         newTask.id=task?.id?:0
 //        I used the Elvis operator (?:) on the above line, to assign the value 0 if the fragment's task is null.
         return newTask
     }
+
+//
+//    private fun requiredConsume(
+//        wt: Double?, ht_ft: Double?, ht_in: Double?, age: Double?,gender: String?,activityLvl:String
+//    ):String{
+//
+//
+
+//    viewModel!!.requiredCalorie(BigDecimal(weight_inputi.text.toString())
+//    ,BigDecimal(heightft_inputi.text.toString()),
+//    BigDecimal(heightin_inputi.text.toString()),BigDecimal(age_inputi.text.toString()),gender,selecteditem)
+
+
+//    }
+
+
+
+
 
 
 

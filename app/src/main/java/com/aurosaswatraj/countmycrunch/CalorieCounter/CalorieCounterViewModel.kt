@@ -7,6 +7,7 @@ import android.view.animation.BounceInterpolator
 import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.RecyclerView
 import com.aurosaswatraj.countmycrunch.R
+import java.lang.NumberFormatException
 import java.math.BigDecimal
 
 private const val TAG="CalorieCounterVM"
@@ -136,76 +137,83 @@ class CalorieCounterViewModel: ViewModel() {
     }
 
 
-     fun requiredCalorie(wt: BigDecimal?, ht_ft: BigDecimal?, ht_in: BigDecimal?, age: BigDecimal?,gender: String?,activityLvl:String): BigDecimal {
+     fun requiredCalorie(wt: BigDecimal?, ht_ft: BigDecimal?, ht_in: BigDecimal?, age: BigDecimal?,gender: String?,activityLvl:String): String {
 
-         when(gender){
-                "female"->{ val female_age=age
-                 val female_weight=wt
-                 val female_height_ft=ht_ft
-                 val female_height_in=ht_in
-                 val heightincm= female_height_ft?.times(30.48.toBigDecimal())?.plus(female_height_in!!.times(2.54.toBigDecimal()))
+         try {
 
-                 var BMR: BigDecimal? =((female_weight?.times(9.563.toBigDecimal()))?.plus(heightincm!!.times(1.850.toBigDecimal()))?.subtract(female_age?.times(4.676.toBigDecimal())))
-                    BMR=BMR?.plus(655.1.toBigDecimal())
-                    when(activityLvl) {
-                        "Sedentary" -> {
-                            val Sedentary=BMR?.multiply(1.2.toBigDecimal())
-                            return Sedentary!!
-                        }
-                        "Lightly" -> {
-                            val Lightly_active=BMR?.multiply(1.375.toBigDecimal())
-                            return Lightly_active!!
-                        }
-                        "Moderate" -> {
-                            val Moderately_active=BMR?.multiply(1.55.toBigDecimal())
-                            return Moderately_active!!
-                        }
-                        "Active" -> {
-                            val Active =BMR?.multiply(1.725.toBigDecimal())
-                            return Active!!
-                        }
-                        else -> {
-                            val Moderately_active=BMR?.multiply(1.55.toBigDecimal())
-                            return Moderately_active!!
-                        }
-                    }
-                }
+             when(gender){
+                 "female"->{ val female_age=age
+                     val female_weight=wt
+                     val female_height_ft=ht_ft
+                     val female_height_in=ht_in
+                     val heightincm= female_height_ft?.times(30.48.toBigDecimal())?.plus(female_height_in!!.times(2.54.toBigDecimal()))
 
-             else->{
-                 val male_weight=wt
-                 val male_height_ft=ht_ft
-                 val male_height_in=ht_in
-                 val male_age=age
-                 val heightincm= male_height_ft?.times(30.48.toBigDecimal())?.plus(male_height_in!!.times(2.54.toBigDecimal()))
-
-                 var BMR: BigDecimal? =((male_weight?.times(13.75.toBigDecimal()))?.plus(heightincm!!.times(5.003.toBigDecimal()))?.subtract(male_age?.times(6.755.toBigDecimal())))
-                 BMR=BMR?.plus(66.47.toBigDecimal())
-
-                 when(activityLvl) {
-                     "Sedentary" -> {
-                         val Sedentary=BMR?.multiply(1.2.toBigDecimal())
-                         return Sedentary!!
-                     }
-                     "Lightly" -> {
-                         val Lightly_active=BMR?.multiply(1.375.toBigDecimal())
-                         return Lightly_active!!
-                     }
-                     "Moderate" -> {
-                         val Moderately_active=BMR?.multiply(1.55.toBigDecimal())
-                         return Moderately_active!!
-                     }
-                     "Active" -> {
-                         val Active =BMR?.multiply(1.725.toBigDecimal())
-                         return Active!!
-                     }
-                     else -> {
-                         val Moderately_active=BMR?.multiply(1.55.toBigDecimal())
-                         return Moderately_active!!
+                     var BMR: BigDecimal? =((female_weight?.times(9.563.toBigDecimal()))?.plus(heightincm!!.times(1.850.toBigDecimal()))?.subtract(female_age?.times(4.676.toBigDecimal())))
+                     BMR=BMR?.plus(655.1.toBigDecimal())
+                     when(activityLvl) {
+                         "Sedentary" -> {
+                             val Sedentary=BMR?.multiply(1.2.toBigDecimal())
+                             return Sedentary!!.toString()
+                         }
+                         "Lightly" -> {
+                             val Lightly_active=BMR?.multiply(1.375.toBigDecimal())
+                             return Lightly_active!!.toString()
+                         }
+                         "Moderate" -> {
+                             val Moderately_active=BMR?.multiply(1.55.toBigDecimal())
+                             return Moderately_active!!.toString()
+                         }
+                         "Active" -> {
+                             val Active =BMR?.multiply(1.725.toBigDecimal())
+                             return Active!!.toString()
+                         }
+                         else -> {
+                             val Moderately_active=BMR?.multiply(1.55.toBigDecimal())
+                             return Moderately_active!!.toString()
+                         }
                      }
                  }
+
+                 else->{
+                     val male_weight=wt
+                     val male_height_ft=ht_ft
+                     val male_height_in=ht_in
+                     val male_age=age
+                     val heightincm= male_height_ft?.times(30.48.toBigDecimal())?.plus(male_height_in!!.times(2.54.toBigDecimal()))
+
+                     var BMR: BigDecimal? =((male_weight?.times(13.75.toBigDecimal()))?.plus(heightincm!!.times(5.003.toBigDecimal()))?.subtract(male_age?.times(6.755.toBigDecimal())))
+                     BMR=BMR?.plus(66.47.toBigDecimal())
+
+                     when(activityLvl) {
+                         "Sedentary" -> {
+                             val Sedentary=BMR?.multiply(1.2.toBigDecimal())
+                             return Sedentary!!.toString()
+                         }
+                         "Lightly" -> {
+                             val Lightly_active=BMR?.multiply(1.375.toBigDecimal())
+                             return Lightly_active!!.toString()
+                         }
+                         "Moderate" -> {
+                             val Moderately_active=BMR?.multiply(1.55.toBigDecimal())
+                             return Moderately_active!!.toString()
+                         }
+                         "Active" -> {
+                             val Active =BMR?.multiply(1.725.toBigDecimal())
+                             return Active!!.toString()
+                         }
+                         else -> {
+                             val Moderately_active=BMR?.multiply(1.55.toBigDecimal())
+                             return Moderately_active!!.toString()
+                         }
+                     }
+                 }
+
              }
 
-         }
+         }catch (e:NumberFormatException){}
+
+         return ""
+
 
     }
 

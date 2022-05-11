@@ -27,7 +27,7 @@ internal class AppDatabase private constructor(context: Context) : SQLiteOpenHel
             ${TrackContract.Columns.TRACK_HEIGHT} TEXT NOT NULL,
             ${TrackContract.Columns.TRACK_WEIGHT} INTEGER NOT NULL,
             ${TrackContract.Columns.TRACK_AMT_CONSUMED} DOUBLE NOT NULL,
-            ${TrackContract.Columns.TRACK_REQUIRED_CONSUMED} DOUBLE NOT NULL,
+            ${TrackContract.Columns.TRACK_REQUIRED_CONSUMED} TEXT NOT NULL,
             ${TrackContract.Columns.TRACK_DATE} TEXT NOT NULL,
             ${TrackContract.Columns.TRACK_SORT_ORDER} INTEGER);""".replaceIndent(" ")
         Log.d(TAG, sSQL)

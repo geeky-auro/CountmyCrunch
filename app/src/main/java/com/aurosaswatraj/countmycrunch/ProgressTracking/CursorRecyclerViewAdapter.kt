@@ -40,7 +40,7 @@ class TaskViewHolder(override val containerView: View) :
         height.text=task.height
         weight.text=task.Weight.toString()
         amt_consumed.text=task.amt_Consumed.toEngineeringString()
-        amt_required.text=task.required_Consumed.toEngineeringString()
+        amt_required.text=task.required_Consumed.toString()
         date.text=task.date
 
         delBtn.setOnClickListener {
@@ -76,13 +76,13 @@ class CursorRecyclerViewAdapter(private var cursor: Cursor?, private val listene
 
         if (cursor == null || cursor.count == 0) {
             Log.d(TAG, "onBindViewHolder:providing instructions")
-            holder.itemView.tli_gender.text=holder.itemView.tli_gender.toString().plus("Null")
-            holder.itemView.tli_age.text=holder.itemView.tli_age.toString().plus("Null")
-            holder.itemView.tli_height.text=holder.itemView.tli_height.toString().plus("Null")
-            holder.itemView.tli_weight.text=holder.itemView.tli_weight.toString().plus("Null")
-            holder.itemView.tli_amt_consumed.text=holder.itemView.tli_amt_consumed.toString().plus("Null")
-            holder.itemView.tli_required_consumed.text=holder.itemView.tli_required_consumed.toString().plus("Null")
-            holder.itemView.tli_date.text=holder.itemView.tli_date.toString().plus("Null")
+            holder.itemView.tli_gender.text=holder.itemView.tli_gender.text.toString().plus("Null")
+            holder.itemView.tli_age.text=holder.itemView.tli_age.text.toString().plus("Null")
+            holder.itemView.tli_height.text=holder.itemView.tli_height.text.toString().plus("Null")
+            holder.itemView.tli_weight.text=holder.itemView.tli_weight.text.toString().plus("Null")
+            holder.itemView.tli_amt_consumed.text=holder.itemView.tli_amt_consumed.text.toString().plus("Null")
+            holder.itemView.tli_required_consumed.text=holder.itemView.tli_required_consumed.text.toString().plus("Null")
+            holder.itemView.tli_date.text=holder.itemView.tli_date.text.toString().plus("Null")
 
         }
         else{
@@ -93,11 +93,12 @@ class CursorRecyclerViewAdapter(private var cursor: Cursor?, private val listene
 //            Create a task object from the data in the cursor
             val task=Track(
                 cursor.getString(cursor.getColumnIndexOrThrow(TrackContract.Columns.TRACK_GENDER)),
-                cursor.getInt(cursor.getColumnIndexOrThrow(TrackContract.Columns.TRACK_AGE)),
+                cursor.getString(cursor.getColumnIndexOrThrow(TrackContract.Columns.TRACK_AGE)),
                 cursor.getString(cursor.getColumnIndexOrThrow(TrackContract.Columns.TRACK_HEIGHT)),
-                cursor.getInt(cursor.getColumnIndexOrThrow(TrackContract.Columns.TRACK_WEIGHT)),
+                cursor.getString(cursor.getColumnIndexOrThrow(TrackContract.Columns.TRACK_WEIGHT)),
                 cursor.getString(cursor.getColumnIndexOrThrow(TrackContract.Columns.TRACK_AMT_CONSUMED)).toBigDecimal(),
-                cursor.getString(cursor.getColumnIndexOrThrow(TrackContract.Columns.TRACK_REQUIRED_CONSUMED)).toBigDecimal(),
+                cursor.getString(cursor.getColumnIndexOrThrow(TrackContract.Columns.TRACK_REQUIRED_CONSUMED)).toBigDecimal()
+                    .toString(),
                 cursor.getString(cursor.getColumnIndexOrThrow(TrackContract.Columns.TRACK_DATE)),
                 cursor.getInt(cursor.getColumnIndexOrThrow(TrackContract.Columns.TRACK_SORT_ORDER))
             )
