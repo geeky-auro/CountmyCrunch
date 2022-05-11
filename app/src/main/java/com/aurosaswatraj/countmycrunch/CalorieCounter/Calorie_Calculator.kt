@@ -278,6 +278,8 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
         return newTask
     }
 
+//    TODO: Required Consumed need to be implemented.>!
+
 //
 //    private fun requiredConsume(
 //        wt: Double?, ht_ft: Double?, ht_in: Double?, age: Double?,gender: String?,activityLvl:String
