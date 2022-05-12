@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp">
 
 
     <ImageView
@@ -21,11 +22,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
+        android:padding="4dp"
         android:clickable="false"
-        app:cardBackgroundColor="#130f40"
+        app:cardBackgroundColor="#052C13"
         app:cardCornerRadius="20sp"
-        app:cardElevation="40sp"
-        app:cardMaxElevation="40dp"
+        app:cardElevation="20sp"
+        app:cardMaxElevation="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tinycircle"
@@ -153,14 +155,14 @@
                 android:textColor="@color/white"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                app:backgroundTint="#30336b"
+                app:backgroundTint="#046326"
                 app:cornerRadius="30dp"
                 app:elevation="50dp"
                 app:icon="@drawable/ic_baseline_delete_sweep_24"
                 app:layout_constraintEnd_toEndOf="@id/constraintView"
                 app:layout_constraintStart_toStartOf="@id/constraintView"
                 app:layout_constraintTop_toBottomOf="@id/tli_date"
-                app:strokeColor="#4834d4"
+                app:strokeColor="#00FF5A"
                 app:strokeWidth="2.5sp">
 
             </com.google.android.material.button.MaterialButton>

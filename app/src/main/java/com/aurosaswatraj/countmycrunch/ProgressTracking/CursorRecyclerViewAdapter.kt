@@ -35,13 +35,13 @@ class TaskViewHolder(override val containerView: View) :
 //           The ViewHolder will then call the appropriate functions on the listener,
 //           and it will do that in its onClick functions.
 
-        gender.text=task.gender
-        age.text=task.age.toString()
-        height.text=task.height
-        weight.text=task.Weight.toString()
-        amt_consumed.text=task.amt_Consumed.toEngineeringString()
-        amt_required.text=task.required_Consumed.toString()
-        date.text=task.date
+        gender.text="Gender:"+task.gender.toString().uppercase()
+        age.text="Age:"+task.age
+        height.text="Height:"+task.height
+        weight.text="Weight:"+task.Weight.toString()
+        amt_consumed.text="Calorie Consumed:"+task.amt_Consumed.toEngineeringString()
+        amt_required.text="Required Calorie Intake:"+task.required_Consumed.toString()
+        date.text="Date:"+task.date
 
         delBtn.setOnClickListener {
             listener.onDeleteClick(task)
