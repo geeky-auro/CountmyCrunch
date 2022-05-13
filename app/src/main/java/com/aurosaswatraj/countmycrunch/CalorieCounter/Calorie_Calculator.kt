@@ -221,7 +221,7 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
                         showoutputDialog(data)
                     }
                     else{
-                        var msg=""
+                        var msg: String
                         if (weight_inputi.text.toString().isEmpty()){
                             msg="Please provide positive weight value."
                             weight_inputi.error=msg
@@ -269,7 +269,7 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
 //        we'll make our new task, assign it an ID, and then return it.
         val newTask=Track(gender,age_inputi.text.toString(),
             heightft_inputi.text.toString()+"Feet "+heightin_inputi.text.toString()+"Inches ",
-            weight_inputi.text.toString()+"Kg"+"\nIdeal Weight:${idealWeightCalculate(heightft_inputi.text.toString().toDouble(),heightin_inputi.text.toString().toDouble())} Kg",
+            weight_inputi.text.toString()+"Kg"+"\n"+"\nIdeal Weight:${idealWeightCalculate(heightft_inputi.text.toString().toDouble(),heightin_inputi.text.toString().toDouble())} Kg",
                 totalCalorieConsumed().toBigDecimal(),
                   requiredConsume(weight_inputi.text.toString().toDoubleOrNull(),
                       heightft_inputi.text.toString().toDoubleOrNull(),
