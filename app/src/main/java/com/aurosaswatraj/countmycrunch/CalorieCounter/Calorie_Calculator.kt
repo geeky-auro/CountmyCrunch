@@ -24,9 +24,10 @@ import kotlinx.android.synthetic.main.calorie_counter_u_i.btn_girl
 import kotlinx.android.synthetic.main.calorie_counter_u_i.submit_button
 import kotlinx.android.synthetic.main.fragment_b_m_i_finder.*
 import java.math.BigDecimal
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.math.RoundingMode
+import java.text.DecimalFormat
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 private const val TAG="Calorie_Calculator"
@@ -267,10 +268,15 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
         val sorOrder=0
 //        we'll make our new task, assign it an ID, and then return it.
         val newTask=Track(gender,age_inputi.text.toString(),
-            heightft_inputi.text.toString()+" "+heightin_inputi.text.toString(),
-            weight_inputi.text.toString(),
+            heightft_inputi.text.toString()+"Feet "+heightin_inputi.text.toString()+"Inches ",
+            weight_inputi.text.toString()+"Kg"+"\nIdeal Weight:${idealWeightCalculate(heightft_inputi.text.toString().toDouble(),heightin_inputi.text.toString().toDouble())} Kg",
                 totalCalorieConsumed().toBigDecimal(),
-                  "0.0"
+                  requiredConsume(weight_inputi.text.toString().toDoubleOrNull(),
+                      heightft_inputi.text.toString().toDoubleOrNull(),
+                      heightin_inputi.text.toString().toDoubleOrNull(),
+                      age_inputi.text.toString().toDoubleOrNull(),
+                      gender,selecteditem
+                  )
 
          ,str,sorOrder)
         newTask.id=task?.id?:0
@@ -280,19 +286,93 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
 
 //    TODO: Required Consumed need to be implemented.>!
 
-//
-//    private fun requiredConsume(
-//        wt: Double?, ht_ft: Double?, ht_in: Double?, age: Double?,gender: String?,activityLvl:String
-//    ):String{
-//
-//
-
-//    viewModel!!.requiredCalorie(BigDecimal(weight_inputi.text.toString())
-//    ,BigDecimal(heightft_inputi.text.toString()),
-//    BigDecimal(heightin_inputi.text.toString()),BigDecimal(age_inputi.text.toString()),gender,selecteditem)
+    private fun idealWeightCalculate(height_ft:Double,height_in:Double):String{
+        val height_in_meter=height_ft * 0.3048 + height_in * 0.0254
+        val idealWeight=22*Math.pow(height_in_meter,2.0)
+        val df = DecimalFormat("0.00")
+        df.setRoundingMode(RoundingMode.UP)
+        return df.format(idealWeight).toString()
 
 
-//    }
+    }
+
+
+    private fun requiredConsume(
+        wt: Double?, ht_ft: Double?, ht_in: Double?, age: Double?,gender: String?,activityLvl:String
+    ):String{
+
+
+        when(gender){
+            "female"->{ val female_age=age
+                val female_weight=wt
+                val female_height_ft=ht_ft
+                val female_height_in=ht_in
+                val heightincm= female_height_ft!!*30.48+female_height_in!!*2.54
+                var BMR: Double? =female_weight!!*9.563+heightincm*1.850+female_age!!*4.676
+                BMR=BMR!!+655.1
+                when(activityLvl) {
+                    "Sedentary" -> {
+                        val Sedentary= BMR *(1.2)
+                        return Sedentary.toString()
+                    }
+                    "Lightly" -> {
+                        val Lightly_active= BMR *(1.375)
+                        return Lightly_active.toString()
+                    }
+                    "Moderate" -> {
+                        val Moderately_active= BMR *(1.55)
+                        return Moderately_active.toString()
+                    }
+                    "Active" -> {
+                        val Active = BMR *(1.725)
+                        return Active.toString()
+                    }
+                    else -> {
+                        val Moderately_active= BMR *(1.55)
+                        return Moderately_active.toString()
+                    }
+                }
+            }
+
+            else->{
+                val male_weight=wt
+                val male_height_ft=ht_ft
+                val male_height_in=ht_in
+                val male_age=age
+                val heightincm= male_height_ft!!*30.48+male_height_in!!*2.54
+                var BMR: Double? =male_weight!!*13.75+heightincm*5.003-male_age!!*6.755
+                BMR=BMR!!+66.47
+
+
+                when(activityLvl) {
+                    "Sedentary" -> {
+                        val Sedentary=BMR *(1.2)
+                        return Sedentary.toString()
+                    }
+                    "Lightly" -> {
+                        val Lightly_active=BMR *(1.375)
+                        return Lightly_active.toString()
+                    }
+                    "Moderate" -> {
+                        val Moderately_active=BMR *(1.55)
+                        return Moderately_active.toString()
+                    }
+                    "Active" -> {
+                        val Active =BMR *(1.725)
+                        return Active.toString()
+                    }
+                    else -> {
+                        val Moderately_active=BMR *(1.55)
+                        return Moderately_active.toString()
+                    }
+                }
+            }
+
+        }
+
+    }
+
+
 
 
 
