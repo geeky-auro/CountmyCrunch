@@ -90,8 +90,10 @@ class AppProvider:ContentProvider(){
         val db=AppDatabase.getInstance(context!!).readableDatabase // Our database in "TaskTimer.db"
 
         val cursor =
-            queryBuilder.query(db, projection, selection, selectionArgs, null, null, sortOrder)
-        Log.d(TAG, "query: rows in returned cursor = ${cursor.count}") // TODO remove this line
+            queryBuilder.query(db, projection, selection, selectionArgs, null, null,
+                "$sortOrder DESC"
+            )
+
 
         return cursor
     }
