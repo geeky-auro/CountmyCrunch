@@ -76,13 +76,13 @@ class CursorRecyclerViewAdapter(private var cursor: Cursor?, private val listene
 
         if (cursor == null || cursor.count == 0) {
             Log.d(TAG, "onBindViewHolder:providing instructions")
-            holder.itemView.tli_gender.text=holder.itemView.tli_gender.text.toString().plus("Null")
-            holder.itemView.tli_age.text=holder.itemView.tli_age.text.toString().plus("Null")
-            holder.itemView.tli_height.text=holder.itemView.tli_height.text.toString().plus("Null")
-            holder.itemView.tli_weight.text=holder.itemView.tli_weight.text.toString().plus("Null")
-            holder.itemView.tli_amt_consumed.text=holder.itemView.tli_amt_consumed.text.toString().plus("Null")
-            holder.itemView.tli_required_consumed.text=holder.itemView.tli_required_consumed.text.toString().plus("Null")
-            holder.itemView.tli_date.text=holder.itemView.tli_date.text.toString().plus("Null")
+            holder.itemView.tli_gender.text=holder.itemView.tli_gender.text.toString().plus("")
+            holder.itemView.tli_age.text=holder.itemView.tli_age.text.toString().plus("")
+            holder.itemView.tli_height.text=holder.itemView.tli_height.text.toString().plus("")
+            holder.itemView.tli_weight.text=holder.itemView.tli_weight.text.toString().plus("")
+            holder.itemView.tli_amt_consumed.text=holder.itemView.tli_amt_consumed.text.toString().plus("")
+            holder.itemView.tli_required_consumed.text=holder.itemView.tli_required_consumed.text.toString().plus("")
+            holder.itemView.tli_date.text=holder.itemView.tli_date.text.toString().plus("")
 
         }
         else{
