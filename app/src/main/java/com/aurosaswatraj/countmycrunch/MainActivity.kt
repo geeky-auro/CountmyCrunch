@@ -41,6 +41,10 @@ class MainActivity : AppCompatActivity(),FragmentCalorieOutput,Calorie_Calculato
 
 
 
+//    TODO:Implement a graph
+
+
+
     private fun taskEditRequest(task: Track?){
 
     }
