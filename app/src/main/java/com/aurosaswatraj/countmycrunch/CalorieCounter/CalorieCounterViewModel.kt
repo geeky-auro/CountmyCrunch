@@ -29,6 +29,7 @@ class CalorieCounterViewModel: ViewModel() {
 
     }
 
+
     fun genderAnim(view: View?, gender:String?) {
         when (gender) {
             "male" -> {
