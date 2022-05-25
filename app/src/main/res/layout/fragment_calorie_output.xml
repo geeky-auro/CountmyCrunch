@@ -39,6 +39,8 @@
             android:textAllCaps="true"
             android:textStyle="bold"
             app:elevation="50sp"
+            app:iconGravity="textStart"
+            app:icon="@drawable/_save_24"
             app:backgroundTint="#C1582B"
             app:strokeColor="#f5cd79"
             app:strokeWidth="2sp"
