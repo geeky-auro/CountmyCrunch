@@ -31,6 +31,9 @@ private const val TAG = "BMIFinder"
  * create an instance of this fragment.
  */
 
+
+
+
 class BMIFinder : Fragment(R.layout.fragment_b_m_i_finder) {
 
     var viewModel:BMIViewModel?=null
