@@ -180,8 +180,6 @@ class BMIFinder : Fragment(R.layout.fragment_b_m_i_finder) {
         WEIGHT.text=WEIGHT.text.toString().plus(weight_input.text.toString()+"Kg")
         val BMICALCULLATED: TextView = view.findViewById<View>(R.id.BMICalculate) as TextView
         BMICALCULLATED.text=BMICALCULLATED.text.toString().plus("$BMI")
-        val SAVE = view.findViewById<View>(R.id.save_btn) as Button
-        SAVE.setOnClickListener { alertDialog.dismiss() }
         val OK = view.findViewById<View>(R.id.OK_btn) as Button
         OK.setOnClickListener { alertDialog.dismiss() }
         alertDialog.setView(view)
