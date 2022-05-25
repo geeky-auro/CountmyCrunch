@@ -30,6 +30,7 @@ private const val TAG = "BMIFinder"
  * Use the [BMIFinder.newInstance] factory method to
  * create an instance of this fragment.
  */
+
 class BMIFinder : Fragment(R.layout.fragment_b_m_i_finder) {
 
     var viewModel:BMIViewModel?=null
