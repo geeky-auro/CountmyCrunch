@@ -6,7 +6,6 @@ import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
-import android.view.Gravity
 import android.view.View
 import android.widget.*
 import androidx.fragment.app.Fragment
@@ -170,7 +169,7 @@ class BMIFinder : Fragment(R.layout.fragment_b_m_i_finder) {
 
     fun customAlertDialogi(BMI:BigDecimal?) {
         val alertDialog: AlertDialog = AlertDialog.Builder(requireContext()).create()
-        val view: View? = requireActivity().getLayoutInflater().inflate(R.layout.custom_dialog, null)
+        val view: View? = requireActivity().getLayoutInflater().inflate(R.layout.bmi_results, null)
         alertDialog.setCancelable(false)
         val AGE: TextView = view?.findViewById<View>(R.id.BMIAge) as TextView
         AGE.text=AGE.text.toString().plus(age_input.text.toString())
