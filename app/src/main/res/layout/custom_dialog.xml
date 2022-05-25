@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#d63031"
+    android:background="#D50000"
     >
 
         <LinearLayout
@@ -42,12 +42,13 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#ff7675"
+                android:background="#FF8A80"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/BMICalculate"
                     android:layout_margin="8dp"
+                    android:fontFamily="@font/googlesans_regular"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -67,6 +68,7 @@
                     android:layout_gravity="center"
                     android:textAlignment="center"
                     android:textSize="30sp"
+                    android:fontFamily="@font/googlesans_medium"
                     android:text="Underweight"
                     android:textAllCaps="true"
                     android:textColor="#FFFFFF"
@@ -81,6 +83,7 @@
             <TextView
                 android:id="@+id/BMIAge"
                 android:layout_margin="4dp"
+                android:fontFamily="@font/googlesans_bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -96,6 +99,7 @@
             <TextView
                 android:id="@+id/BMIWeight"
                 android:layout_margin="4dp"
+                android:fontFamily="@font/googlesans_bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -111,6 +115,7 @@
             <TextView
                 android:id="@+id/BMIHeight"
                 android:layout_margin="4dp"
+                android:fontFamily="@font/googlesans_bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -128,34 +133,20 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:weightSum="2"
+                android:weightSum="1"
                 android:layout_margin="8dp"
                 android:orientation="horizontal">
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/save_btn"
-                    android:layout_margin="2dp"
-                    android:layout_width="100dp"
-                    android:layout_height="70dp"
-                    android:layout_gravity="center"
-                    android:textAlignment="center"
-                    app:backgroundTint="#4D9CE6"
-                    android:text="SAVE"
-                    android:layout_weight="1"
-                    android:textSize="20sp"
-                    app:cornerRadius="10dp">
-
-                </com.google.android.material.button.MaterialButton>
-
-                <com.google.android.material.button.MaterialButton
                     android:id="@+id/OK_btn"
-                    android:layout_width="100dp"
+                    android:layout_width="0dp"
+                    app:elevation="20dp"
                     android:layout_margin="2dp"
                     android:layout_height="70dp"
-                    android:layout_gravity="center"
                     android:textAlignment="center"
-                    app:backgroundTint="#40739e"
-                    android:text="OK"
+                    app:backgroundTint="#FF5B28"
+                    app:icon="@drawable/ic_baseline_done_4"
+                    android:text="Exit"
                     android:layout_weight="1"
                     android:textSize="20sp"
                     app:cornerRadius="10dp">
