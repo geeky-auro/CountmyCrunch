@@ -32,10 +32,6 @@ private const val TAG = "BMIFinder"
  */
 
 
-
-
-
-
 class BMIFinder : Fragment(R.layout.fragment_b_m_i_finder) {
 
     var viewModel:BMIViewModel?=null
