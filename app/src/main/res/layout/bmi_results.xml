@@ -8,7 +8,7 @@
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="-5dp"
             android:scrollbars="vertical"
             android:scrollbarAlwaysDrawVerticalTrack="true"
@@ -33,7 +33,7 @@
                 android:textColor="#000"
                 android:fontFamily="cursive"
                 android:textStyle="bold"
-                android:textSize="70sp"
+                android:textSize="50sp"
                 android:padding="2dp"
                 android:textAlignment="center">
 
@@ -41,9 +41,32 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/result_anim"
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"
+                    android:scaleType="centerInside"
+                    android:layout_gravity="center"
+                    app:lottie_rawRes="@raw/gainweight"
+                    app:lottie_loop="true"
+                    app:lottie_autoPlay="true"
+                    android:layout_marginBottom="5dp"
+                    >
+
+                </com.airbnb.lottie.LottieAnimationView>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#FF8A80"
                 android:orientation="vertical">
+
 
                 <TextView
                     android:id="@+id/BMICalculate"
@@ -54,7 +77,7 @@
                     android:layout_gravity="center"
                     android:textAlignment="center"
                     android:textSize="20sp"
-                    android:text="BMI="
+                    android:text="@string/bmi"
                     android:textColor="#FFFFFF"
                     android:textStyle="bold">
 
@@ -89,7 +112,7 @@
                 android:layout_gravity="center"
                 android:textAlignment="center"
                 android:textSize="22sp"
-                android:text="Age:"
+                android:text="@string/age"
                 android:textAllCaps="true"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold">
@@ -105,7 +128,7 @@
                 android:layout_gravity="center"
                 android:textAlignment="center"
                 android:textSize="22sp"
-                android:text="Weight:"
+                android:text="@string/weight"
                 android:textAllCaps="true"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold">
@@ -121,7 +144,7 @@
                 android:layout_gravity="center"
                 android:textAlignment="center"
                 android:textSize="22sp"
-                android:text="HEIGHT:"
+                android:text="@string/height"
                 android:textAllCaps="true"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold">
@@ -133,7 +156,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_margin="6dp"
                 android:orientation="vertical">
 
                 <com.google.android.material.button.MaterialButton

@@ -10,6 +10,8 @@ import android.view.View
 import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.airbnb.lottie.LottieAnimationView
+import com.airbnb.lottie.LottieDrawable
 import com.aurosaswatraj.countmycrunch.Dialogs.ErrorDialog
 import com.aurosaswatraj.countmycrunch.R
 import com.thecode.aestheticdialogs.*
@@ -169,7 +171,7 @@ class BMIFinder : Fragment(R.layout.fragment_b_m_i_finder) {
 
     fun customAlertDialogi(BMI:BigDecimal?) {
         val alertDialog: AlertDialog = AlertDialog.Builder(requireContext()).create()
-        val view: View? = requireActivity().getLayoutInflater().inflate(R.layout.bmi_results, null)
+        val view: View? = requireActivity().layoutInflater.inflate(R.layout.bmi_results, null)
         alertDialog.setCancelable(false)
         val AGE: TextView = view?.findViewById<View>(R.id.BMIAge) as TextView
         AGE.text=AGE.text.toString().plus(age_input.text.toString())
@@ -181,6 +183,25 @@ class BMIFinder : Fragment(R.layout.fragment_b_m_i_finder) {
         WEIGHT.text=WEIGHT.text.toString().plus(weight_input.text.toString()+"Kg")
         val BMICALCULLATED: TextView = view.findViewById<View>(R.id.BMICalculate) as TextView
         BMICALCULLATED.text=BMICALCULLATED.text.toString().plus("$BMI")
+        val lottie = view.findViewById<LottieAnimationView>(R.id.result_anim)
+
+        when(viewModel?.showRecommendations(BMI)){
+            "Underweight"->{
+                lottie.setAnimation(R.raw.under_final)
+            }
+            "Normal weight"->{
+                lottie.setAnimation(R.raw.normal_1)
+            }
+            "OverWeight"->{lottie.setAnimation(R.raw.overweight_2)
+            }
+            "Obesity"->{
+                lottie.setAnimation(R.raw.obesity_3)
+            }
+            else->{   lottie.setAnimation(R.raw.normal)   }
+
+        }
+
+
         val OK = view.findViewById<View>(R.id.OK_btn) as Button
         OK.setOnClickListener { alertDialog.dismiss() }
         alertDialog.setView(view)

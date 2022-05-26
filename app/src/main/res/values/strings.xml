@@ -13,6 +13,10 @@
     <string name="bmi_table_for_adults">BMI table for adults</string>
     <string name="delete">Delete</string>
     <string name="submit">SUBMIT</string>
+    <string name="bmi">BMI=</string>
+    <string name="age">Age:</string>
+    <string name="weight">Weight:</string>
+    <string name="height">HEIGHT:</string>
 
     <string-array name="Activity_Level">
         <item>Sedentary(little or no exercise)</item>
