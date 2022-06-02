@@ -477,7 +477,293 @@ class VlogContents(content_vlogs:ArrayList<HealthVlogs>) {
 
                 vlogs.add(HealthVlogs("https://www.thegoodbody.com/wp-content/uploads/2022/01/the-word-gymnasium-means-school%E2%80%93for-naked-exercise.png","The word ‘gymnasium’ comes from an Ancient Greek term meaning “school for naked exercise”.","gymnasium, large room used and equipped for the performance of various sports. The history of the gymnasium dates back to ancient Greece, where the literal meaning of the Greek word gymnasion was “school for naked exercise.” The gymnasiums were of great significance to the ancient Greeks, and every important city had at least one.","https://www.britannica.com/technology/gymnasium-sports"))
 
+        vlogs.add(HealthVlogs("https://www.anytimefitness.com/wp-content/uploads/2020/10/GroceryShoppingResized.jpeg","Our Favorite Healthy Foods to Add to Your Grocery List","What’s the secret to healthy eating? Well, a lot of things of course, but if we had to pick one it would probably be preparation! It’s so much easier to choose a homemade, healthy meal over a stop at the nearest drive-thru when you know you have food prepped and ready for you at home. ","https://www.anytimefitness.com/ccc/nutrition/our-favorite-healthy-foods-to-add-to-your-grocery-list/"))
 
+        vlogs.add(HealthVlogs("https://www.anytimefitness.com/wp-content/uploads/2020/06/nutrition-sm.jpg","Coach-Approved Pre-Workout Snacks","You ultimately have to choose what’s right for your workout and your body, and it might take a bit of experimentation to find a snack that leaves you feeling energized but not overly full. Here’s a few of our coaches’ favorite pre-workout snacks to get you started.","https://www.anytimefitness.com/ccc/nutrition/coach-approved-pre-workout-snacks/"))
+
+        vlogs.add(HealthVlogs("https://www.anytimefitness.com/wp-content/uploads/2021/02/RT_20210921_ANYTIMEFITNESS_RTV0631-FINAL-1.jpg","What Are Macros, How Do You Count Them, and Do They Matter?","There are three main macros: fats, carbohydrates and protein.","https://www.anytimefitness.com/ccc/nutrition/what-are-macros-how-do-you-count-them-and-do-they-matter/"))
+
+        vlogs.add(HealthVlogs("https://www.anytimefitness.com/wp-content/uploads/2020/10/AdobeStock_234377349-1536x1024.jpeg","The Risks and Rewards of Protein Bars","Let’s take a look at some of the most important information to consider when looking for a healthy protein bar that fits into your healthy eating plan.","https://www.anytimefitness.com/ccc/nutrition/the-risks-and-rewards-of-protein-bars/"))
+
+        vlogs.add(HealthVlogs("https://www.anytimefitness.com/wp-content/uploads/2020/10/AdobeStock_166747861-1536x1025.jpeg","The Health Benefits of Asparagus","No idea how to cook such a funky-shaped item? If that’s the case, we’ve got the answers to all your questions – simply read on for more information! You’re going to love preparing this healthy, adaptable vegetable.","https://www.anytimefitness.com/ccc/nutrition/the-health-benefits-of-asparagus/"))
+
+        vlogs.add(HealthVlogs("https://www.anytimefitness.com/wp-content/uploads/2020/09/AdobeStock_196412575-1536x1018.jpeg","Oats: Steel-Cut Vs. Rolled, Which Is Best?","Before you get wrapped up in the hype, know that both are a fantastic (and gluten-free) breakfast option, and both come from the same starting point. And we’ve got some insider information for you: The only difference is their processing.","https://www.anytimefitness.com/ccc/nutrition/oats-steel-cut-vs-rolled-which-is-best/"))
+
+        vlogs.add(HealthVlogs("https://www.anytimefitness.com/wp-content/uploads/2020/08/gluten-free-protein-bar-recipe.jpg","Easy No-Bake Gluten-Free Protein Bars","Use this recipe as a starting point and make the protein bars your own by experimenting with special ingredients like dried fruit, shredded coconut, or cinnamon!","https://www.anytimefitness.com/ccc/nutrition/easy-no-bake-gluten-free-protein-bars/"))
+
+        vlogs.add(HealthVlogs("https://www.anytimefitness.com/wp-content/uploads/2020/08/3-Minute-Banana-Berry-Green-Smoothie--1536x1024.jpg","3-Minute Banana-Berry Green Smoothie","This smoothie packs a major green punch! It’s loaded with the healthy taste of summer thanks the addition of berries, spinach, and avocado. ","https://www.anytimefitness.com/ccc/nutrition/3-minute-banana-berry-green-smoothie/"))
+
+        vlogs.add(HealthVlogs("https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/03/pool-swimming-swim-cap-1296x728-header.jpg?w=1575","Swimming vs. Running: Which One Is Right for You?","In this article, we’ll cover everything you need to know about the benefits of swimming and running, and how to decide which one may be better suited to you.","https://www.healthline.com/health/swimming-vs-running"))
+
+        vlogs.add(HealthVlogs("https://www.healthshots.com/wp-content/uploads/2020/08/Weight-loss-women-diet.jpg","Keto or intermittent fasting? A nutritionist reveals which is better for weight loss","If you’re looking at weight loss diets, you need to know which one is the best to deliver the results  you  want.","https://www.healthshots.com/healthy-eating/nutrition/keto-or-intermittent-fasting-a-nutritionist-reveals-which-is-better-for-weight-loss/"))
+
+
+
+
+        vlogs.add(HealthVlogs("https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/AN_images/dash-diet-1296x728-feature.jpg?w=1575","The DASH diet","This article examines the DASH diet, which was designed to combat high blood pressure and reduce people’s risk of heart disease.","https://www.healthline.com/nutrition/dash-diet"))
+
+
+
+        vlogs.add(HealthVlogs("Mediterranean Diet 101: A Meal Plan and Beginner’s Guide","Mediterranean Diet 101: A Meal Plan and Beginner’s Guide","This article examines the DASH diet, which was designed to combat high blood pressure and reduce people’s risk of heart disease.","https://www.healthline.com/nutrition/mediterranean-diet-meal-plan#foods-to-eat"))
+
+
+
+        vlogs.add(HealthVlogs("https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/reference_guide/very_lowcalorie_diets_ref_guide/650x350_very_lowcalorie_diets_ref_guide.jpg?resize=550px:*&output-quality=50","Very Low-Calorie Diets: What You Need to Know","This article debunks ","https://www.webmd.com/diet/low-calorie-diets"))
+
+                vlogs.add(HealthVlogs("https://miro.medium.com/max/1400/1*e-m3ssy0YleedZBhMRcssQ.jpeg","The Case for a Low-Carb Diet Is Stronger Than Ever","A new, major study supports the “Carbohydrate Insulin Model” of obesity","https://elemental.medium.com/major-study-supports-carbohydrate-insulin-model-of-obesity-cb7d47a571d9"))
+
+
+                vlogs.add(HealthVlogs("https://miro.medium.com/max/1400/1*e-m3ssy0YleedZBhMRcssQ.jpeg","The Case for a Low-Carb Diet Is Stronger Than Ever","A new, major study supports the “Carbohydrate Insulin Model” of obesity","https://elemental.medium.com/major-study-supports-carbohydrate-insulin-model-of-obesity-cb7d47a571d9https://medium.com/elemental-by-medium/the-science-behind-the-mental-clarity-diet-a6b2d765ffa6"))
+
+
+
+
+
+
+                vlogs.add(HealthVlogs("https://www.anytimefitness.com/wp-content/uploads/2021/03/Anytime-Fitness-Egg-Roll-In-A-Bowl-Recipe-3200-1536x1024.jpg","Egg Roll in a Bowl","https://www.anytimefitness.com/ccc/nutrition/egg-roll-in-a-bowl/","https://www.anytimefitness.com/ccc/nutrition/egg-roll-in-a-bowl/"))
+
+                vlogs.add(HealthVlogs("https://www.anytimefitness.com/wp-content/uploads/2020/06/Which-Cooking-Oil-Is-Healthiest-sm.jpg","Which Cooking Oil Is Healthiest?","Today, we’re going to break down three of the most popular oils discussed in the healthy cooking atmosphere—olive oil, avocado oil, and coconut oil. ","https://www.anytimefitness.com/ccc/nutrition/which-cooking-oil-is-healthiest/"))
+
+                vlogs.add(HealthVlogs("https://www.helpguide.org/wp-content/uploads/young-woman-smiling-while-adjusting-beam-weight-scale-768.jpg","How to Lose Weight and Keep It Off","There’s a better way to lose weight. These dieting tips can help you avoid diet pitfalls and achieve lasting weight-loss success.","https://www.helpguide.org/articles/diets/how-to-lose-weight-and-keep-it-off.htm"))
+
+                vlogs.add(HealthVlogs("https://images.everydayhealth.com/images/why-you-shouldnt-rush-weight-loss-1440x810.jpg?w=1110","Why You Shouldn’t Rush Weight Loss","Losing weight too quickly could jeopardize your chances of long-term success, plus it could introduce a host of side effects. Here’s why the slow and steady approach to shedding pounds is best.","https://www.everydayhealth.com/weight/why-you-shouldnt-rush-weight-loss/"))
+
+                vlogs.add(HealthVlogs("https://images.everydayhealth.com/images/sleep-and-weight-loss-1440x810.jpg?w=1110","Sleeping 1 Extra Hour Linked to Eating 270 Fewer Daily Calories, Study Shows","The data adds to a growing volume of evidence suggesting sleep plays an important role in weight management. Experts say sleep could be a ‘game changer’ for weight loss efforts.","https://www.everydayhealth.com/weight/sleeping-extra-hour-linked-to-eating-fewer-daily-calories-study-shows/"))
+
+
+                vlogs.add(HealthVlogs("https://images.everydayhealth.com/images/can-drinking-coffee-help-you-lose-weight-1440x810.jpg?w=1110","Can Drinking Coffee Lead to Weight Loss?","Your morning brew has been linked with several effects, including potential health benefits like a longer life span and a reduced risk of chronic disease. Find out if slimming down is one of those results.","https://www.everydayhealth.com/diet-nutrition/can-drinking-coffee-lead-to-weight-loss/"))
+
+
+                vlogs.add(HealthVlogs("https://images.everydayhealth.com/images/types-of-tea-that-may-help-with-weight-loss-01-1440x810.jpg?w=768","5 Types of Tea That May Help With Weight Loss","Certain brews may help you lose weight, thanks to plant compounds called catechins that can rev metabolism. More research is needed, but here are the teas that experts say hold the most potential.","https://www.everydayhealth.com/weight/types-of-tea-that-may-help-with-weight-loss/"))
+
+                vlogs.add(HealthVlogs("https://images.everydayhealth.com/images/healthy-weight-habits-from-lockdown-alt-1440x810.jpg?w=1110","6 Habits That Can Help You Lose Lockdown Weight (and 5 That Won’t)","Not everything about staying home was bad. Use these expert tips to start losing, or keep your weight loss momentum going.","https://www.everydayhealth.com/weight/habits-that-can-help-you-lose-lockdown-weight-that-wont/"))
+
+                vlogs.add(HealthVlogs("https://images.everydayhealth.com/images/best-frozen-meals-for-weight-loss-00-1440x810.jpg?w=768","The 10 Best Frozen Meals for Weight Loss","When you can't be bothered to put together a complicated dish, frozen meals can be a good solution for a healthy lunch or dinner — as long as you know how to shop smartly. Here, registered dietitians show you how.","https://www.everydayhealth.com/weight-pictures/best-frozen-meals-for-weight-loss.aspx"))
+
+                vlogs.add(HealthVlogs("https://images.everydayhealth.com/images/essential-facts-about-metabolism-and-weight-loss-1440x810.jpg?w=1110","7 Essential Facts About Metabolism and Weight Loss","Are you having trouble shedding pounds? The key to weight loss success may be understanding how your metabolism really works.","https://www.everydayhealth.com/news/essential-facts-about-your-metabolism-weight-loss/"))
+
+                vlogs.add(HealthVlogs("https://images.everydayhealth.com/images/reasons-youre-not-losing-weight-722x406.jpg?w=1110","8 Reasons You Aren’t Losing Weight","Weight loss isn’t always a simple equation — other factors, both internal and external — may be standing in the way of your goal. Here are some common stumbling blocks and how to overcome them.","https://www.everydayhealth.com/diet-nutrition/weight/9-reasons-youre-not-losing-weight/"))
+
+                vlogs.add(HealthVlogs("https://images.everydayhealth.com/images/diet-nutrition/weight/expert-weight-loss-tips-list-1440x810.jpg?w=1110","21 Tips for Weight Loss That Actually Work","Here's expert advice for what really works when it comes to shedding unwanted pounds.","https://www.everydayhealth.com/diet-and-nutrition/diet/tips-weight-loss-actually-work/"))
+
+                vlogs.add(HealthVlogs("https://images.everydayhealth.com/images/the-truth-about-breakfast-and-weight-loss-722x406.jpg?w=1110","The Truth About Breakfast and Weight Loss","What science says about the morning meal may surprise you. Plus, how to build the best breakfast if you do decide to eat one.","https://www.everydayhealth.com/weight/eating-a-healthy-breakfast.aspx"))
+
+                vlogs.add(HealthVlogs("https://images.everydayhealth.com/images/diet-nutrition/weight/lowcaloriediet.jpg?w=1110","Low-Calorie Diets Mean High-Quality Lives, Research Shows"," new research shows that low-calorie diets can help with surprisingly more than your weight.","https://www.everydayhealth.com/columns/jared-bunch-rhythm-of-life/reducing-daily-calories-is-a-great-way-to-improve-your-quality-of-life/"))
+
+                vlogs.add(HealthVlogs("https://images.everydayhealth.com/images/diet-nutrition/weight/how-to-lose-weight-in-your-20s-722x406.jpg?w=1110","10 Weight-Loss Tips for Women in Their Twenties","Now is the time to set up healthy habits you can maintain for life. Read on to learn how to keep the scale steady in your twenties.","https://www.everydayhealth.com/news/10-weight-loss-tips-women-their-20s/"))
+
+                vlogs.add(HealthVlogs("https://images.everydayhealth.com/images/diet-nutrition/weight/instagrammers-to-follow-to-lose-weight-intro-722x406.jpg?w=768","https://www.everydayhealth.com/pictures/instagrammers-follow-trying-lose-weight/","These Accounts Get a Double Tap for Weight-Loss Motivation","https://www.everydayhealth.com/pictures/instagrammers-follow-trying-lose-weight/"))
+
+
+                vlogs.add(HealthVlogs("https://images.everydayhealth.com/images/diet-nutrition/weight/top-weight-loss-diet-programs-722x406.jpg?w=1110","Top 5 Doctor-Recommended Weight Loss Plans","Trying to lose weight? More than 900 experts share which plans are your best bets.","https://www.everydayhealth.com/news/top-5-doctor-recommended-weight-loss-plans/"))
+
+
+                vlogs.add(HealthVlogs("https://images.everydayhealth.com/images/diet-nutrition/weight/obesity-america-vs-world.jpg?w=1110","Are We as Fat as We Think?","The U.S. gets a bad rap as the most obese country in the world. Do we deserve it?","https://www.everydayhealth.com/news/are-we-fat-think/"))
+
+                vlogs.add(HealthVlogs("https://images.everydayhealth.com/images/newsletter-signup/diet-and-nutrition-nl-signup.jpg?w=695","5 Surprising Foods That Help You Lose Weight","Is peanut butter really a diet food? Even some high-calorie eats can help you shed pounds, some by making you feel full, others by actually blocking the formation of fat cells.","https://www.everydayhealth.com/weight-video/five-surprising-foods-that-help-you-lose-weight.aspx"))
+
+
+                vlogs.add(HealthVlogs("https://images.everydayhealth.com/images/diet-nutrition/weight/ways-to-lose-the-last-ten-pounds-01-pg-full.jpg?w=768","8 Ways to Lose the Last 10 Pounds","The last few pounds have been scientifically proven to be the hardest. But if you follow this blueprint for success, your scale will start moving again.","https://www.everydayhealth.com/weight-pictures/ways-to-lose-the-last-10-pounds.aspx"))
+
+
+                vlogs.add(HealthVlogs("https://images.everydayhealth.com/images/healthy-weight-habits-from-lockdown-alt-1440x810.jpg?w=284","Could Being a Little Overweight Help You Live Longer?","International analysis found obesity raised the odds of early death, but a few extra pounds didn't hurt.","https://www.everydayhealth.com/weight-video/could-being-a-little-overweight-help-you-live-longer.aspx"))
+
+
+                vlogs.add(HealthVlogs("https://images.everydayhealth.com/images/apps-really-can-make-a-difference-when-youre-trying-to-lose-weight-alt-1440x810.jpg?w=1110","Weight Loss Apps Will Likely Help You Shed Pounds, an Analysis Finds","Data from 39 studies showed that using tech like apps and wearables resulted in weight loss 74 percent of the time. Here, weight loss specialists share how these resources may help you.","https://www.everydayhealth.com/weight/weight-loss-apps-likely-to-help-you-shed-pounds-an-analysis-finds/"))
+
+                vlogs.add(HealthVlogs("https://images.everydayhealth.com/images/why-you-shouldnt-rush-weight-loss-1440x810.jpg?w=284","When It Comes to Weight, Addition Is a Lot Easier Than Subtraction","Knowing exactly what a calorie could cost you in exercise may help you avoid eating that cupcake or having an extra helping of dressing at a holiday meal.","https://www.everydayhealth.com/weight-video/when-it-comes-to-weight-addition-is-a-lot-easier-than-subtraction.aspx"))
+
+
+                vlogs.add(HealthVlogs("https://images.everydayhealth.com/images/could-that-plastic-water-bottle-be-making-you-gain-weight-1440x810.jpg?w=1110","Could That Plastic Water Bottle Be Making You Gain Weight?","Research suggests that many substances in plastic containers and packaging may increase the size and number of fat cells.","https://www.everydayhealth.com/weight/could-that-plastic-water-bottle-be-making-you-gain-weight/"))
+
+
+                vlogs.add(HealthVlogs("https://images.everydayhealth.com/images/are-plant-based-alternatives-to-meat-actually-healthier-1440x810.jpg?w=1110","Are Plant-Based Alternatives to Meat Actually Healthier?","Some argue meat alternatives like plant-based burgers and faux chicken are healthy substitutes to the real thing. Here's what health experts say.","https://www.everydayhealth.com/diet-nutrition/are-beyond-burgers-impossible-burgers-healthier-than-meat/"))
+
+
+                vlogs.add(HealthVlogs("https://images.everydayhealth.com/images/grill-worthy-vegetarian-recipes-00-intro-alt-1440x810.jpg?w=768","11 Grill-Worthy (and Nutritious) Vegetarian Recipes","Whether you’ve eliminated meat from your diet or simply want to eat more fruits and veggies, these delicious plant-based recipes will thrill your grill this summer.","https://www.everydayhealth.com/healthy-recipes-pictures/tasty-vegetarian-recipes-for-the-barbecue.aspx"))
+
+
+                vlogs.add(HealthVlogs("https://images.everydayhealth.com/images/is-organic-produce-healthier-than-the-conventional-kind-1440x810.jpg?w=1110","Is Organic Produce Healthier Than the Conventional Kind?","People are willing to pay more for it, but should they? See what the research says.","https://www.everydayhealth.com/diet-nutrition/is-organic-produce-healthier-than-the-conventional-kind/"))
+
+
+
+                vlogs.add(HealthVlogs("https://images.everydayhealth.com/images/diet-nutrition/how-weight-watchers-works-722x406.jpg?w=1110","Can WW (Weight Watchers) Actually Help You Lose Weight and Keep It Off?","Today, WW remains one of the most popular diets in the world, with 4.5 million subscribers as of 2018, and an international roster of doctors, researchers, and other experts on its scientific advisory board. ","https://www.everydayhealth.com/diet-nutrition/weight-watchers.aspx"))
+
+
+
+                vlogs.add(HealthVlogs("https://images.everydayhealth.com/images/emotional-health/stress/all-about-stress-and-your-diet-how-it-impacts-what-you-eat-how-to-manage-stress-and-foods-to-eat-when-stressed-722x406.jpg?w=284","What Is Intermittent Fasting? A Detailed Beginner's Guide"," Use this scientific guide to get the lowdown on IF specifically. You’ll also find tips for how to set yourself up for success if you decide to start.","https://www.everydayhealth.com/diet-nutrition/intermittent-fasting/"))
+
+
+                vlogs.add(HealthVlogs("https://images.everydayhealth.com/images/diet-nutrition/going-vegetarian-benefits-risks-sample-menu-722x406.jpg?w=1110","A Detailed Guide to Following a Vegetarian Diet","Here, let’s dive into what it means to be a vegetarian and the effect it could have on your health.","https://www.everydayhealth.com/diet-nutrition/diet/going-vegetarian-benefits-risks-types-sample-menu/"))
+
+
+
+                vlogs.add(HealthVlogs("https://images.everydayhealth.com/images/how-quickly-do-you-actually-lose-fitness-1440x810.jpg?w=1110","How Fast Do You Actually Lose Fitness?","The short answer: it varies immensely depending upon how you’ve been training. Below, discover the truth behind undone fitness — and find out when it’s essential to take a break.","https://www.everydayhealth.com/fitness/how-fast-do-you-actually-lose-fitness/"))
+
+
+                vlogs.add(HealthVlogs("https://www.everydayhealth.com/fitness/workout-supplements-do-they-really-boost-performance/","7 Workout Supplements: Do They Really Boost Performance?","You may be able to optimize and support your fitness performance with supplements, but not all are worthwhile, and some (in large doses) may be dangerous. Here’s our short list of what’s out there, which ones work, and which ones to skip.","https://www.everydayhealth.com/fitness/workout-supplements-do-they-really-boost-performance/"))
+
+
+                vlogs.add(HealthVlogs("https://cdn1.sph.harvard.edu/wp-content/uploads/sites/30/2018/04/Ketogenic-Diet_725641921-1024x683.jpg","The Ketogenic Diet: Evidence for Optimism but High-Quality Research Needed","The ketogenic diet has a long track record—not only in clinical medicine but also through human evolution—providing evidence for optimism in the search for more effective dietary prevention and treatment of chronic diseases.","https://doi.org/10.1093/jn/nxz308"))
+
+
+
+
+                vlogs.add(HealthVlogs("https://images.theconversation.com/files/422337/original/file-20210921-25-fjz9wk.png?ixlib=rb-1.1.0&q=45&auto=format&w=754&h=493&fit=crop&dpr=1","The Relative Caloric Prices of Healthy and Unhealthy Foods Differ Systematically across Income Levels and Continents ","Relative prices of healthy/unhealthy foods have been implicated in the obesity epidemic, but never extensively quantified across countries or empirically linked to undernutrition.","https://academic.oup.com/jn/article/149/11/2020/5535433?login=true"))
+
+
+
+
+                vlogs.add(HealthVlogs("https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1240w,f_auto,q_auto:best/newscms/2019_33/2203981/171026-better-coffee-boost-se-329p.jpg","Long-term coffee consumption, caffeine metabolism genetics, and risk of cardiovascular disease","Coffee is one of the most widely consumed stimulants worldwide and is generally considered to be safe or even beneficial for health. ","https://doi.org/10.1093/ajcn/nqy297"))
+
+
+
+                vlogs.add(HealthVlogs("https://scitechdaily.com/images/Vitamin-K.jpg?ezimgfmt=ng%3Awebp%2Fngcb1%2Frs%3Adevice%2Frscb1-1","Multiple Vitamin K Forms Exist in Dairy Foods","The plant-based form of vitamin K (phylloquinone, vitamin K-1) has been well quantified in the US diet. ","https://doi.org/10.3945/cdn.117.000638"))
+
+
+
+                vlogs.add(HealthVlogs("https://sa1s3optim.patientpop.com/assets/images/provider/photos/1951643.jpg","10 Leading Causes of Weight Gain and Obesity","Here are 10 factors that are leading causes of weight gain, obesity and metabolic disease, many of which have nothing to do with willpower.","https://www.healthline.com/nutrition/10-causes-of-weight-gain"))
+
+
+
+                vlogs.add(HealthVlogs("https://i0.wp.com/post.healthline.com/wp-content/uploads/2021/08/egg-yolk-1296x728-header.jpg?w=1155&h=1528","Are Whole Eggs and Egg Yolks Good or Bad for You?","So, are eggs beneficial or harmful for your health? This article explores both sides of the argument.","https://www.healthline.com/nutrition/are-egg-yolks-bad"))
+
+                vlogs.add(HealthVlogs("https://tpc.googlesyndication.com/daca_images/simgad/326233922100596640","The 8 Most Popular Ways to Do a Low-Carb Diet","Here are 8 popular ways to do a low-carb diet.","https://www.healthline.com/nutrition/8-popular-ways-to-do-low-carb"))
+
+                vlogs.add(HealthVlogs("http://hungryandfit.com/wp-content/uploads/2018/11/gronk-1.jpg","The Art of Healthy Living","This article explains the benefits of counting macros and provides a step-by-step guide on how to get started.","https://www.healthline.com/nutrition/how-to-count-macros"))
+
+                vlogs.add(HealthVlogs("https://assets.lybrate.com/q_auto:eco,f_auto,w_850/imgs/product/kwds/diet-chart/Atkins-Diet-Chart-v1.jpg","The Atkins Diet: Everything You Need to Know","Here’s a brief summary of how to follow the Atkins diet. It’s always a good idea to consult your registered dietitian or physician before starting a new weight-loss diet plan.","https://www.healthline.com/nutrition/atkins-diet-101"))
+
+                vlogs.add(HealthVlogs("https://miro.medium.com/max/875/1*xhv5svso2nfZjiJzmez7Xw.jpeg","The Three Silent Assassins of our Diet","Six months of positive restriction will change your life","https://https://medium.com/bowel-movements/the-three-silent-assassins-of-our-diet-8b1725cb808c"))
+
+        vlogs.add(HealthVlogs("https://miro.medium.com/fit/c/140/140/1*O6vVwnFT0AOvtN7CGBb_cw.jpeg","Lose a Lot of Weight by Making This One Tiny Change to Your Diet","An effective way to get back on track when you lose your way — How do you lose Pandemic pounds?","https://medium.com/in-fitness-and-in-health/how-one-tiny-change-in-your-diet-can-help-you-lose-a-lot-of-weight-40fe73730b00?source=search_post---------12----------------------------"))
+
+        vlogs.add(HealthVlogs("https://miro.medium.com/focal/140/140/62/56/1*3ePOPbbLFISsBTQpbBsLpQ.jpeg","How To Leave Toxic Diet Culture Behind And Pursue Actual Health","The real data behind weight loss research points to a radically different approach to healthy living ","https://medium.com/better-humans/how-to-leave-toxic-diet-culture-behind-and-pursue-actual-health-a0aae77dd470?source=search_post---------14----------------------------"))
+
+        vlogs.add(HealthVlogs("https://miro.medium.com/fit/c/140/140/1*bSPiuzjjtHbt3mJnIh2PLQ.jpeg","Why Fasting Diets Are About to Get More Extreme","Two weeks without food? Some scientists think it could help. — Every week, the Nuance will go beyond the basics, offering a deep and researched look at the latest science and expert insights on a buzzed-about health","https://medium.com/elemental-by-medium/why-fasting-diets-of-the-future-may-be-even-more-extreme-bf8db9befa70?source=search_post---------15----------------------------"))
+
+        vlogs.add(HealthVlogs("https://miro.medium.com/fit/c/140/140/1*aHal_ZF1MBNg698J9Nbezg.png","I Lost 50 Pounds on a 5:2 Fasting Diet","This form of intermittent fasting helped me lose weight and, more importantly, kept it off ","https://medium.com/better-humans/the-anti-diet-that-changed-my-life-forever-d4b0923aba0d?source=search_post---------16----------------------------"))
+
+
+        vlogs.add(HealthVlogs("https://miro.medium.com/focal/140/140/47/55/1*5piaBPbLGVCCvXnEjGUIGw.jpeg","If You Really Want to Optimize Your Diet, Focus on Fiber","Fiber isn’t sexy, but it’s the key to health — It’s a puzzle that doctors have long struggled to solve: Inflammatory bowel disease","https://medium.com/elemental-by-medium/if-you-really-want-to-optimize-your-diet-focus-on-fiber-c4ad231806f?source=search_post---------17----------------------------"))
+
+
+        vlogs.add(HealthVlogs("https://miro.medium.com/focal/140/140/53/60/1*ySCrTsGWl0x2N7VYLc1vEQ.jpeg","Obesity Is About So Much More Than Diet and Exercise","An obesity specialist reveals four overlooked contributors — A recent study in the Journal of the American Medical Association should serve as an eye-opener to any American who has ever struggled with their weight ","https://medium.com/elemental-by-medium/the-diet-delusion-the-many-ways-in-which-were-underestimating-obesity-1190a0771c35?source=search_post---------19----------------------------"))
+
+
+        vlogs.add(HealthVlogs("https://miro.medium.com/focal/140/140/50/7/1*z5aopNNN3DEBpUPWSx7CEw.jpeg","I’ve followed the Mediterranean diet for years. Here are 11 things I always have in my pantry and fridge.","The Mediterranean diet helped me learn how to cook.","https://medium.com/insider/ive-followed-the-mediterranean-diet-for-years-here-are-11-foods-i-always-stock-up-on-37d4e47a1b0e?source=search_post---------23----------------------------"))
+
+
+        vlogs.add(HealthVlogs("https://miro.medium.com/fit/c/140/140/1*1B3SDpXwYP2-vNVXchAAQA.jpeg","Experts just ranked the best diets, and their choices will probably surprise you","Minor eating changes aren’t as satisfying, but they work.","https://medium.com/popular-science/experts-just-ranked-the-best-diets-and-their-choices-will-probably-surprise-you-188cdfa17260?source=search_post---------24----------------------------"))
+
+
+        vlogs.add(HealthVlogs("https://miro.medium.com/fit/c/140/140/1*5rJOSaPboVXZtS_9uwD7vA@2x.jpeg","A sane and thoughtful approach to permanent weight loss.","Not Another Diet — Introduction — Eleven years ago, I set about tackling a long out-of-reach goal. In the course of a year, I lost 50 pounds.","https://medium.com/not-another-diet/not-another-diet-6a86abe25803?source=search_post---------26----------------------------"))
+
+
+        vlogs.add(HealthVlogs("https://medium.com/in-fitness-and-in-health/i-removed-sugar-from-my-diet-heres-what-happened-c022c57561ff?source=search_post---------28----------------------------","I Removed Sugar From My Diet. Here’s What Happened","I’m not going back. — White bread for breakfast. Pasta for lunch. A treat around 4 pm. Ice cream after dinner. Refined carbs are often hidden in the foods we crave. ","https://medium.com/in-fitness-and-in-health/i-removed-sugar-from-my-diet-heres-what-happened-c022c57561ff?source=search_post---------28----------------------------"))
+
+
+        vlogs.add(HealthVlogs("https://miro.medium.com/fit/c/140/140/0*HXwnUZ4jSGGql7MQ","To Lose Weight, Follow The 1960 Diet","The average person weighs 30 pounds more today than in 1960 — I used to eat out with someone about 5' 3" ,"https://medium.com/in-fitness-and-in-health/to-lose-weight-follow-the-1960-diet-601ba9c65cc3?source=search_post---------34----------------------------"))
+
+
+                vlogs.add(HealthVlogs("https://miro.medium.com/fit/c/140/140/1*DCf7lloeWcQWXxaNf4m3Dw.jpeg","The 90-Day Ketogenic Diet & Intermittent Fasting Experiment: How Does It Work?","For the next 3 months, I decided to eat +160g of fat a day. Why would I do something this stupid, you ask? ","https://medium.com/the-ketogenic-diet-and-intermintent-fasting-bible/the-90-day-ketogenic-diet-intermittent-fasting-experiment-how-does-it-work-d40e9a78f2f1?source=search_post---------36----------------------------"))
+
+
+
+                vlogs.add(HealthVlogs("https://medium.com/swlh/tired-all-the-time-if-your-diet-is-the-problem-its-also-the-solution-ba74aab790db?source=search_post---------37----------------------------","Tired all the Time? If Your Diet is the Problem, it’s Also the Solution","https://medium.com/swlh/tired-all-the-time-if-your-diet-is-the-problem-its-also-the-solution-ba74aab790db?source=search_post---------37----------------------------","https://medium.com/swlh/tired-all-the-time-if-your-diet-is-the-problem-its-also-the-solution-ba74aab790db?source=search_post---------37----------------------------"))
+
+
+                vlogs.add(HealthVlogs("How to Lose Weight Without Dieting: An Interview with Darya Rose of Summer Tomato","The Art of Healthy Living","Dump the fad diets: The science of eating habits that really work might surprise you","https://medium.com/better-humans/how-to-eat-healthy-food-and-lose-weight-without-dieting-an-interview-with-darya-rose-of-summer-fc4310473e7a?source=search_post---------38----------------------------"))
+
+                vlogs.add(HealthVlogs("https://miro.medium.com/focal/140/140/50/44/1*rpiXUp3fJpDAl5cwc8f0kw.jpeg","How to Strengthen Your Immune System Through Diet","You’re not eating for this pandemic—you’re eating for the next one — This story is part of How to Eat in the New Normal, a weeklong series about how the Covid-19 pandemic is changing the way we eat, ","https://medium.com/elemental-by-medium/how-to-strengthen-your-immune-system-through-diet-b54d45c4e0f8?source=search_post---------39----------------------------"))
+
+                vlogs.add(HealthVlogs("https://miro.medium.com/fit/c/140/140/1*e7LJTZV28cU3njmoLS9WFg.jpeg","The Only Diet You’ll Ever Need to Get the Results You Crave","I was hiking through the woods when the thought hit me. To be honest, it was more like I was lost in the woods","https://medium.com/the-ascent/the-only-diet-youll-ever-need-to-get-the-results-you-crave-dd464e5e0eda?source=search_post---------41----------------------------"))
+
+
+
+
+                vlogs.add(HealthVlogs("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Joghurt.jpg/330px-Joghurt.jpg","Does Yogurt (or the Yogurt Diet) Aid Weight Loss?","This article explains everything you need to know about specific yogurt diets and whether this popular dairy product helps you lose weight.","https://www.healthline.com/nutrition/yogurt-diet"))
+
+                vlogs.add(HealthVlogs("https://www.healthline.com/nutrition/vegetarian-keto-diet-plan","Can You Go Vegetarian on the Keto Diet?","This article tells you everything you need to know about the vegetarian keto diet.","https://www.healthline.com/nutrition/vegetarian-keto-diet-plan"))
+
+
+                    vlogs.add(HealthVlogs("https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Dwayne_Johnson_2014_%28cropped%29.jpg/330px-Dwayne_Johnson_2014_%28cropped%29.jpg","What Is the Rock’s Diet and Workout Plan?","If you’ve ever wondered what it’s like to exercise and eat like the Rock, this article will tell you more about the food he eats and his workout plan.","https://www.healthline.com/nutrition/the-rock-diet"))
+
+                    vlogs.add(HealthVlogs("https://s20427.pcdn.co/wp-content/uploads/2018/08/A-Balanced-Diet-for-Men-in-Their-20s-768x528.jpg","10 of the Best Weight Loss Eating Patterns for Men","Here are 10 healthy diets that may help men lose weight.","https://www.healthline.com/nutrition/weight-loss-diet-plan-for-men"))
+
+
+                    vlogs.add(HealthVlogs("https://static.toiimg.com/thumb/msid-86012243,width-800,height-600,resizemode-75,imgsize-190362,pt-32,y_pad-40/86012243.jpg","https://www.healthline.com/nutrition/paleo-diet-meal-plan-and-menu","This article is a basic introduction to the paleo diet, providing a simple meal plan and other essential information.","https://www.healthline.com/nutrition/paleo-diet-meal-plan-and-menu"))
+
+
+
+                    vlogs.add(HealthVlogs("https://www.helpguide.org/wp-content/uploads/calories-counting-diet-food-control-and-weight-loss-concept-calorie-768.jpg","Healthy Eating","Confused by all the conflicting nutrition advice out there? These simple tips can show you how to plan, enjoy, and stick to a healthy diet.","https://www.helpguide.org/articles/healthy-eating/healthy-eating.htm"))
+
+                        vlogs.add(HealthVlogs("https://miro.medium.com/max/875/1*xhv5svso2nfZjiJzmez7Xw.jpeg","The Three Silent Assassins of our Diet","Six months of positive restriction will change your life","https://https://medium.com/bowel-movements/the-three-silent-assassins-of-our-diet-8b1725cb808c"))
+
+
+                        vlogs.add(HealthVlogs("https://miro.medium.com/fit/c/1175/500/1*eRqVMAUcfNWqDJrv2G9b5g.png","Everything You Need to Know About the Slow-carb diet","Getting Started with Lift’s slow carb Diet","https://medium.com/better-humans/a67062761d92"))
+
+                vlogs.add(HealthVlogs("https://miro.medium.com/fit/c/140/140/1*O6vVwnFT0AOvtN7CGBb_cw.jpeg","Lose a Lot of Weight by Making This One Tiny Change to Your Diet","An effective way to get back on track when you lose your way — How do you lose Pandemic pounds?","https://medium.com/in-fitness-and-in-health/how-one-tiny-change-in-your-diet-can-help-you-lose-a-lot-of-weight-40fe73730b00?source=search_post---------12----------------------------"))
+
+                    vlogs.add(HealthVlogs("https://miro.medium.com/focal/140/140/62/56/1*3ePOPbbLFISsBTQpbBsLpQ.jpeg","How To Leave Toxic Diet Culture Behind And Pursue Actual Health","The real data behind weight loss research points to a radically different approach to healthy living ","https://medium.com/better-humans/how-to-leave-toxic-diet-culture-behind-and-pursue-actual-health-a0aae77dd470?source=search_post---------14----------------------------"))
+
+                    vlogs.add(HealthVlogs("https://miro.medium.com/fit/c/140/140/1*bSPiuzjjtHbt3mJnIh2PLQ.jpeg","Why Fasting Diets Are About to Get More Extreme","Two weeks without food? Some scientists think it could help. — Every week, the Nuance will go beyond the basics, offering a deep and researched look at the latest science and expert insights on a buzzed-about health","https://medium.com/elemental-by-medium/why-fasting-diets-of-the-future-may-be-even-more-extreme-bf8db9befa70?source=search_post---------15----------------------------"))
+
+                    vlogs.add(HealthVlogs("https://miro.medium.com/fit/c/140/140/1*aHal_ZF1MBNg698J9Nbezg.png","I Lost 50 Pounds on a 5:2 Fasting Diet","This form of intermittent fasting helped me lose weight and, more importantly, kept it off ","https://medium.com/better-humans/the-anti-diet-that-changed-my-life-forever-d4b0923aba0d?source=search_post---------16----------------------------"))
+
+
+                    vlogs.add(HealthVlogs("https://miro.medium.com/focal/140/140/47/55/1*5piaBPbLGVCCvXnEjGUIGw.jpeg","If You Really Want to Optimize Your Diet, Focus on Fiber","Fiber isn’t sexy, but it’s the key to health — It’s a puzzle that doctors have long struggled to solve: Inflammatory bowel disease","https://medium.com/elemental-by-medium/if-you-really-want-to-optimize-your-diet-focus-on-fiber-c4ad231806f?source=search_post---------17----------------------------"))
+
+
+                    vlogs.add(HealthVlogs("https://miro.medium.com/focal/140/140/53/60/1*ySCrTsGWl0x2N7VYLc1vEQ.jpeg","Obesity Is About So Much More Than Diet and Exercise","An obesity specialist reveals four overlooked contributors — A recent study in the Journal of the American Medical Association should serve as an eye-opener to any American who has ever struggled with their weight ","https://medium.com/elemental-by-medium/the-diet-delusion-the-many-ways-in-which-were-underestimating-obesity-1190a0771c35?source=search_post---------19----------------------------"))
+
+
+                    vlogs.add(HealthVlogs("https://miro.medium.com/focal/140/140/50/7/1*z5aopNNN3DEBpUPWSx7CEw.jpeg","I’ve followed the Mediterranean diet for years. Here are 11 things I always have in my pantry and fridge.","The Mediterranean diet helped me learn how to cook.","https://medium.com/insider/ive-followed-the-mediterranean-diet-for-years-here-are-11-foods-i-always-stock-up-on-37d4e47a1b0e?source=search_post---------23----------------------------"))
+
+
+                    vlogs.add(HealthVlogs("https://miro.medium.com/fit/c/140/140/1*1B3SDpXwYP2-vNVXchAAQA.jpeg","Experts just ranked the best diets, and their choices will probably surprise you","Minor eating changes aren’t as satisfying, but they work.","https://medium.com/popular-science/experts-just-ranked-the-best-diets-and-their-choices-will-probably-surprise-you-188cdfa17260?source=search_post---------24----------------------------"))
+
+
+                    vlogs.add(HealthVlogs("https://miro.medium.com/fit/c/140/140/1*5rJOSaPboVXZtS_9uwD7vA@2x.jpeg","A sane and thoughtful approach to permanent weight loss.","Not Another Diet — Introduction — Eleven years ago, I set about tackling a long out-of-reach goal. In the course of a year, I lost 50 pounds.","https://medium.com/not-another-diet/not-another-diet-6a86abe25803?source=search_post---------26----------------------------"))
+
+
+                    vlogs.add(HealthVlogs("https://medium.com/in-fitness-and-in-health/i-removed-sugar-from-my-diet-heres-what-happened-c022c57561ff?source=search_post---------28----------------------------","I Removed Sugar From My Diet. Here’s What Happened","I’m not going back. — White bread for breakfast. Pasta for lunch. A treat around 4 pm. Ice cream after dinner. Refined carbs are often hidden in the foods we crave. ","https://medium.com/in-fitness-and-in-health/i-removed-sugar-from-my-diet-heres-what-happened-c022c57561ff?source=search_post---------28----------------------------"))
+
+
+                    vlogs.add(HealthVlogs("https://miro.medium.com/fit/c/140/140/0*HXwnUZ4jSGGql7MQ","To Lose Weight, Follow The 1960 Diet","The average person weighs 30 pounds more today than in 1960 — I used to eat out with someone about 5' 3 who stayed slim for the twenty years I knew her." ,"https://medium.com/in-fitness-and-in-health/to-lose-weight-follow-the-1960-diet-601ba9c65cc3?source=search_post---------34----------------------------"))
+
+
+                    vlogs.add(HealthVlogs("https://miro.medium.com/fit/c/140/140/1*DCf7lloeWcQWXxaNf4m3Dw.jpeg","The 90-Day Ketogenic Diet & Intermittent Fasting Experiment: How Does It Work?","For the next 3 months, I decided to eat +160g of fat a day. Why would I do something this stupid, you ask? ","https://medium.com/the-ketogenic-diet-and-intermintent-fasting-bible/the-90-day-ketogenic-diet-intermittent-fasting-experiment-how-does-it-work-d40e9a78f2f1?source=search_post---------36----------------------------"))
+
+
+
+                    vlogs.add(HealthVlogs("https://medium.com/swlh/tired-all-the-time-if-your-diet-is-the-problem-its-also-the-solution-ba74aab790db?source=search_post---------37----------------------------","Tired all the Time? If Your Diet is the Problem, it’s Also the Solution","https://medium.com/swlh/tired-all-the-time-if-your-diet-is-the-problem-its-also-the-solution-ba74aab790db?source=search_post---------37----------------------------","https://medium.com/swlh/tired-all-the-time-if-your-diet-is-the-problem-its-also-the-solution-ba74aab790db?source=search_post---------37----------------------------"))
+
+
+                    vlogs.add(HealthVlogs("How to Lose Weight Without Dieting: An Interview with Darya Rose of Summer Tomato","The Art of Healthy Living","Dump the fad diets: The science of eating habits that really work might surprise you","https://medium.com/better-humans/how-to-eat-healthy-food-and-lose-weight-without-dieting-an-interview-with-darya-rose-of-summer-fc4310473e7a?source=search_post---------38----------------------------"))
+
+                    vlogs.add(HealthVlogs("https://miro.medium.com/focal/140/140/50/44/1*rpiXUp3fJpDAl5cwc8f0kw.jpeg","How to Strengthen Your Immune System Through Diet","You’re not eating for this pandemic—you’re eating for the next one — This story is part of How to Eat in the New Normal, a weeklong series about how the Covid-19 pandemic is changing the way we eat, ","https://medium.com/elemental-by-medium/how-to-strengthen-your-immune-system-through-diet-b54d45c4e0f8?source=search_post---------39----------------------------"))
+
+                    vlogs.add(HealthVlogs("https://miro.medium.com/fit/c/140/140/1*e7LJTZV28cU3njmoLS9WFg.jpeg","The Only Diet You’ll Ever Need to Get the Results You Crave","I was hiking through the woods when the thought hit me. To be honest, it was more like I was lost in the woods","https://medium.com/the-ascent/the-only-diet-youll-ever-need-to-get-the-results-you-crave-dd464e5e0eda?source=search_post---------41----------------------------"))
+
+
+
+
+                    vlogs.add(HealthVlogs("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Joghurt.jpg/330px-Joghurt.jpg","Does Yogurt (or the Yogurt Diet) Aid Weight Loss?","This article explains everything you need to know about specific yogurt diets and whether this popular dairy product helps you lose weight.","https://www.healthline.com/nutrition/yogurt-diet"))
+
+                    vlogs.add(HealthVlogs("https://www.healthline.com/nutrition/vegetarian-keto-diet-plan","Can You Go Vegetarian on the Keto Diet?","This article tells you everything you need to know about the vegetarian keto diet.","https://www.healthline.com/nutrition/vegetarian-keto-diet-plan"))
+
+
+                        vlogs.add(HealthVlogs("https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Dwayne_Johnson_2014_%28cropped%29.jpg/330px-Dwayne_Johnson_2014_%28cropped%29.jpg","What Is the Rock’s Diet and Workout Plan?","If you’ve ever wondered what it’s like to exercise and eat like the Rock, this article will tell you more about the food he eats and his workout plan.","https://www.healthline.com/nutrition/the-rock-diet"))
+
+                        vlogs.add(HealthVlogs("https://s20427.pcdn.co/wp-content/uploads/2018/08/A-Balanced-Diet-for-Men-in-Their-20s-768x528.jpg","10 of the Best Weight Loss Eating Patterns for Men","Here are 10 healthy diets that may help men lose weight.","https://www.healthline.com/nutrition/weight-loss-diet-plan-for-men"))
+
+
+                        vlogs.add(HealthVlogs("https://static.toiimg.com/thumb/msid-86012243,width-800,height-600,resizemode-75,imgsize-190362,pt-32,y_pad-40/86012243.jpg","https://www.healthline.com/nutrition/paleo-diet-meal-plan-and-menu","This article is a basic introduction to the paleo diet, providing a simple meal plan and other essential information.","https://www.healthline.com/nutrition/paleo-diet-meal-plan-and-menu"))
+
+
+
+                        vlogs.add(HealthVlogs("https://www.helpguide.org/wp-content/uploads/calories-counting-diet-food-control-and-weight-loss-concept-calorie-768.jpg","Healthy Eating","Confused by all the conflicting nutrition advice out there? These simple tips can show you how to plan, enjoy, and stick to a healthy diet.","https://www.helpguide.org/articles/healthy-eating/healthy-eating.htm"))
 
 
 
