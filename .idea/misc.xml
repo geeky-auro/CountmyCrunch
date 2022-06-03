@@ -12,6 +12,7 @@
         <entry key="..\:/Android Projects/CountmyCrunch/app/src/main/res/layout/activity_health_vlogs.xml" value="0.36666666666666664" />
         <entry key="..\:/Android Projects/CountmyCrunch/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Android Projects/CountmyCrunch/app/src/main/res/layout/activity_main2.xml" value="0.25" />
+        <entry key="..\:/Android Projects/CountmyCrunch/app/src/main/res/layout/activity_recipe_detail.xml" value="0.35260416666666666" />
         <entry key="..\:/Android Projects/CountmyCrunch/app/src/main/res/layout/activity_user_manual.xml" value="0.36666666666666664" />
         <entry key="..\:/Android Projects/CountmyCrunch/app/src/main/res/layout/bmi_layout_main.xml" value="0.33" />
         <entry key="..\:/Android Projects/CountmyCrunch/app/src/main/res/layout/bmi_results.xml" value="0.36666666666666664" />
@@ -29,6 +30,9 @@
         <entry key="..\:/Android Projects/CountmyCrunch/app/src/main/res/layout/item_view_pager.xml" value="0.36666666666666664" />
         <entry key="..\:/Android Projects/CountmyCrunch/app/src/main/res/layout/item_vlogs.xml" value="0.36666666666666664" />
         <entry key="..\:/Android Projects/CountmyCrunch/app/src/main/res/layout/item_weight.xml" value="0.2296195652173913" />
+        <entry key="..\:/Android Projects/CountmyCrunch/app/src/main/res/layout/list_random.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android Projects/CountmyCrunch/app/src/main/res/layout/spinner_inner_text.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android Projects/CountmyCrunch/app/src/main/res/layout/spinner_text.xml" value="0.36666666666666664" />
         <entry key="..\:/Android Projects/CountmyCrunch/app/src/main/res/layout/task_list_item.xml" value="0.3625" />
         <entry key="..\:/Android Projects/CountmyCrunch/app/src/main/res/layout/title_error.xml" value="0.23550724637681159" />
         <entry key="..\:/Android Projects/CountmyCrunch/app/src/main/res/menu/buttom_nev_menu.xml" value="0.20520833333333333" />
