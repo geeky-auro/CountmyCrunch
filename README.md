@@ -17,6 +17,9 @@ To determine your level of body fat.In some cases, it can help a doctor determin
 CountMyCrunch is an Indian digital health and wellness platform that provides services such as calorie tracking, one-on-one nutrition and fitness tracking. It provides BMI finder, calorie tracker, and personalized calorie goals to aid in the consumer`s fitness journey. They have the intuitive option to log their weight logs for tracking progress too.Developed for Android platforms, the app takes a holistic lifestyle tracking approach to keep users engaged and motivated. Reaching fitness goals has never been this easy!!
 ### Project Type-**Android Software Development**
 
+## Contributions
+Contributions are always welcome. Please fork this repository and contribute using pull requests. The pull requests will be thoroughly assessed and if found significant will be accepted.
+
 
 License
 ---
