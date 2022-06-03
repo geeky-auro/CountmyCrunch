@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CountmyCrunch</string>
+    <string name="app_name">CountMyCrunch</string>
     <string name="string_age">Enter your age in Years</string>
     <string name="string_weight">Enter your Weight in Kg</string>
     <string name="inches">inches</string>

@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CountmyCrunch">
         <activity
+            android:name=".Health_Vlogs"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustPan">
@@ -25,9 +28,7 @@
             android:exported="false" />
         <activity
             android:name=".DashBoard.DashBoard"
-            android:exported="false" />
-
-        <!-- Register up your Content Provider Here! -->
+            android:exported="false" /> <!-- Register up your Content Provider Here! -->
         <provider
             android:name="com.aurosaswatraj.countmycrunch.ProgressTracking.AppProvider"
             android:authorities="com.aurosaswatraj.countmycrunch.ProgressTracking.provider"

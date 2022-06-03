@@ -8,7 +8,6 @@ class VlogContents(content_vlogs:ArrayList<HealthVlogs>) {
 
     fun initialize_vlogs(){
 
-
         vlogs.add(HealthVlogs("https://miro.medium.com/max/700/1*HKFhv25tbp-Qvrjvw9Pi8g.png","Chris Hemsworth Is Exactly What's Wrong With the Fitness Industry","Think back to the early 90s when television bombarded us with fitness infomercials. They sold us the idea that a simple piece of fitness equipment would give us abs in a matter of just five minutes a day","https://medium.com/better-marketing/chris-hemsworth-is-exactly-whats-wrong-with-the-fitness-industry-b9a74d0fe007"))
 
         vlogs.add(HealthVlogs("https://miro.medium.com/max/700/1*ipVD-Iripp9eR_A6Vr5rEA.jpeg","This Meditation Exercise Builds Mental Muscle and Cures Procrastination","Meditation can help solve procrastination—it’s like mental pushups to help you improve your focus.Imagine always having the strongest mind in the room.More importantly, you’d be grounded and unflappable. No emotion would corrupt your judgement. No distraction would diminish your focus.This is trainable just like when you hit the gym.","https://medium.com/better-humans/this-meditation-exercise-builds-mental-muscle-and-cures-procrastination-2f15faade9f3"))
