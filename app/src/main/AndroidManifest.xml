@@ -10,8 +10,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CountmyCrunch">
+
         <activity
-            android:name=".Health_Vlogs"
+            android:name=".Fooding.Foodz"
+            android:exported="false" />
+
+        <activity
+            android:name=".HealthBlogs.Health_Vlogs"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
