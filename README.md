@@ -28,8 +28,8 @@ This Application is licensed under the [Apache Software License, Version 2.0](ht
 
 See [`LICENSE`](LICENSE) for full of the license text.
 
-    Copyright (C) 2022 AURO SASWAT RAJ
-
+    2022 © AURO SASWAT RAJ
+    
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
     You may obtain a copy of the License at
