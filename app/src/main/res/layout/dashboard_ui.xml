@@ -125,7 +125,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/contributeCard"
+            android:id="@+id/bmi_calc"
             android:layout_width="140dp"
             android:layout_height="128dp"
             android:layout_margin="8dp"
@@ -173,7 +173,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/practiceCard"
+            android:id="@+id/calorie_count"
             android:layout_width="140dp"
             android:layout_height="128dp"
             android:layout_margin="8dp"
@@ -234,7 +234,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/learnCard"
+            android:id="@+id/foodie"
             android:layout_width="140dp"
             android:layout_height="128dp"
             android:layout_margin="8dp"
@@ -282,7 +282,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/interestsCard"
+            android:id="@+id/calorie_track"
             android:layout_width="140dp"
             android:layout_height="128dp"
             android:layout_margin="8dp"
@@ -342,7 +342,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/helpCard"
+            android:id="@+id/health_vlogs"
             android:layout_width="140dp"
             android:layout_height="128dp"
             android:layout_margin="8dp"
@@ -390,7 +390,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/settingsCard"
+            android:id="@+id/chronometer"
             android:layout_width="140dp"
             android:layout_height="128dp"
             android:layout_margin="8dp"

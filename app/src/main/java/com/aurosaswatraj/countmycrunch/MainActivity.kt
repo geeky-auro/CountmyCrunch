@@ -2,13 +2,11 @@ package com.aurosaswatraj.countmycrunch
 
 
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
 import android.view.Menu
 import android.view.MenuInflater
-
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.aurosaswatraj.countmycrunch.BMIFinder.BMIFinder
@@ -16,12 +14,8 @@ import com.aurosaswatraj.countmycrunch.CalorieCounter.CalorieData
 import com.aurosaswatraj.countmycrunch.CalorieCounter.CalorieOutputFragment
 import com.aurosaswatraj.countmycrunch.CalorieCounter.Calorie_Calculator
 import com.aurosaswatraj.countmycrunch.CalorieCounter.FragmentCalorieOutput
-import com.aurosaswatraj.countmycrunch.DashBoard.DashBoard
 import com.aurosaswatraj.countmycrunch.Dialogs.UserManualDialog
-import com.aurosaswatraj.countmycrunch.Fooding.Foodz
 import com.aurosaswatraj.countmycrunch.ProgressTracking.MainActivityFragment
-import com.aurosaswatraj.countmycrunch.ProgressTracking.Track
-
 import com.thecode.aestheticdialogs.*
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -29,16 +23,42 @@ import kotlinx.android.synthetic.main.activity_main.*
 private const val TAG="MainActivity"
 class MainActivity : AppCompatActivity(),FragmentCalorieOutput,Calorie_Calculator.OnSaveClicked{
 
+    private var id=0
+
     private var fragmentB:CalorieOutputFragment?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        initialInitialization(savedInstanceState)
 
-        intent = Intent(applicationContext, DashBoard::class.java)
-        startActivity(intent)
+//        dialog = new ProgressDialog(this);
+//        dialog.setTitle("Please wait...");
+        id =intent.getIntExtra("id",-1)
+        initialInitialization(savedInstanceState,id)
+
+        var itemID:Int=id
+        Log.d(TAG," Id is $itemID")
+        var selectedFragment:Fragment?
+        when(itemID){
+            1->{
+                selectedFragment=BMIFinder()
+                supportFragmentManager.beginTransaction().replace(R.id.fragment_container_view,
+                    selectedFragment
+                ).commit()
+            }
+            2->{
+                selectedFragment=Calorie_Calculator()
+                supportFragmentManager.beginTransaction().replace(R.id.fragment_container_view,
+                    selectedFragment
+                ).commit()
+            }
+            3->{
+                selectedFragment=MainActivityFragment()
+                supportFragmentManager.beginTransaction().replace(R.id.fragment_container_view,selectedFragment)
+                    .commit()
+            }
+        }
 
 
 
@@ -52,22 +72,24 @@ class MainActivity : AppCompatActivity(),FragmentCalorieOutput,Calorie_Calculato
 //    TODO:Implement a graph :https://www.mobindustry.net/blog/how-to-quickly-implement-beautiful-charts-in-your-android-app/
 
 
-    private fun initialInitialization(savedInstanceState: Bundle?) {
+    private fun initialInitialization(savedInstanceState: Bundle?,id: Int) {
         fragmentB=CalorieOutputFragment()
 
         UserManualDialog().showDialog(this)
 
         if(savedInstanceState==null){
-            supportFragmentManager.beginTransaction().replace(R.id.fragment_container_view,
-                BMIFinder()).commit()
+            bottomNaviView(id)
+
         }
 
-        bottomNaviView()
+
     }
 
-    private fun bottomNaviView(){
+    private fun bottomNaviView(id:Int){
         bottomNavigationView.setOnItemSelectedListener {
-            val selectedFragment:Fragment?
+            var selectedFragment:Fragment?
+
+
             when (it.itemId) {
                 R.id.BMI1->{selectedFragment=BMIFinder()
                     supportFragmentManager.beginTransaction().replace(R.id.fragment_container_view,
@@ -81,8 +103,6 @@ class MainActivity : AppCompatActivity(),FragmentCalorieOutput,Calorie_Calculato
                 }
                 R.id.TRACKER1->{
 
-
-//                    cominGsoon()
                 selectedFragment=MainActivityFragment()
                     supportFragmentManager.beginTransaction().replace(R.id.fragment_container_view,selectedFragment)
                         .commit()

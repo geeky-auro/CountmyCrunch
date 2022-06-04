@@ -12,15 +12,27 @@
         android:theme="@style/Theme.CountmyCrunch">
         <activity
             android:name=".Fooding.RecipeDetailActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan"/>
         <activity
             android:name=".Fooding.Foodz"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan"/>
         <activity
             android:name=".HealthBlogs.Health_Vlogs"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan"/>
         <activity
             android:name=".MainActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity
+            android:name=".manuals.UserManual"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name=".DashBoard.DashBoard"
             android:exported="true"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>
@@ -28,13 +40,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".manuals.UserManual"
-            android:exported="false" />
-        <activity
-            android:name=".DashBoard.DashBoard"
-            android:exported="false" /> <!-- Register up your Content Provider Here! -->
+        </activity> <!-- Register up your Content Provider Here! -->
         <provider
             android:name="com.aurosaswatraj.countmycrunch.ProgressTracking.AppProvider"
             android:authorities="com.aurosaswatraj.countmycrunch.ProgressTracking.provider"

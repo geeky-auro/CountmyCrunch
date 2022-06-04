@@ -20,11 +20,13 @@
     <!--  UI Dashboard  -->
     <string name="bmi_calculator">BMI Calculator</string>
     <string name="calorie_counter">Calorie Counter</string>
-    <string name="foodzee">Foodzee</string>
+    <string name="foodzee">Foodie</string>
     <string name="health_vlogs">Health Vlogs</string>
     <string name="stopwatch">Chronometer</string>
     <string name="calorie_tracker">Calorie Tracker</string>
 
+
+<!--  Calorie Counter Fields  -->
     <string-array name="Activity_Level">
         <item>Sedentary(little or no exercise)</item>
         <item>Light(exercise 1–3 times/week)</item>
@@ -32,9 +34,11 @@
         <item>Active(intense exercise 6–7 times/week)</item>
     </string-array>
 
+
     <string name="app_moto">Don\'t just count your calories, make your calories count!</string>
 
 
+<!--  Foodzie  -->
     <string name="api_key">934aae548ca0482fb60852753c5e5e25</string>
     <string name="height">HEIGHT:</string>
 
