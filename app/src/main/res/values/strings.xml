@@ -16,7 +16,14 @@
     <string name="bmi">BMI=</string>
     <string name="age">Age:</string>
     <string name="weight">Weight:</string>
-    <string name="height">HEIGHT:</string>
+
+    <!--  UI Dashboard  -->
+    <string name="bmi_calculator">BMI Calculator</string>
+    <string name="calorie_counter">Calorie Counter</string>
+    <string name="foodzee">Foodzee</string>
+    <string name="health_vlogs">Health Vlogs</string>
+    <string name="stopwatch">Chronometer</string>
+    <string name="calorie_tracker">Calorie Tracker</string>
 
     <string-array name="Activity_Level">
         <item>Sedentary(little or no exercise)</item>
@@ -29,6 +36,7 @@
 
 
     <string name="api_key">934aae548ca0482fb60852753c5e5e25</string>
+    <string name="height">HEIGHT:</string>
 
     <string-array name="tags">
         <item>Main course</item>
