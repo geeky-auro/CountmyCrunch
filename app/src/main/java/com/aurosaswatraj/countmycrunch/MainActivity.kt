@@ -47,6 +47,7 @@ class MainActivity : AppCompatActivity(),FragmentCalorieOutput,Calorie_Calculato
                     selectedFragment
                 ).commit()
             }
+
             2->{
                 selectedFragment=Calorie_Calculator()
                 supportFragmentManager.beginTransaction().replace(R.id.fragment_container_view,
