@@ -25,6 +25,8 @@
         <item>Active(intense exercise 6–7 times/week)</item>
     </string-array>
 
+    <string name="app_moto">Don\'t just count your calories, make your calories count!</string>
+
 
     <string name="api_key">934aae548ca0482fb60852753c5e5e25</string>
 

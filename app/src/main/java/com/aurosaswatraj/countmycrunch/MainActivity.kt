@@ -16,6 +16,7 @@ import com.aurosaswatraj.countmycrunch.CalorieCounter.CalorieData
 import com.aurosaswatraj.countmycrunch.CalorieCounter.CalorieOutputFragment
 import com.aurosaswatraj.countmycrunch.CalorieCounter.Calorie_Calculator
 import com.aurosaswatraj.countmycrunch.CalorieCounter.FragmentCalorieOutput
+import com.aurosaswatraj.countmycrunch.DashBoard.DashBoard
 import com.aurosaswatraj.countmycrunch.Dialogs.UserManualDialog
 import com.aurosaswatraj.countmycrunch.Fooding.Foodz
 import com.aurosaswatraj.countmycrunch.ProgressTracking.MainActivityFragment
@@ -29,16 +30,17 @@ private const val TAG="MainActivity"
 class MainActivity : AppCompatActivity(),FragmentCalorieOutput,Calorie_Calculator.OnSaveClicked{
 
     private var fragmentB:CalorieOutputFragment?=null
-    private var mTwoPane = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-//        TODO: Remove the comment
+
 //        initialInitialization(savedInstanceState)
 
-        intent = Intent(applicationContext, Foodz::class.java)
+        intent = Intent(applicationContext, DashBoard::class.java)
         startActivity(intent)
+
+
 
 
 
@@ -48,16 +50,6 @@ class MainActivity : AppCompatActivity(),FragmentCalorieOutput,Calorie_Calculato
 
 
 //    TODO:Implement a graph :https://www.mobindustry.net/blog/how-to-quickly-implement-beautiful-charts-in-your-android-app/
-
-
-
-    private fun taskEditRequest(task: Track?){
-
-    }
-
-
-
-
 
 
     private fun initialInitialization(savedInstanceState: Bundle?) {
