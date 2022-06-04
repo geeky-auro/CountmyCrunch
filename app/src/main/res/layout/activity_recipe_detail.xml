@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E64A19"
+    android:background="#E61938"
     tools:context=".Fooding.RecipeDetailActivity">
 
     <ScrollView
@@ -51,7 +51,7 @@
                 android:id="@+id/textView_meal_source"
                 android:layout_alignParentStart="true"
                 android:text="Source Name"
-                android:textSize="12sp"
+                android:textSize="10sp"
                 android:fontFamily="@font/carter_one"
                 android:gravity="center"
                 android:padding="8dp"
@@ -69,7 +69,7 @@
                 android:id="@+id/button_nutrition"
                 android:text="See Nutrition Chart"
                 android:textAllCaps="false"
-                android:backgroundTint="#388E3C"
+                android:backgroundTint="#8E3883"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <TextView

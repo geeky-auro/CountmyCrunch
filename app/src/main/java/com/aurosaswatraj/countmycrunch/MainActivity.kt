@@ -2,6 +2,7 @@ package com.aurosaswatraj.countmycrunch
 
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
@@ -16,6 +17,7 @@ import com.aurosaswatraj.countmycrunch.CalorieCounter.CalorieOutputFragment
 import com.aurosaswatraj.countmycrunch.CalorieCounter.Calorie_Calculator
 import com.aurosaswatraj.countmycrunch.CalorieCounter.FragmentCalorieOutput
 import com.aurosaswatraj.countmycrunch.Dialogs.UserManualDialog
+import com.aurosaswatraj.countmycrunch.Fooding.Foodz
 import com.aurosaswatraj.countmycrunch.ProgressTracking.MainActivityFragment
 import com.aurosaswatraj.countmycrunch.ProgressTracking.Track
 
@@ -32,7 +34,11 @@ class MainActivity : AppCompatActivity(),FragmentCalorieOutput,Calorie_Calculato
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        initialInitialization(savedInstanceState)
+//        TODO: Remove the comment
+//        initialInitialization(savedInstanceState)
+
+        intent = Intent(applicationContext, Foodz::class.java)
+        startActivity(intent)
 
 
 

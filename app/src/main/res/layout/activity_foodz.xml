@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E64A19"
+    android:background="#E61938"
     android:orientation="vertical"
     tools:context=".Fooding.Foodz">
     <androidx.appcompat.widget.Toolbar
@@ -39,7 +39,7 @@
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.cardview.widget.CardView
-        app:cardBackgroundColor="#F4511E"
+        app:cardBackgroundColor="#FF1744"
         android:layout_margin="12dp"
         app:cardElevation="8dp"
         android:layout_width="match_parent"
@@ -48,7 +48,7 @@
             android:id="@+id/searchView_home"
             app:searchIcon="@drawable/ic_search"
             app:iconifiedByDefault="false"
-            app:queryHint="Search Your Quick Meals..."
+            app:queryHint="Search Your Food...!"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
     </androidx.cardview.widget.CardView>

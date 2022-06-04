@@ -2,6 +2,8 @@ package com.aurosaswatraj.countmycrunch.Fooding;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -31,6 +33,10 @@ public class NutritionDialog extends Dialog implements View.OnClickListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+        Window window = this.getWindow();
+        window.setStatusBarColor(Color.parseColor("#C51162"));
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.nutrition_dialog);

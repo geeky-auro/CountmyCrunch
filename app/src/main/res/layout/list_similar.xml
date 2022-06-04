@@ -15,14 +15,14 @@
         <TextView
             android:id="@+id/textView_similar_title"
             android:text="Name"
-            android:textColor="#F4511E"
+            android:textColor="#AE0A23"
             android:textAlignment="center"
             android:textSize="16sp"
             android:singleLine="true"
             android:ellipsize="marquee"
             android:marqueeRepeatLimit="marquee_forever"
             android:scrollHorizontally="true"
-            android:textStyle="normal"
+            android:textStyle="bold"
             android:padding="4dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
