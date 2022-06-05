@@ -18,15 +18,15 @@ public class UserManualDialog {
                 .setTitle("User Guide")
                 .setCancelable(true)
                 .setMessage("What is CountMyCrunch All about..! Let’s Know more about the insights of our application.")
-                .setDialogBackgroundColor(Color.parseColor("#DEBA9D"))
-                .addButton("BMI Calculator", -1, Color.parseColor("#774E4E"), CFAlertDialog.CFAlertActionStyle.POSITIVE, CFAlertDialog.CFAlertActionAlignment.JUSTIFIED, (dialog, which) -> {
+                .setDialogBackgroundColor(Color.WHITE)
+                .addButton("BMI Calculator", Color.WHITE, Color.BLACK, CFAlertDialog.CFAlertActionStyle.POSITIVE, CFAlertDialog.CFAlertActionAlignment.JUSTIFIED, (dialog, which) -> {
                     String strName = "https://medium.com/@aurosaswatraj/user-manual-of-bmi-calculator-22ce96dd09c7";
                     i.putExtra("STRING_I_NEED", strName);
                     context.startActivity(i);
                     dialog.dismiss();
                 })
 
-                .addButton("Calorie Counter", -1, Color.parseColor("#774E4E"), CFAlertDialog.CFAlertActionStyle.POSITIVE, CFAlertDialog.CFAlertActionAlignment.JUSTIFIED, (dialog, which) -> {
+                .addButton("Calorie Counter", Color.WHITE, Color.BLACK, CFAlertDialog.CFAlertActionStyle.POSITIVE, CFAlertDialog.CFAlertActionAlignment.JUSTIFIED, (dialog, which) -> {
                     String strName = "https://medium.com/@aurosaswatraj/user-manual-of-calorie-counter-972df34a8009";
                     i.putExtra("STRING_I_NEED", strName);
                     context.startActivity(i);
