@@ -11,35 +11,39 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CountmyCrunch">
         <activity
-            android:name=".Fooding.RecipeDetailActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustPan"/>
-        <activity
-            android:name=".Fooding.Foodz"
-            android:exported="false"
-            android:windowSoftInputMode="adjustPan"/>
-        <activity
-            android:name=".HealthBlogs.Health_Vlogs"
-            android:exported="false"
-            android:windowSoftInputMode="adjustPan"/>
-        <activity
-            android:name=".MainActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustPan">
-        </activity>
-        <activity
-            android:name=".manuals.UserManual"
-            android:exported="false"
-            android:windowSoftInputMode="adjustPan"/>
-        <activity
-            android:name=".DashBoard.DashBoard"
-            android:exported="true"
-            android:windowSoftInputMode="adjustPan">
+            android:name=".introScreen.IntroActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".Fooding.RecipeDetailActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fooding.Foodz"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".HealthBlogs.Health_Vlogs"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".manuals.UserManual"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".DashBoard.DashBoard"
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan">
+
         </activity> <!-- Register up your Content Provider Here! -->
         <provider
             android:name="com.aurosaswatraj.countmycrunch.ProgressTracking.AppProvider"

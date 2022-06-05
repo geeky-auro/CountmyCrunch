@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android Projects/CountmyCrunch/app/src/main/res/drawable/btn_gradient_style.xml" value="0.1395" />
         <entry key="..\:/Android Projects/CountmyCrunch/app/src/main/res/drawable/circle.xml" value="0.3828125" />
         <entry key="..\:/Android Projects/CountmyCrunch/app/src/main/res/drawable/custom_rectangle.xml" value="0.211" />
         <entry key="..\:/Android Projects/CountmyCrunch/app/src/main/res/drawable/ic_baseline_circle_24.xml" value="0.1965" />
@@ -11,6 +12,7 @@
         <entry key="..\:/Android Projects/CountmyCrunch/app/src/main/res/layout-v28/fragment_b_m_i_finder.xml" value="0.2536231884057971" />
         <entry key="..\:/Android Projects/CountmyCrunch/app/src/main/res/layout/activity_foodz.xml" value="0.36666666666666664" />
         <entry key="..\:/Android Projects/CountmyCrunch/app/src/main/res/layout/activity_health_vlogs.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android Projects/CountmyCrunch/app/src/main/res/layout/activity_intro.xml" value="0.23232323232323232" />
         <entry key="..\:/Android Projects/CountmyCrunch/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Android Projects/CountmyCrunch/app/src/main/res/layout/activity_main2.xml" value="0.25" />
         <entry key="..\:/Android Projects/CountmyCrunch/app/src/main/res/layout/activity_recipe_detail.xml" value="0.35260416666666666" />
@@ -31,6 +33,7 @@
         <entry key="..\:/Android Projects/CountmyCrunch/app/src/main/res/layout/item_view_pager.xml" value="0.36666666666666664" />
         <entry key="..\:/Android Projects/CountmyCrunch/app/src/main/res/layout/item_vlogs.xml" value="0.36666666666666664" />
         <entry key="..\:/Android Projects/CountmyCrunch/app/src/main/res/layout/item_weight.xml" value="0.2296195652173913" />
+        <entry key="..\:/Android Projects/CountmyCrunch/app/src/main/res/layout/layout_screen.xml" value="0.36666666666666664" />
         <entry key="..\:/Android Projects/CountmyCrunch/app/src/main/res/layout/list_ingredients.xml" value="0.36666666666666664" />
         <entry key="..\:/Android Projects/CountmyCrunch/app/src/main/res/layout/list_instructions.xml" value="0.3" />
         <entry key="..\:/Android Projects/CountmyCrunch/app/src/main/res/layout/list_instructions_step_items.xml" value="0.36666666666666664" />

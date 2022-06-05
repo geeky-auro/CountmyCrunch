@@ -50,6 +50,9 @@ dependencies {
     implementation 'com.google.android.material:material:1.6.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
 
+//    Animations
+    implementation 'com.github.faruktoptas:FancyShowCaseView:1.3.9'
+
 
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
     implementation 'androidx.core:core-ktx:1.7.0'

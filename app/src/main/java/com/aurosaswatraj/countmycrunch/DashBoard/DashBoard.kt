@@ -11,6 +11,7 @@ import com.aurosaswatraj.countmycrunch.MainActivity
 import com.aurosaswatraj.countmycrunch.R
 import com.thecode.aestheticdialogs.*
 import kotlinx.android.synthetic.main.dashboard_ui.*
+import me.toptas.fancyshowcase.FancyShowCaseView
 
 class DashBoard : AppCompatActivity() {
 
@@ -22,6 +23,9 @@ class DashBoard : AppCompatActivity() {
         val window = this.window
         window.statusBarColor = Color.parseColor("#2f3640")
         fragment_no=0
+
+        showSomeSpotLight()
+
 
         helpme.setOnClickListener {
             UserManualDialog().showDialog(this)
@@ -61,6 +65,16 @@ class DashBoard : AppCompatActivity() {
         }
 
 
+    }
+
+    private fun showSomeSpotLight(){
+
+        FancyShowCaseView.Builder(this)
+            .focusOn(helpme)
+            .title("CountMyCrunch HelpDesk\nGet Well in a personal way What is CountMyCrunch All about..! Let’s Know more about the insights of our application.")
+            .titleStyle(R.style.spotLightTitle, Gravity.CENTER_VERTICAL)
+            .build()
+            .show()
     }
 
 

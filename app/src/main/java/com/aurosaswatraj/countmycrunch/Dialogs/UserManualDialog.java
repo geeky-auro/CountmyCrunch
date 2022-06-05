@@ -17,7 +17,6 @@ public class UserManualDialog {
                 .setDialogStyle(CFAlertDialog.CFAlertStyle.BOTTOM_SHEET)
                 .setTitle("User Guide")
                 .setCancelable(true)
-                .setMessage("What is CountMyCrunch All about..! Let’s Know more about the insights of our application.")
                 .setDialogBackgroundColor(Color.WHITE)
                 .addButton("BMI Calculator", Color.WHITE, Color.BLACK, CFAlertDialog.CFAlertActionStyle.POSITIVE, CFAlertDialog.CFAlertActionAlignment.JUSTIFIED, (dialog, which) -> {
                     String strName = "https://medium.com/@aurosaswatraj/user-manual-of-bmi-calculator-22ce96dd09c7";
