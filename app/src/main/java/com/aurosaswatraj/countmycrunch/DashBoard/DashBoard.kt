@@ -7,6 +7,8 @@ import android.view.Gravity
 import androidx.appcompat.app.AppCompatActivity
 import com.aurosaswatraj.countmycrunch.Dialogs.UserManualDialog
 import com.aurosaswatraj.countmycrunch.Fooding.Foodz
+import com.aurosaswatraj.countmycrunch.HealthBlogs.HealthVlogActivity
+import com.aurosaswatraj.countmycrunch.HealthBlogs.HealthVlogs
 import com.aurosaswatraj.countmycrunch.MainActivity
 import com.aurosaswatraj.countmycrunch.R
 import com.thecode.aestheticdialogs.*
@@ -55,7 +57,8 @@ class DashBoard : AppCompatActivity() {
         }
 
         health_vlogs.setOnClickListener {
-            cominGsoon()
+            intent=Intent(applicationContext,HealthVlogActivity::class.java)
+            startActivity(intent)
         }
 
 

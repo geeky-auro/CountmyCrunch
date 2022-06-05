@@ -2,11 +2,9 @@ package com.aurosaswatraj.countmycrunch.HealthBlogs
 
 
 
-class VlogContents(content_vlogs:ArrayList<HealthVlogs>) {
+class VlogContents() {
 
-    val vlogs=content_vlogs
-
-    fun initialize_vlogs(){
+    fun initialize_vlogs(vlogs:ArrayList<HealthVlogs>){
 
         vlogs.add(HealthVlogs("https://miro.medium.com/max/700/1*HKFhv25tbp-Qvrjvw9Pi8g.png","Chris Hemsworth Is Exactly What's Wrong With the Fitness Industry","Think back to the early 90s when television bombarded us with fitness infomercials. They sold us the idea that a simple piece of fitness equipment would give us abs in a matter of just five minutes a day","https://medium.com/better-marketing/chris-hemsworth-is-exactly-whats-wrong-with-the-fitness-industry-b9a74d0fe007"))
 

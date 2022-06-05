@@ -28,7 +28,7 @@
             android:exported="false"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".HealthBlogs.Health_Vlogs"
+            android:name=".HealthBlogs.HealthVlogActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustPan" />
         <activity
