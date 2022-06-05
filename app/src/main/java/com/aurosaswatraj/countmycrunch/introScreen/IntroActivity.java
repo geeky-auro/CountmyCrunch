@@ -37,11 +37,12 @@ public class IntroActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_intro);
-
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.activity_intro);
+
+
 
         if (restorePrefData()) {
 
@@ -49,7 +50,7 @@ public class IntroActivity extends AppCompatActivity {
             startActivity(mainActivity);
             finish();
         }
-        Objects.requireNonNull(getSupportActionBar()).hide();
+
 
         // ini views
         btnNext = findViewById(R.id.btn_next);

@@ -18,14 +18,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_next"
         android:layout_width="wrap_content"
+        app:elevation="50dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:layout_marginBottom="16dp"
-        android:background="#fff"
+        app:backgroundTint="#fff"
         android:drawableRight="@drawable/ic_arrow_forward_black_24dp"
         android:drawableTint="@color/gradient_start_color"
         android:text="Next"
@@ -33,7 +34,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <com.google.android.material.tabs.TabItem
+    <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -48,7 +49,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:tabBackground="@drawable/indicator_selector">
 
-    </com.google.android.material.tabs.TabItem>
+    </com.google.android.material.tabs.TabLayout>
 
     <Button
         android:visibility="invisible"
