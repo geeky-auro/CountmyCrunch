@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.os.Bundle
 import android.view.Gravity
 import androidx.appcompat.app.AppCompatActivity
+import com.aurosaswatraj.countmycrunch.Dialogs.UserManualDialog
 import com.aurosaswatraj.countmycrunch.Fooding.Foodz
 import com.aurosaswatraj.countmycrunch.MainActivity
 import com.aurosaswatraj.countmycrunch.R
@@ -21,6 +22,10 @@ class DashBoard : AppCompatActivity() {
         val window = this.window
         window.statusBarColor = Color.parseColor("#2f3640")
         fragment_no=0
+
+        helpme.setOnClickListener {
+            UserManualDialog().showDialog(this)
+        }
 
         bmi_calc.setOnClickListener {
             fragment_no=1
@@ -45,22 +50,15 @@ class DashBoard : AppCompatActivity() {
             startActivity(intent)
         }
 
-
-
-        chronometer.setOnClickListener {
+        health_vlogs.setOnClickListener {
             cominGsoon()
         }
 
 
 
-
-
-
-
-
-
-
-
+        chronometer.setOnClickListener {
+            cominGsoon()
+        }
 
 
     }

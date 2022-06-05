@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity(),FragmentCalorieOutput,Calorie_Calculato
     private fun initialInitialization(savedInstanceState: Bundle?,id: Int) {
         fragmentB=CalorieOutputFragment()
 
-        UserManualDialog().showDialog(this)
+
 
         if(savedInstanceState==null){
             bottomNaviView(id)
