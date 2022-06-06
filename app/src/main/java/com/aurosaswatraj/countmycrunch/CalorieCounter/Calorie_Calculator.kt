@@ -412,6 +412,14 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
         val cancel=view?.findViewById<MaterialButton>(R.id.cance_btn)
         val save=view?.findViewById<MaterialButton>(R.id.save_bitn)
         cancel?.setOnClickListener {
+            resetvariables()
+            btn_boy.setBackgroundColor(Color.parseColor("#774E4E"))
+            btn_girl.setBackgroundColor(Color.parseColor("#774E4E"))
+            weight_inputi.setText("")
+            heightin_inputi.setText("")
+            age_inputi.setText("")
+            heightft_inputi.setText("")
+            gender="male"
             alertDialog.dismiss()
         }
         save?.setOnClickListener {
@@ -491,11 +499,6 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
         } else {
             throw RuntimeException("$context Must implement OnSaveClicked")
         }
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
     }
 
     override fun onDetach() {
