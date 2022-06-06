@@ -3,12 +3,11 @@ package com.aurosaswatraj.countmycrunch.HealthBlogs
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.aurosaswatraj.countmycrunch.R
 import kotlinx.android.synthetic.main.activity_health_vlogs.*
-import java.util.ArrayList
+import java.util.*
 
 class HealthVlogActivity : AppCompatActivity(),iSelectListener {
 
@@ -22,7 +21,7 @@ class HealthVlogActivity : AppCompatActivity(),iSelectListener {
         VlogContents().initialize_vlogs(vlogs)
         recyclerVlogs.layoutManager=LinearLayoutManager(applicationContext,
             RecyclerView.VERTICAL,false)
-
+        vlogs.shuffle()
         recyclerVlogs.adapter=VlogAdapter(vlogs,this)
 
 

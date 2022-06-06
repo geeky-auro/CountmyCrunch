@@ -94,4 +94,14 @@ class VlogAdapter(val content_vlogs:ArrayList<HealthVlogs>,private val selectLis
     override fun getItemCount(): Int {
        return content_vlogs.size
     }
+
+
+    override fun getItemId(position: Int): Long {
+        return super.getItemId(position)
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        return super.getItemViewType(position)
+    }
+
 }

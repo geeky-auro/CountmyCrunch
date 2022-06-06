@@ -102,6 +102,5 @@ class DashBoard : AppCompatActivity() {
             })
             .show()
     }
-// TODO: Implement a Cardview based UI DashBoard : https://www.geeksforgeeks.org/dashboard-ui-design-in-android/
-// TODO: Implement a spotlight feature-> https://github.com/TakuSemba/Spotlight
+
 }
