@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CountmyCrunch">
         <activity
+            android:name=".HealthBlogs.BlogScreen"
+            android:exported="false" />
+        <activity
             android:name=".introScreen.IntroActivity"
             android:exported="true">
             <intent-filter>
@@ -34,7 +37,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="false"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".manuals.UserManual"
             android:exported="false"
@@ -42,9 +45,7 @@
         <activity
             android:name=".DashBoard.DashBoard"
             android:exported="true"
-            android:windowSoftInputMode="adjustPan">
-
-        </activity> <!-- Register up your Content Provider Here! -->
+            android:windowSoftInputMode="adjustPan"></activity> <!-- Register up your Content Provider Here! -->
         <provider
             android:name="com.aurosaswatraj.countmycrunch.ProgressTracking.AppProvider"
             android:authorities="com.aurosaswatraj.countmycrunch.ProgressTracking.provider"

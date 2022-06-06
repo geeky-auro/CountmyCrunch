@@ -763,23 +763,7 @@ class VlogContents() {
                         vlogs.add(HealthVlogs("https://www.helpguide.org/wp-content/uploads/calories-counting-diet-food-control-and-weight-loss-concept-calorie-768.jpg","Healthy Eating","Confused by all the conflicting nutrition advice out there? These simple tips can show you how to plan, enjoy, and stick to a healthy diet.","https://www.helpguide.org/articles/healthy-eating/healthy-eating.htm"))
 
 
-
-
-
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
