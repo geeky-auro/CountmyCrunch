@@ -1,5 +1,6 @@
 package com.aurosaswatraj.countmycrunch.HealthBlogs
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -29,6 +30,9 @@ class HealthVlogActivity : AppCompatActivity(),iSelectListener {
     }
 
     override fun onVlogSelected(vlogLink: String?) {
-        Toast.makeText(this,"Vlog Link is $vlogLink",Toast.LENGTH_SHORT).show()
+        intent = Intent(applicationContext, BlogScreen::class.java)
+                 .putExtra("link",vlogLink)
+        startActivity(intent)
+        finish()
     }
 }

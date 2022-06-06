@@ -67,6 +67,10 @@ class DashBoard : AppCompatActivity() {
             cominGsoon()
         }
 
+        backB.setOnClickListener {
+            finishAffinity()
+        }
+
 
     }
 

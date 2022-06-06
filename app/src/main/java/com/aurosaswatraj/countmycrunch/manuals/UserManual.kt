@@ -17,7 +17,7 @@ class UserManual : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_manual)
-        var newString:String? = if (savedInstanceState == null) {
+        val newString:String? = if (savedInstanceState == null) {
             intent.extras?.getString("STRING_I_NEED")
         } else {
             savedInstanceState.getSerializable("STRING_I_NEED") as String?
