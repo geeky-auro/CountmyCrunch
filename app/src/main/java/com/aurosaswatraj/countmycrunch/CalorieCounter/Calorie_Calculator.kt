@@ -28,6 +28,7 @@ import java.math.RoundingMode
 import java.text.DecimalFormat
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.math.pow
 
 
 private const val TAG="Calorie_Calculator"
@@ -60,7 +61,7 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
     private var food:ArrayList<FoodItems> =ArrayList()
     private var data:ArrayList<CalorieData> = ArrayList()
 
-    var viewModel: CalorieCounterViewModel?=null
+    private var viewModel: CalorieCounterViewModel?=null
 
 
     private var task: Track? = null
@@ -185,7 +186,7 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
                     }
                     else{
 
-                       var msg=""
+                       var msg:String
                         if (weight_inputi.text.toString().isEmpty()){
                             msg="Please provide positive weight value."
                             weight_inputi.error=msg
@@ -288,7 +289,7 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
 
     private fun idealWeightCalculate(height_ft:Double,height_in:Double):String{
         val height_in_meter=height_ft * 0.3048 + height_in * 0.0254
-        val idealWeight=22*Math.pow(height_in_meter,2.0)
+        val idealWeight=22* height_in_meter.pow(2.0)
         val df = DecimalFormat("0.00")
         df.setRoundingMode(RoundingMode.UP)
         return df.format(idealWeight).toString()
@@ -303,12 +304,9 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
 
 
         when(gender){
-            "female"->{ val female_age=age
-                val female_weight=wt
-                val female_height_ft=ht_ft
-                val female_height_in=ht_in
-                val heightincm= female_height_ft!!*30.48+female_height_in!!*2.54
-                var BMR: Double? =female_weight!!*9.563+heightincm*1.850+female_age!!*4.676
+            "female"->{
+                val heightincm= ht_ft!! * 30.48 + ht_in!! * 2.54
+                var BMR: Double? = wt!! * 9.563 + heightincm * 1.850 + age!! * 4.676
                 BMR=BMR!!+655.1
                 when(activityLvl) {
                     "Sedentary" -> {
