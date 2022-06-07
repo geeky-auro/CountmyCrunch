@@ -26,6 +26,8 @@ class HealthVlogActivity : AppCompatActivity(),iSelectListener {
 
 
 
+
+
     }
 
     override fun onVlogSelected(vlogLink: String?) {
