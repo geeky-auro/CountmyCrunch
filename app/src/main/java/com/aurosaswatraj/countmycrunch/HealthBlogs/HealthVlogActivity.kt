@@ -33,7 +33,7 @@ class HealthVlogActivity : AppCompatActivity(),iSelectListener {
 
     }
 
-    fun RearrangeItems() {
+    private fun RearrangeItems() {
         // Shuffling the data of ArrayList using system time
         vlogs.shuffle(Random(System.currentTimeMillis()))
         recyclerVlogs.adapter=VlogAdapter(vlogs,this)
