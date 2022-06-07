@@ -1,6 +1,7 @@
 package com.aurosaswatraj.countmycrunch.HealthBlogs
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,6 +19,9 @@ class HealthVlogActivity : AppCompatActivity(),iSelectListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_health_vlogs)
+
+        val window = this.window
+        window.statusBarColor = Color.parseColor("#2f3640")
 
         VlogContents().initialize_vlogs(vlogs)
         recyclerVlogs.layoutManager=LinearLayoutManager(applicationContext,

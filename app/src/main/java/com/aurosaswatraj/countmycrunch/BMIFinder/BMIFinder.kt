@@ -48,16 +48,16 @@ class BMIFinder : Fragment(R.layout.fragment_b_m_i_finder) {
 
     private fun genderSelection(){
         btn_boy.setOnClickListener {
-            it.setBackgroundColor(Color.parseColor("#774E4E"))
-            btn_girl.setBackgroundColor(Color.parseColor("#9E7777"))
+            it.setBackgroundColor(Color.parseColor("#FF0000"))
+            btn_girl.setBackgroundColor(Color.parseColor("#FFFFFF"))
             gender="male"
             Log.d(TAG, gender)
             viewModel?.goback(it,gender)
         }
 
         btn_girl.setOnClickListener{
-            it.setBackgroundColor(Color.parseColor("#774E4E"))
-            btn_boy.setBackgroundColor(Color.parseColor("#9E7777"))
+            it.setBackgroundColor(Color.parseColor("#FF0000"))
+            btn_boy.setBackgroundColor(Color.parseColor("#FFFFFF"))
             gender="female"
             Log.d(TAG, gender)
             viewModel?.goback(it,gender)

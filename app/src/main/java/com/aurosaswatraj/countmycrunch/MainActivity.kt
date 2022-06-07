@@ -2,6 +2,7 @@ package com.aurosaswatraj.countmycrunch
 
 
 
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
@@ -31,6 +32,8 @@ class MainActivity : AppCompatActivity(),FragmentCalorieOutput,Calorie_Calculato
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val window = this.window
+        window.statusBarColor = Color.parseColor("#2f3640")
 
 //        dialog = new ProgressDialog(this);
 //        dialog.setTitle("Please wait...");

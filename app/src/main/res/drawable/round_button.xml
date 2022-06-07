@@ -10,7 +10,7 @@
 
 <item android:bottom="5dp" android:right="3dp">
     <shape>
-        <solid android:color="@color/btn_shadow_color" />
+        <solid android:color="@color/black" />
         <corners android:radius="100dp" />
     </shape>
 </item>
