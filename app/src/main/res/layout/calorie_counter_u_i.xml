@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5E8C7">
+    android:background="#E1DCDC">
 
 
     <LinearLayout
@@ -35,7 +35,7 @@
                 android:id="@+id/btn_boy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#774E4E"
+                android:background="#FF0000"
                 android:clickable="true"
                 android:contentDescription="Male"
                 android:focusable="true"
@@ -65,7 +65,7 @@
                 android:id="@+id/btn_girl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#774E4E"
+                android:background="@color/white"
                 android:clickable="true"
                 android:contentDescription="Male"
                 android:focusable="true"
@@ -254,15 +254,20 @@
         android:layout_width="180dp"
         android:layout_height="70dp"
         android:layout_gravity="center"
+        app:cornerRadius="20sp"
+        app:elevation="50dp"
+        app:strokeWidth="2dp"
+        app:strokeColor="@color/white"
         android:layout_marginTop="16dp"
-        android:background="@drawable/round_button"
+        app:backgroundTint="@color/red_connectify"
         android:minWidth="48dp"
         android:minHeight="48dp"
         android:text="@string/calculate"
-        android:textColor="#ffffff"
+        android:textColor="@color/white"
         android:textSize="23sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativelayout" />
 

@@ -151,15 +151,15 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
         Spinner.adapter = adapter
 
         btn_boy.setOnClickListener {
-            it.setBackgroundColor(Color.parseColor("#774E4E"))
-            btn_girl.setBackgroundColor(Color.parseColor("#9E7777"))
+            it.setBackgroundColor(Color.parseColor("#FF0000"))
+            btn_girl.setBackgroundColor(Color.parseColor("#FFFFFF"))
             gender="male"
             viewModel?.genderAnim(it,gender)
         }
 
         btn_girl.setOnClickListener{
-            it.setBackgroundColor(Color.parseColor("#774E4E"))
-            btn_boy.setBackgroundColor(Color.parseColor("#9E7777"))
+            it.setBackgroundColor(Color.parseColor("#FF0000"))
+            btn_boy.setBackgroundColor(Color.parseColor("#FFFFFF"))
             gender="female"
             viewModel?.genderAnim(it,gender)
         }
@@ -285,7 +285,6 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
         return newTask
     }
 
-//    TODO: Required Consumed need to be implemented.>!
 
     private fun idealWeightCalculate(height_ft:Double,height_in:Double):String{
         val height_in_meter=height_ft * 0.3048 + height_in * 0.0254
@@ -369,12 +368,6 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
         }
 
     }
-
-
-
-
-
-
 
 
 
@@ -510,6 +503,7 @@ class Calorie_Calculator : Fragment(R.layout.calorie_counter_u_i), SelectListene
     override fun onOutputSent(data: ArrayList<CalorieData>) {
         fragmentB?.updateEditText(data)
     }
+
 
 
 }

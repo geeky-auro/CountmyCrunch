@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#FFFFFF"
+    android:background="@color/white"
     tools:context=".BMIFinder.BMIFinder">
 
     <com.google.android.material.card.MaterialCardView
@@ -25,7 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="#F5E8C7"
+            android:background="#D5D2CB"
             android:weightSum="2">
 
             <ImageButton
@@ -51,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="#FFFFFF"
+                android:background="@color/white"
                 android:clickable="true"
                 android:contentDescription="Female"
                 android:focusable="true"

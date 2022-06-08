@@ -35,7 +35,7 @@ private const val TAG = "BMIFinder"
 
 class BMIFinder : Fragment(R.layout.fragment_b_m_i_finder) {
 
-    var viewModel:BMIViewModel?=null
+    private var viewModel:BMIViewModel?=null
     private var gender="male"
 
 
@@ -83,7 +83,7 @@ class BMIFinder : Fragment(R.layout.fragment_b_m_i_finder) {
 //
                     }
                     else{
-                    var msg=""
+                    var msg:String
                         if (weight_input.text.toString().isEmpty()){
                             msg="Please provide positive weight value."
                             weight_input.error=msg

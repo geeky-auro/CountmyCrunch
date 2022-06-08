@@ -4,7 +4,7 @@
     android:id="@+id/cardBtn"
     android:layout_width="150dp"
     android:layout_height="wrap_content"
-    app:cardBackgroundColor="#C66C6C"
+    app:cardBackgroundColor="#251F1F"
     app:cardCornerRadius="30dp"
     android:layout_margin="8dp"
     >
@@ -34,6 +34,7 @@
             android:text="Default Text"
             android:padding="4dp"
             android:textAlignment="center"
+            android:singleLine="true"
             android:textStyle="bold"
             android:textSize="20sp"
             android:fontFamily="cursive"
@@ -52,9 +53,10 @@
                 android:layout_height="50dp"
                 android:text="@string/plus"
                 android:textStyle="bold"
+                android:textColor="@color/black"
                 app:cornerRadius="60dp"
                 app:elevation="5dp"
-                app:backgroundTint="#9F4848"
+                app:backgroundTint="#E8E5E5"
                 android:layout_weight="0.5"
                 >
             </com.google.android.material.button.MaterialButton>
@@ -79,9 +81,10 @@
                 android:layout_height="50dp"
                 android:text="@string/minus"
                 android:textStyle="bold"
+                android:textColor="@color/black"
                 app:cornerRadius="60dp"
                 app:elevation="5dp"
-                app:backgroundTint="#9F4848"
+                app:backgroundTint="#E8E5E5"
                 android:layout_weight="0.5"
                 >
             </com.google.android.material.button.MaterialButton>
