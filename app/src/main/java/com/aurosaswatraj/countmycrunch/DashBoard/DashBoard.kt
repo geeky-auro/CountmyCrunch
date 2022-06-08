@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.os.Bundle
 import android.view.Gravity
 import androidx.appcompat.app.AppCompatActivity
+import com.aurosaswatraj.countmycrunch.Chronometer.ChronometerActivity
 import com.aurosaswatraj.countmycrunch.Dialogs.UserManualDialog
 import com.aurosaswatraj.countmycrunch.Fooding.Foodz
 import com.aurosaswatraj.countmycrunch.HealthBlogs.HealthVlogActivity
@@ -35,36 +36,37 @@ class DashBoard : AppCompatActivity() {
 
         bmi_calc.setOnClickListener {
             fragment_no=1
-            intent = Intent(applicationContext, MainActivity::class.java).putExtra("id",fragment_no)
+            intent = Intent(applicationContext, MainActivity::class.java).putExtra("id",fragment_no).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
             startActivity(intent)
         }
 
         calorie_count.setOnClickListener {
             fragment_no=2
-            intent = Intent(applicationContext, MainActivity::class.java).putExtra("id",fragment_no)
+            intent = Intent(applicationContext, MainActivity::class.java).putExtra("id",fragment_no).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
             startActivity(intent)
         }
 
         foodie.setOnClickListener {
-            intent = Intent(applicationContext, Foodz::class.java)
+            intent = Intent(applicationContext, Foodz::class.java).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
             startActivity(intent)
         }
 
         calorie_track.setOnClickListener {
             fragment_no=3
-            intent = Intent(applicationContext, MainActivity::class.java).putExtra("id",fragment_no)
+            intent = Intent(applicationContext, MainActivity::class.java).putExtra("id",fragment_no).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
             startActivity(intent)
         }
 
         health_vlogs.setOnClickListener {
-            intent=Intent(applicationContext,HealthVlogActivity::class.java)
+            intent=Intent(applicationContext,HealthVlogActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
             startActivity(intent)
         }
 
 
 
         chronometer.setOnClickListener {
-            cominGsoon()
+            intent=Intent(applicationContext,ChronometerActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+            startActivity(intent)
         }
 
         backB.setOnClickListener {

@@ -25,6 +25,23 @@
 
     </ImageView>
 
+    <Chronometer
+        android:id="@+id/timeHere"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        android:textColor="@color/white"
+        android:textSize="62sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bgcircle">
+
+    </Chronometer>
+
+
     <ImageView
         android:id="@+id/icanchor"
         android:layout_width="358dp"
@@ -42,6 +59,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_start"
+        android:fontFamily="@font/mmedium"
         android:layout_width="280dp"
         android:layout_height="55dp"
         android:layout_marginBottom="16dp"
@@ -68,6 +86,7 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_stop"
         android:layout_width="280dp"
+        android:fontFamily="@font/mmedium"
         android:layout_height="55dp"
         android:layout_marginBottom="44dp"
         android:layout_marginEnd="8dp"
