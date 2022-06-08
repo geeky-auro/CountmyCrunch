@@ -44,21 +44,48 @@
         android:id="@+id/btn_start"
         android:layout_width="280dp"
         android:layout_height="55dp"
-        android:layout_marginBottom="72dp"
+        android:layout_marginBottom="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        app:backgroundTint="#E53935"
+        app:cornerRadius="20sp"
+        app:elevation="50dp"
+        app:strokeColor="#00ACC1"
+        app:strokeWidth="2sp"
+        app:backgroundTint="#00838F"
         android:text="Start Now"
+        android:textStyle="bold"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_stop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         >
 
     </com.google.android.material.button.MaterialButton>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_stop"
+        android:layout_width="280dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="44dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:backgroundTint="#C62828"
+        app:strokeColor="#E53935"
+        app:strokeWidth="2sp"
+        app:cornerRadius="20sp"
+        app:elevation="50dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:text="Finish Workout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        ></com.google.android.material.button.MaterialButton>
 
 
 
