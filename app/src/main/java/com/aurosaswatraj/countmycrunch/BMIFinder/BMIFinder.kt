@@ -26,6 +26,7 @@ import java.math.BigDecimal
 private const val TAG = "BMIFinder"
 
 
+
 /**
  * A simple [Fragment] subclass.
  * Use the [BMIFinder.newInstance] factory method to
