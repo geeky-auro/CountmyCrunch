@@ -9,8 +9,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.CountmyCrunch">
+        android:theme="@style/Theme.CountmyCrunch"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".Chronometer.ChronometerActivity"
+            android:exported="false" />
         <activity
             android:name=".HealthBlogs.BlogScreen"
             android:exported="false" />
