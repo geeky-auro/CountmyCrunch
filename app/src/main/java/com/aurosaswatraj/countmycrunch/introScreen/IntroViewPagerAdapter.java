@@ -35,10 +35,12 @@ public class IntroViewPagerAdapter extends PagerAdapter {
         ImageView imgSlide = layoutScreen.findViewById(R.id.intro_img);
         TextView title = layoutScreen.findViewById(R.id.intro_title);
         TextView description = layoutScreen.findViewById(R.id.intro_description);
+        TextView title_description=layoutScreen.findViewById(R.id.intro_title_description);
 
         title.setText(mListScreen.get(position).getTitle());
         description.setText(mListScreen.get(position).getDescription());
         imgSlide.setImageResource(mListScreen.get(position).getScreenImg());
+        title_description.setText(mListScreen.get(position).getTitle_description());
 
         container.addView(layoutScreen);
 

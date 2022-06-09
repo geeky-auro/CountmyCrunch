@@ -59,10 +59,14 @@ public class IntroActivity extends AppCompatActivity {
         btnAnim = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.button_animation);
         tvSkip = findViewById(R.id.tv_skip);
 
+//        TODO: Remove img1,img2,img3 from drawables and replace them in the code with the appropriate tasks...!
         final List<ScreenItem> mList = new ArrayList<>();
-        mList.add(new ScreenItem("Fresh Food","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur  consectetur adipiscing elit",R.drawable.img1));
-        mList.add(new ScreenItem("Fast Delivery","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur  consectetur adipiscing elit",R.drawable.img2));
-        mList.add(new ScreenItem("Easy Payment","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur  consectetur adipiscing elit",R.drawable.img3));
+        mList.add(new ScreenItem("BMI Calculator","It’s a good way to gauge whether your weight is in healthy proportion to your height. In fact, knowing your BMI can help you.","Track your BMI and AMR",R.drawable.img1));
+        mList.add(new ScreenItem("Calorie Counter","Use the calorie Counter to estimate the number of daily calories your body needs to maintain your current weight.","Track Calories",R.drawable.img2));
+        mList.add(new ScreenItem("Foodie","Eat Smarter and Live Better","Explore a plethora of personal diet recipes",R.drawable.img3));
+        mList.add(new ScreenItem("Calorie Tracker","Keep track of all your progress","Keeping the amount of calories you consume balanced with the amount of calories you burn through regular metabolism and physical activity will keep your weight stable.",R.drawable.img3));
+        mList.add(new ScreenItem("Health Vlogs","Consistent body weight or resistance training from home can still help you to maintain strength, quality of movement, aerobic capacity and skill acquisition just as effectively as heading to the gym.","Daily Health Tips",R.drawable.img3));
+        mList.add(new ScreenItem("Chronometer","Interval Timer for any workout.","Workout Timer",R.drawable.img3));
 
 
         screenPager =findViewById(R.id.screen_viewpager);
