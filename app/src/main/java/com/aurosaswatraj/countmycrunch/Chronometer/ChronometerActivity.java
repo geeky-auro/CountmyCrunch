@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.ImageView;
 
+import com.aurosaswatraj.countmycrunch.Dialogs.UserDarkModeDialog;
 import com.aurosaswatraj.countmycrunch.R;
 
 
@@ -24,13 +25,16 @@ public class ChronometerActivity extends AppCompatActivity {
     private Chronometer timeHere;
 
     private ObjectAnimator objectAnimator;
-
+    UserDarkModeDialog darkModeDialog;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chronometer);
+        darkModeDialog=new UserDarkModeDialog();
+        darkModeDialog.darkModeDialog(this,this);
+
 
 
 

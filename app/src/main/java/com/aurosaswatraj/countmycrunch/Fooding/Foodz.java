@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import com.aurosaswatraj.countmycrunch.Dialogs.UserDarkModeDialog;
 import com.aurosaswatraj.countmycrunch.Fooding.Adapters.RandomMealAdapter;
 import com.aurosaswatraj.countmycrunch.Fooding.Listeners.CustomOnClickListener;
 import com.aurosaswatraj.countmycrunch.Fooding.Listeners.RandomAPIResponseListener;
@@ -36,11 +37,18 @@ public class Foodz extends AppCompatActivity {
     Spinner spinner;
     SearchView searchView_home;
 
+    UserDarkModeDialog darkModeDialog;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_foodz);
+
+        darkModeDialog=new UserDarkModeDialog();
+        darkModeDialog.darkModeDialog(this,this);
+
+
 
         Window window = this.getWindow();
         window.setStatusBarColor(Color.parseColor("#C51162"));
@@ -51,7 +59,7 @@ public class Foodz extends AppCompatActivity {
 
 
         manager = new RequestManager(this);
-        ArrayAdapter arrayAdapter = ArrayAdapter.createFromResource(
+        ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(
                 this,
                 R.array.tags,
                 R.layout.spinner_text

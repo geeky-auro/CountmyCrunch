@@ -15,6 +15,7 @@ import com.aurosaswatraj.countmycrunch.CalorieCounter.CalorieData
 import com.aurosaswatraj.countmycrunch.CalorieCounter.CalorieOutputFragment
 import com.aurosaswatraj.countmycrunch.CalorieCounter.Calorie_Calculator
 import com.aurosaswatraj.countmycrunch.CalorieCounter.FragmentCalorieOutput
+import com.aurosaswatraj.countmycrunch.Dialogs.UserDarkModeDialog
 import com.aurosaswatraj.countmycrunch.Dialogs.UserManualDialog
 import com.aurosaswatraj.countmycrunch.ProgressTracking.MainActivityFragment
 import com.thecode.aestheticdialogs.*
@@ -31,6 +32,8 @@ class MainActivity : AppCompatActivity(),FragmentCalorieOutput,Calorie_Calculato
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val darkModeDialog= UserDarkModeDialog()
+        darkModeDialog.darkModeDialog(this,this)
 
         val window = this.window
         window.statusBarColor = Color.parseColor("#2f3640")

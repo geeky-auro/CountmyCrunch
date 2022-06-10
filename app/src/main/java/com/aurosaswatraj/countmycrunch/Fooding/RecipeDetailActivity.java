@@ -19,6 +19,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.aurosaswatraj.countmycrunch.Dialogs.UserDarkModeDialog;
 import com.aurosaswatraj.countmycrunch.Fooding.Adapters.IngredientsAdapter;
 import com.aurosaswatraj.countmycrunch.Fooding.Adapters.InstructionsAdapter;
 import com.aurosaswatraj.countmycrunch.Fooding.Adapters.SimilarListAdapter;
@@ -43,6 +44,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
     RecyclerView recycler_meal_ingredients, recycler_meal_similar, recycler_meal_instructions;
     Button button_nutrition;
     ScrollView scrollView;
+    UserDarkModeDialog darkModeDialog;
 
     RequestManager manager;
     IngredientsAdapter adapter;
@@ -58,6 +60,10 @@ public class RecipeDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_detail);
+
+        darkModeDialog=new UserDarkModeDialog();
+        darkModeDialog.darkModeDialog(this,this);
+
 
 
         Window window = this.getWindow();

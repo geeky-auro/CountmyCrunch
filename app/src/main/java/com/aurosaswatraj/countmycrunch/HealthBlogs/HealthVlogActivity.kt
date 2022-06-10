@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.aurosaswatraj.countmycrunch.Dialogs.UserDarkModeDialog
 import com.aurosaswatraj.countmycrunch.R
 import kotlinx.android.synthetic.main.activity_health_vlogs.*
 import java.util.*
@@ -19,6 +20,8 @@ class HealthVlogActivity : AppCompatActivity(),iSelectListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_health_vlogs)
+        val darkModeDialog= UserDarkModeDialog()
+        darkModeDialog.darkModeDialog(this,this)
 
         val window = this.window
         window.statusBarColor = Color.parseColor("#2f3640")

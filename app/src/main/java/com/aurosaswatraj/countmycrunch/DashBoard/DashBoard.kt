@@ -8,6 +8,7 @@ import android.view.Gravity
 import androidx.appcompat.app.AppCompatActivity
 import com.aurosaswatraj.countmycrunch.Chronometer.ChronometerActivity
 import com.aurosaswatraj.countmycrunch.Dialogs.ErrorDialog
+import com.aurosaswatraj.countmycrunch.Dialogs.UserDarkModeDialog
 import com.aurosaswatraj.countmycrunch.Dialogs.UserManualDialog
 import com.aurosaswatraj.countmycrunch.Fooding.Foodz
 import com.aurosaswatraj.countmycrunch.HealthBlogs.HealthVlogActivity
@@ -25,17 +26,11 @@ class DashBoard : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dashboard_ui)
-        val darkModeDialog:ErrorDialog= ErrorDialog(this)
         val window = this.window
-        when (applicationContext.resources?.configuration?.uiMode?.and(Configuration.UI_MODE_NIGHT_MASK)) {
-            Configuration.UI_MODE_NIGHT_YES -> {
-                darkModeDialog.warningDarkMode()
-            }
-            Configuration.UI_MODE_NIGHT_NO -> {}
-            Configuration.UI_MODE_NIGHT_UNDEFINED -> {
-                darkModeDialog.warningDarkMode()
-            }
-        }
+
+
+        val darkModeDialog=UserDarkModeDialog()
+        darkModeDialog.darkModeDialog(this,this)
         window.statusBarColor = Color.parseColor("#2f3640")
         fragment_no=0
 
