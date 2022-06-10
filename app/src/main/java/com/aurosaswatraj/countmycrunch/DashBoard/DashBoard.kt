@@ -1,20 +1,22 @@
 package com.aurosaswatraj.countmycrunch.DashBoard
 
 import android.content.Intent
+import android.content.res.Configuration
 import android.graphics.Color
 import android.os.Bundle
 import android.view.Gravity
 import androidx.appcompat.app.AppCompatActivity
 import com.aurosaswatraj.countmycrunch.Chronometer.ChronometerActivity
+import com.aurosaswatraj.countmycrunch.Dialogs.ErrorDialog
 import com.aurosaswatraj.countmycrunch.Dialogs.UserManualDialog
 import com.aurosaswatraj.countmycrunch.Fooding.Foodz
 import com.aurosaswatraj.countmycrunch.HealthBlogs.HealthVlogActivity
-import com.aurosaswatraj.countmycrunch.HealthBlogs.HealthVlogs
 import com.aurosaswatraj.countmycrunch.MainActivity
 import com.aurosaswatraj.countmycrunch.R
 import com.thecode.aestheticdialogs.*
 import kotlinx.android.synthetic.main.dashboard_ui.*
 import me.toptas.fancyshowcase.FancyShowCaseView
+import java.security.AccessController.getContext
 
 class DashBoard : AppCompatActivity() {
 
@@ -23,7 +25,17 @@ class DashBoard : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dashboard_ui)
+        val darkModeDialog:ErrorDialog= ErrorDialog(this)
         val window = this.window
+        when (applicationContext.resources?.configuration?.uiMode?.and(Configuration.UI_MODE_NIGHT_MASK)) {
+            Configuration.UI_MODE_NIGHT_YES -> {
+                darkModeDialog.warningDarkMode()
+            }
+            Configuration.UI_MODE_NIGHT_NO -> {}
+            Configuration.UI_MODE_NIGHT_UNDEFINED -> {
+                darkModeDialog.warningDarkMode()
+            }
+        }
         window.statusBarColor = Color.parseColor("#2f3640")
         fragment_no=0
 

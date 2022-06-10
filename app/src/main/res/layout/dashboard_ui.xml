@@ -345,6 +345,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
@@ -386,10 +387,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:singleLine="true"
                     android:text="@string/health_vlogs"
                     android:textAllCaps="true"
                     android:textColor="@color/black"
-                    android:singleLine="true"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -450,5 +451,19 @@
         </androidx.cardview.widget.CardView>
 
     </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="8dp"
+        app:backgroundTint="#fff"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="16dp"
+        app:srcCompat="@drawable/ic_baseline_schedule"
+        app:elevation="20sp"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
