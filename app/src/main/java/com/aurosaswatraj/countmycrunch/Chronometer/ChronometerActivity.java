@@ -3,6 +3,7 @@ package com.aurosaswatraj.countmycrunch.Chronometer;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.animation.ObjectAnimator;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -34,7 +35,7 @@ public class ChronometerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chronometer);
         darkModeDialog=new UserDarkModeDialog();
         darkModeDialog.darkModeDialog(this,this);
-
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); // Fixed portrait orientation
 
 
 

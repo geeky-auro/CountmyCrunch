@@ -1,13 +1,12 @@
 package com.aurosaswatraj.countmycrunch.DashBoard
 
 import android.content.Intent
-import android.content.res.Configuration
+import android.content.pm.ActivityInfo
 import android.graphics.Color
 import android.os.Bundle
 import android.view.Gravity
 import androidx.appcompat.app.AppCompatActivity
 import com.aurosaswatraj.countmycrunch.Chronometer.ChronometerActivity
-import com.aurosaswatraj.countmycrunch.Dialogs.ErrorDialog
 import com.aurosaswatraj.countmycrunch.Dialogs.UserDarkModeDialog
 import com.aurosaswatraj.countmycrunch.Dialogs.UserManualDialog
 import com.aurosaswatraj.countmycrunch.Fooding.Foodz
@@ -17,7 +16,6 @@ import com.aurosaswatraj.countmycrunch.R
 import com.thecode.aestheticdialogs.*
 import kotlinx.android.synthetic.main.dashboard_ui.*
 import me.toptas.fancyshowcase.FancyShowCaseView
-import java.security.AccessController.getContext
 
 class DashBoard : AppCompatActivity() {
 
@@ -27,6 +25,7 @@ class DashBoard : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dashboard_ui)
         val window = this.window
+        requestedOrientation =ActivityInfo.SCREEN_ORIENTATION_PORTRAIT // Fixed portrait orientation
 
 
         val darkModeDialog=UserDarkModeDialog()

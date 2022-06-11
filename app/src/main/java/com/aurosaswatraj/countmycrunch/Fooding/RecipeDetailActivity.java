@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -63,7 +64,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
         darkModeDialog=new UserDarkModeDialog();
         darkModeDialog.darkModeDialog(this,this);
-
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); // Fixed portrait orientation
 
 
         Window window = this.getWindow();

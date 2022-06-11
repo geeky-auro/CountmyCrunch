@@ -1,6 +1,7 @@
 package com.aurosaswatraj.countmycrunch.HealthBlogs
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,6 +15,7 @@ class BlogScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_blog_screen)
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
 
         val blogLink:String? = if (savedInstanceState == null) {

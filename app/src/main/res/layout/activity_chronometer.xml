@@ -55,21 +55,31 @@
 
     </ImageView>
 
-    <Chronometer
-        android:id="@+id/timeHere"
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="48dp"
-        android:textColor="@color/white"
-        android:textSize="62sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bgcircle">
 
-    </Chronometer>
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/icanchor">
+
+
+        <Chronometer
+            android:id="@+id/timeHere"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="62sp">
+
+        </Chronometer>
+
+    </ScrollView>
+
+
 
 
     <ImageView
@@ -89,52 +99,52 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_start"
-        android:fontFamily="@font/mmedium"
         android:layout_width="280dp"
         android:layout_height="55dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        app:cornerRadius="20sp"
-        app:elevation="50dp"
-        app:strokeColor="#00ACC1"
-        app:strokeWidth="2sp"
-        app:backgroundTint="#00838F"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/mmedium"
         android:text="Start Now"
-        android:textStyle="bold"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="20sp"
+        android:textStyle="bold"
+        app:backgroundTint="#00838F"
+        app:cornerRadius="20sp"
+        app:elevation="50dp"
         app:layout_constraintBottom_toTopOf="@id/btn_stop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        >
+        app:strokeColor="#00ACC1"
+        app:strokeWidth="2sp">
 
     </com.google.android.material.button.MaterialButton>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_stop"
         android:layout_width="280dp"
-        android:fontFamily="@font/mmedium"
         android:layout_height="55dp"
-        android:layout_marginBottom="44dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        app:backgroundTint="#C62828"
-        app:strokeColor="#E53935"
-        app:strokeWidth="2sp"
-        app:cornerRadius="20sp"
-        app:elevation="50dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/mmedium"
+        android:text="Finish Workout"
+        android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="20sp"
-        android:textAllCaps="false"
-        android:text="Finish Workout"
+        android:layout_marginBottom="16dp"
+        app:backgroundTint="#C62828"
+        app:cornerRadius="20sp"
+        app:elevation="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        ></com.google.android.material.button.MaterialButton>
+        app:strokeColor="#E53935"
+        app:strokeWidth="2sp"></com.google.android.material.button.MaterialButton>
+
+
 
 
 

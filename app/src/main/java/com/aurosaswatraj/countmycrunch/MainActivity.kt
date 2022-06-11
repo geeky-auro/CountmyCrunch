@@ -2,6 +2,7 @@ package com.aurosaswatraj.countmycrunch
 
 
 
+import android.content.pm.ActivityInfo
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
@@ -34,6 +35,8 @@ class MainActivity : AppCompatActivity(),FragmentCalorieOutput,Calorie_Calculato
         setContentView(R.layout.activity_main)
         val darkModeDialog= UserDarkModeDialog()
         darkModeDialog.darkModeDialog(this,this)
+
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
         val window = this.window
         window.statusBarColor = Color.parseColor("#2f3640")

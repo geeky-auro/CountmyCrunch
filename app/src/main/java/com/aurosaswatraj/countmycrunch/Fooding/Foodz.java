@@ -1,6 +1,7 @@
 package com.aurosaswatraj.countmycrunch.Fooding;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -44,6 +45,7 @@ public class Foodz extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_foodz);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); // Fixed portrait orientation
 
         darkModeDialog=new UserDarkModeDialog();
         darkModeDialog.darkModeDialog(this,this);

@@ -1,6 +1,7 @@
 package com.aurosaswatraj.countmycrunch.HealthBlogs
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -22,6 +23,7 @@ class HealthVlogActivity : AppCompatActivity(),iSelectListener {
         setContentView(R.layout.activity_health_vlogs)
         val darkModeDialog= UserDarkModeDialog()
         darkModeDialog.darkModeDialog(this,this)
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
         val window = this.window
         window.statusBarColor = Color.parseColor("#2f3640")
