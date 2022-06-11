@@ -60,26 +60,82 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-
-
+        android:scrollbars="vertical"
+        android:fillViewport="true"
+        android:scrollIndicators="end"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/icanchor">
 
-
-        <Chronometer
-            android:id="@+id/timeHere"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textColor="@color/white"
-            android:textSize="62sp">
+            android:orientation="vertical">
+            <Chronometer
+                android:id="@+id/timeHere"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:layout_marginBottom="8dp"
+                android:textSize="62sp">
 
-        </Chronometer>
+            </Chronometer>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/lapRv"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:scrollbars="vertical">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_start"
+                android:layout_width="280dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/mmedium"
+                android:text="Start Now"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:backgroundTint="#00838F"
+                app:cornerRadius="20sp"
+                app:elevation="50dp"
+                app:strokeColor="#00ACC1"
+                app:strokeWidth="2sp">
+
+            </com.google.android.material.button.MaterialButton>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_stop"
+                android:layout_width="280dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/mmedium"
+                android:text="Finish Workout"
+                android:textAllCaps="false"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:layout_marginBottom="16dp"
+                app:backgroundTint="#C62828"
+                app:cornerRadius="20sp"
+                app:elevation="50dp"
+                app:strokeColor="#E53935"
+                app:strokeWidth="2sp"></com.google.android.material.button.MaterialButton>
+
+        </LinearLayout>
 
     </ScrollView>
-
-
 
 
     <ImageView
@@ -96,53 +152,6 @@
         >
 
     </ImageView>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_start"
-        android:layout_width="280dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp"
-        android:fontFamily="@font/mmedium"
-        android:text="Start Now"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:backgroundTint="#00838F"
-        app:cornerRadius="20sp"
-        app:elevation="50dp"
-        app:layout_constraintBottom_toTopOf="@id/btn_stop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:strokeColor="#00ACC1"
-        app:strokeWidth="2sp">
-
-    </com.google.android.material.button.MaterialButton>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_stop"
-        android:layout_width="280dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:fontFamily="@font/mmedium"
-        android:text="Finish Workout"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:layout_marginBottom="16dp"
-        app:backgroundTint="#C62828"
-        app:cornerRadius="20sp"
-        app:elevation="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:strokeColor="#E53935"
-        app:strokeWidth="2sp"></com.google.android.material.button.MaterialButton>
 
 
 
