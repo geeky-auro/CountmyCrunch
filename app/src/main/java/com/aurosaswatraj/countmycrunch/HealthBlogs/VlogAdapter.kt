@@ -74,7 +74,7 @@ class VlogsViewHolder(override val containerView: View) :
     }
 }
 
-class VlogAdapter(val content_vlogs:ArrayList<HealthVlogs>,private val selectListener: iSelectListener): RecyclerView.Adapter<VlogsViewHolder>() {
+class VlogAdapter(private val content_vlogs:ArrayList<HealthVlogs>, private val selectListener: iSelectListener): RecyclerView.Adapter<VlogsViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VlogsViewHolder {
         val view= LayoutInflater.from(parent.context).inflate(R.layout.item_vlogs,parent,false)
         return VlogsViewHolder(view)

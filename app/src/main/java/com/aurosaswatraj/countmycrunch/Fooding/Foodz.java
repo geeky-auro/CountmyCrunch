@@ -73,7 +73,9 @@ public class Foodz extends AppCompatActivity {
         searchView_home.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                Toast.makeText(Foodz.this, "Will be added soon!", Toast.LENGTH_SHORT).show();
+              tags.clear();
+                tags.add(query);
+                manager.GetRandomRecipes(listener,tags);
                 return true;
             }
 
