@@ -3,7 +3,7 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:weightSum="2"
-
+    android:background="#393535"
     android:layout_height="wrap_content">
 
     <TextView
@@ -11,7 +11,6 @@
         android:id="@+id/lap_counter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1."
         android:textSize="18sp"
         android:textStyle="normal"
         android:textColor="@color/md_white_1000"
@@ -23,7 +22,6 @@
         android:id="@+id/lap_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="00:15"
         android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="@color/md_white_1000"

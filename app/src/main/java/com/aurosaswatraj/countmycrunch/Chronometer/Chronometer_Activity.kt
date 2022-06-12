@@ -29,7 +29,7 @@ class Chronometer_Activity : AppCompatActivity() {
         var laps:ArrayList<Laps> = ArrayList()
         var counter = 0
 
-        laps.add(Laps(counter++,"00:00"))
+        laps.add(Laps(counter++,time_Here.text.toString()))
 
         lap_Rv.layoutManager=LinearLayoutManager(applicationContext,RecyclerView.VERTICAL,false)
         lap_Rv.adapter=ChronometerLapAdapter(laps)
