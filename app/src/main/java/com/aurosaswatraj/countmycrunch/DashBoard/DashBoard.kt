@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.Gravity
 import androidx.appcompat.app.AppCompatActivity
 import com.aurosaswatraj.countmycrunch.Chronometer.ChronometerActivity
+import com.aurosaswatraj.countmycrunch.Chronometer.Chronometer_Activity
 import com.aurosaswatraj.countmycrunch.Dialogs.UserDarkModeDialog
 import com.aurosaswatraj.countmycrunch.Dialogs.UserManualDialog
 import com.aurosaswatraj.countmycrunch.Fooding.Foodz
@@ -71,7 +72,7 @@ class DashBoard : AppCompatActivity() {
 
 
         chronometer.setOnClickListener {
-            intent=Intent(applicationContext,ChronometerActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+            intent=Intent(applicationContext,Chronometer_Activity::class.java).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
             startActivity(intent)
         }
 

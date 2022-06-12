@@ -26,15 +26,16 @@
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 android:textStyle="bold" />
+
             <Spinner
                 android:id="@+id/spinner_tags"
-                android:gravity="center"
-                android:entries="@array/tags"
-                android:backgroundTint="@color/white"
                 style="@style/mySpinnerItemStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_alignParentEnd="true"/>
+                android:layout_alignParentEnd="true"
+                android:backgroundTint="@color/white"
+                android:entries="@array/tags"
+                android:gravity="center" />
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
 

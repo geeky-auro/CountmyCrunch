@@ -12,6 +12,9 @@
         android:theme="@style/Theme.CountmyCrunch"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Chronometer.Chronometer_Activity"
+            android:exported="false" />
+        <activity
             android:name=".CMCScheduler.SchedulerActivity"
             android:exported="false" />
         <activity
