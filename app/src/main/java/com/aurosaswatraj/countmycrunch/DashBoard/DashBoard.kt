@@ -6,7 +6,6 @@ import android.graphics.Color
 import android.os.Bundle
 import android.view.Gravity
 import androidx.appcompat.app.AppCompatActivity
-import com.aurosaswatraj.countmycrunch.Chronometer.ChronometerActivity
 import com.aurosaswatraj.countmycrunch.Chronometer.Chronometer_Activity
 import com.aurosaswatraj.countmycrunch.Dialogs.UserDarkModeDialog
 import com.aurosaswatraj.countmycrunch.Dialogs.UserManualDialog

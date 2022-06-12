@@ -16,7 +16,7 @@ class LapViewHolder(override val containerView: View ) : RecyclerView.ViewHolder
 
     fun bind(currentItem:Laps){
 
-        lap_counter.text=currentItem.lapCounter.toString()
+        lap_counter.text=currentItem.lapCounter.toString()+"."
         lap_time.text=currentItem.lapTime
 
     }

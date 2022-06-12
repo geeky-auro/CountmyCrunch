@@ -18,9 +18,6 @@
             android:name=".CMCScheduler.SchedulerActivity"
             android:exported="false" />
         <activity
-            android:name=".Chronometer.ChronometerActivity"
-            android:exported="false" />
-        <activity
             android:name=".HealthBlogs.BlogScreen"
             android:exported="false" />
         <activity
