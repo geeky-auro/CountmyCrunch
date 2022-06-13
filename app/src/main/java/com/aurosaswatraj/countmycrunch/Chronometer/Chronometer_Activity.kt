@@ -45,8 +45,7 @@ class Chronometer_Activity : AppCompatActivity() {
 
 //                passing Animation
             objectAnimator.start()
-//                icanchor.startAnimation(roundingalone);
-            //                icanchor.startAnimation(roundingalone);
+            //    icanchor.startAnimation(roundingalone);
             btn_stop_.animate().alpha(1f).translationY(-80f).setDuration(300).start()
             btn_start_.animate().alpha(0f).setDuration(300).start()
 //                start time

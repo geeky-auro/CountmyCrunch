@@ -5,6 +5,10 @@ import android.content.pm.ActivityInfo
 import android.graphics.Color
 import android.os.Bundle
 import android.view.Gravity
+import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.aurosaswatraj.countmycrunch.Chronometer.Chronometer_Activity
 import com.aurosaswatraj.countmycrunch.Dialogs.UserDarkModeDialog
@@ -21,12 +25,31 @@ class DashBoard : AppCompatActivity() {
 
     private var fragment_no=0
 
+    private val rotateOpen:Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.rotate_open_anim) }
+    private val rotateClose:Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.rotate_close_anim) }
+    private val fromBottom:Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.from_bottom_anim) }
+    private val toBottom:Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.to_bottom_anim) }
+
+
+    private var clicked=false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dashboard_ui)
         val window = this.window
         requestedOrientation =ActivityInfo.SCREEN_ORIENTATION_PORTRAIT // Fixed portrait orientation
 
+
+        scheduler_btn.setOnClickListener {
+            onAddButtonClicked()
+        }
+
+        setAlarm.setOnClickListener {
+            Toast.makeText(this,"Set Alarm",Toast.LENGTH_SHORT).show()
+        }
+        cancelAlarm.setOnClickListener {
+            Toast.makeText(this,"Cancel Alarm",Toast.LENGTH_SHORT).show()
+        }
 
         val darkModeDialog=UserDarkModeDialog()
         darkModeDialog.darkModeDialog(this,this)
@@ -79,6 +102,51 @@ class DashBoard : AppCompatActivity() {
             finishAffinity()
         }
 
+
+    }
+
+    private fun onAddButtonClicked() {
+        setVisibility(clicked)
+        setAnimation(clicked)
+        setClickable(clicked)
+        clicked = !clicked
+
+
+    }
+
+    private fun setVisibility(clicked:Boolean) {
+       if (!clicked){
+           setAlarm.visibility=View.VISIBLE
+           cancelAlarm.visibility=View.VISIBLE
+       }
+        else{
+           setAlarm.visibility=View.INVISIBLE
+           cancelAlarm.visibility=View.INVISIBLE
+       }
+    }
+
+    private fun setAnimation(clicked:Boolean) {
+        if (!clicked){
+            setAlarm.startAnimation(fromBottom)
+            cancelAlarm.startAnimation(fromBottom)
+            scheduler_btn.startAnimation(rotateOpen)
+        }
+        else{
+            setAlarm.startAnimation(toBottom)
+            cancelAlarm.startAnimation(toBottom)
+            scheduler_btn.startAnimation(rotateClose)
+        }
+    }
+
+    private fun setClickable(clicked: Boolean){
+        if (!clicked){
+            setAlarm.isClickable=true
+            cancelAlarm.isClickable=true
+        }
+        else{
+            setAlarm.isClickable=false
+            cancelAlarm.isClickable=false
+        }
 
     }
 
