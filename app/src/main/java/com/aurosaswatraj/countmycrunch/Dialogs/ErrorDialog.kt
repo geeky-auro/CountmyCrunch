@@ -25,6 +25,24 @@ class ErrorDialog(activity:Activity) {
             .show()
     }
 
+
+    fun serverBusy(){
+        AestheticDialog.Builder(activity, DialogStyle.FLAT, DialogType.ERROR)
+            .setTitle("Server Busy")
+            .setMessage("Please Try again in a few minutes.")
+            .setCancelable(true)
+            .setDarkMode(true)
+            .setGravity(Gravity.CENTER)
+            .setAnimation(DialogAnimation.SHRINK)
+            .setOnClickListener(object : OnDialogClickListener {
+                override fun onClick(dialog: AestheticDialog.Builder) {
+                    dialog.dismiss()
+                    //actions...
+                }
+            })
+            .show()
+    }
+
     fun warningDarkMode(){
         AestheticDialog.Builder(activity, DialogStyle.FLAT, DialogType.WARNING)
             .setTitle("Warning!")

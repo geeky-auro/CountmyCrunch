@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import com.aurosaswatraj.countmycrunch.Dialogs.ErrorDialog;
 import com.aurosaswatraj.countmycrunch.Dialogs.UserDarkModeDialog;
 import com.aurosaswatraj.countmycrunch.Fooding.Adapters.RandomMealAdapter;
 import com.aurosaswatraj.countmycrunch.Fooding.Listeners.CustomOnClickListener;
@@ -29,6 +30,8 @@ import java.util.List;
 
 public class Foodz extends AppCompatActivity {
 
+
+    ErrorDialog errorDialog;
 
     RequestManager manager;
     RandomMealAdapter adapter;
@@ -46,7 +49,7 @@ public class Foodz extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_foodz);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); // Fixed portrait orientation
-
+        errorDialog=new ErrorDialog(this);
         darkModeDialog=new UserDarkModeDialog();
         darkModeDialog.darkModeDialog(this,this);
 
@@ -106,7 +109,7 @@ public class Foodz extends AppCompatActivity {
         @Override
         public void didError(String message) {
             recyclerView.setVisibility(View.VISIBLE);
-
+            errorDialog.serverBusy();
             Toast.makeText(Foodz.this, message, Toast.LENGTH_SHORT).show();
         }
     };

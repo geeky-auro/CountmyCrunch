@@ -20,6 +20,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.aurosaswatraj.countmycrunch.Dialogs.ErrorDialog;
 import com.aurosaswatraj.countmycrunch.Dialogs.UserDarkModeDialog;
 import com.aurosaswatraj.countmycrunch.Fooding.Adapters.IngredientsAdapter;
 import com.aurosaswatraj.countmycrunch.Fooding.Adapters.InstructionsAdapter;
@@ -38,6 +39,9 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 public class RecipeDetailActivity extends AppCompatActivity {
+
+
+    ErrorDialog errorDialog;
 
     TextView textView_meal_name, textView_meal_source, textView_meal_servings, textView_meal_ready, textView_meal_price;
     TextView textView_meal_summary;
@@ -69,7 +73,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
         Window window = this.getWindow();
         window.setStatusBarColor(Color.parseColor("#C51162"));
-
+        errorDialog=new ErrorDialog(this);
 
         findViews();
 
@@ -127,6 +131,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
         @Override
         public void didError(String message) {
             Toast.makeText(RecipeDetailActivity.this, message, Toast.LENGTH_SHORT).show();
+            errorDialog.serverBusy();
         }
     };
 
@@ -160,7 +165,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
         @Override
         public void didError(String message) {
-
+            errorDialog.serverBusy();
         }
     };
 
@@ -184,6 +189,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
         @Override
         public void didError(String message) {
+            errorDialog.serverBusy();
             Toast.makeText(RecipeDetailActivity.this, message, Toast.LENGTH_SHORT).show();
         }
     };
