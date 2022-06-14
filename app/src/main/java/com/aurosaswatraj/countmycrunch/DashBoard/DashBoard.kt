@@ -250,7 +250,7 @@ class DashBoard : AppCompatActivity(),TimePickerDialog.OnTimeSetListener {
     }
 
     private fun updateTimeText(c: Calendar) {
-        var timeText="Scheduler Updated..!"
+        var timeText="Scheduler Updated to "
         timeText+=DateFormat.getTimeInstance(DateFormat.SHORT).format(c.time)
         Toast.makeText(this, timeText,Toast.LENGTH_SHORT).show()
 
