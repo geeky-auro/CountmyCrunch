@@ -41,15 +41,10 @@ class DashBoard : AppCompatActivity(),TimePickerDialog.OnTimeSetListener {
 
     private var fragment_no=0
 
-
-
     private val rotateOpen:Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.rotate_open_anim) }
     private val rotateClose:Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.rotate_close_anim) }
     private val fromBottom:Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.from_bottom_anim) }
     private val toBottom:Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.to_bottom_anim) }
-
-
-
 
 
     private lateinit var notificationmaganer: NotificationManagerCompat
