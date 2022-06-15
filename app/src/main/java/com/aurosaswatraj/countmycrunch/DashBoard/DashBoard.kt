@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.graphics.Color
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.view.Gravity
@@ -14,12 +15,9 @@ import android.view.animation.AnimationUtils
 import android.widget.TimePicker
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.fragment.app.DialogFragment
 import com.aurosaswatraj.countmycrunch.CMCScheduler.AlarmReceiver
-import com.aurosaswatraj.countmycrunch.CMCScheduler.App.CHANNEL_1_ID
-import com.aurosaswatraj.countmycrunch.CMCScheduler.NotificationReceiver
 import com.aurosaswatraj.countmycrunch.CMCScheduler.TimePickerFragement
 import com.aurosaswatraj.countmycrunch.Chronometer.Chronometer_Activity
 import com.aurosaswatraj.countmycrunch.Dialogs.UserDarkModeDialog
@@ -28,14 +26,12 @@ import com.aurosaswatraj.countmycrunch.Fooding.Foodz
 import com.aurosaswatraj.countmycrunch.HealthBlogs.HealthVlogActivity
 import com.aurosaswatraj.countmycrunch.MainActivity
 import com.aurosaswatraj.countmycrunch.R
-import com.aurosaswatraj.countmycrunch.databinding.ActivityMainBinding
-import com.google.android.material.timepicker.MaterialTimePicker
-import com.google.android.material.timepicker.TimeFormat
 import com.thecode.aestheticdialogs.*
 import kotlinx.android.synthetic.main.dashboard_ui.*
 import me.toptas.fancyshowcase.FancyShowCaseView
 import java.text.DateFormat
 import java.util.*
+
 
 class DashBoard : AppCompatActivity(),TimePickerDialog.OnTimeSetListener {
 
@@ -44,6 +40,8 @@ class DashBoard : AppCompatActivity(),TimePickerDialog.OnTimeSetListener {
     private val rotateOpen:Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.rotate_open_anim) }
     private val rotateClose:Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.rotate_close_anim) }
     private val fromBottom:Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.from_bottom_anim) }
+    private val fromLeft:Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.slide_from_left) }
+    private val fromRight:Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.slide_from_right) }
     private val toBottom:Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.to_bottom_anim) }
 
 
@@ -73,6 +71,11 @@ class DashBoard : AppCompatActivity(),TimePickerDialog.OnTimeSetListener {
         }
         cancelAlarm.setOnClickListener {
             cancelAlarm()
+        }
+
+        developer.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.linkedin.com/in/auro-saswat-raj-d05m07y2003"))
+            startActivity(intent)
         }
 
         val darkModeDialog=UserDarkModeDialog()
@@ -136,30 +139,37 @@ class DashBoard : AppCompatActivity(),TimePickerDialog.OnTimeSetListener {
         setClickable(clicked)
         clicked = !clicked
 
-
     }
 
     private fun setVisibility(clicked:Boolean) {
        if (!clicked){
            setAlarm.visibility=View.VISIBLE
            cancelAlarm.visibility=View.VISIBLE
+           developer.visibility=View.VISIBLE
        }
         else{
            setAlarm.visibility=View.INVISIBLE
            cancelAlarm.visibility=View.INVISIBLE
+           developer.visibility=View.INVISIBLE
        }
     }
 
     private fun setAnimation(clicked:Boolean) {
+
+
         if (!clicked){
             setAlarm.startAnimation(fromBottom)
             cancelAlarm.startAnimation(fromBottom)
             scheduler_btn.startAnimation(rotateOpen)
+            developer.startAnimation(fromLeft)
+
         }
         else{
             setAlarm.startAnimation(toBottom)
             cancelAlarm.startAnimation(toBottom)
             scheduler_btn.startAnimation(rotateClose)
+            developer.startAnimation(fromRight)
+
         }
     }
 
@@ -167,10 +177,12 @@ class DashBoard : AppCompatActivity(),TimePickerDialog.OnTimeSetListener {
         if (!clicked){
             setAlarm.isClickable=true
             cancelAlarm.isClickable=true
+            developer.isClickable=true
         }
         else{
             setAlarm.isClickable=false
             cancelAlarm.isClickable=false
+            developer.isClickable=false
         }
 
     }
