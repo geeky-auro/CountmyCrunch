@@ -89,7 +89,7 @@
             android:id="@+id/flFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#191111"
+            android:background="#232020"
             android:orientation="vertical">
 
 

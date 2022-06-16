@@ -17,7 +17,7 @@
             android:text="Gingerbread Christmas Tree Cookies"
             android:singleLine="true"
             android:ellipsize="marquee"
-            android:fontFamily="@font/carter_one"
+            android:fontFamily="@font/federoka_regular"
             android:marqueeRepeatLimit="marquee_forever"
             android:scrollHorizontally="true"
             android:textStyle="bold"

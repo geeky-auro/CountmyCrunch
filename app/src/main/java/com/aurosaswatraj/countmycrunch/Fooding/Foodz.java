@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -24,6 +25,8 @@ import com.aurosaswatraj.countmycrunch.Fooding.Listeners.CustomOnClickListener;
 import com.aurosaswatraj.countmycrunch.Fooding.Listeners.RandomAPIResponseListener;
 import com.aurosaswatraj.countmycrunch.Fooding.Models.RandomRecipe;
 import com.aurosaswatraj.countmycrunch.R;
+import com.github.ybq.android.spinkit.sprite.Sprite;
+import com.github.ybq.android.spinkit.style.Wave;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +43,7 @@ public class Foodz extends AppCompatActivity {
     List<String> tags = new ArrayList<>();
     Spinner spinner;
     SearchView searchView_home;
+    ProgressBar progressBar;
 
     UserDarkModeDialog darkModeDialog;
 
@@ -57,6 +61,9 @@ public class Foodz extends AppCompatActivity {
 
         Window window = this.getWindow();
         window.setStatusBarColor(Color.parseColor("#C51162"));
+        progressBar = (ProgressBar)findViewById(R.id.loader);
+        Sprite doubleBounce = new Wave();
+        progressBar.setIndeterminateDrawable(doubleBounce);
 
         recyclerView = findViewById(R.id.recycler_random);
         spinner = findViewById(R.id.spinner_tags);
@@ -103,6 +110,7 @@ public class Foodz extends AppCompatActivity {
             adapter = new RandomMealAdapter(Foodz.this, responses, customOnClickListener);
             recyclerView.setAdapter(adapter);
             recyclerView.setVisibility(View.VISIBLE);
+            progressBar.setVisibility(View.GONE);
 
         }
 
@@ -121,6 +129,7 @@ public class Foodz extends AppCompatActivity {
             tags.add(adapterView.getSelectedItem().toString().toLowerCase());
             manager.GetRandomRecipes(listener, tags);
             recyclerView.setVisibility(View.GONE);
+            progressBar.setVisibility(View.VISIBLE);
 
         }
 

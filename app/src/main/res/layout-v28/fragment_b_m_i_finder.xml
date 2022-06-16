@@ -89,7 +89,7 @@
             android:id="@+id/flFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#191111"
+            android:background="#232020"
             android:orientation="vertical">
 
 
@@ -99,21 +99,21 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="64dp"
-                app:hintTextColor="@color/white"
                 android:layout_marginEnd="32dp"
                 android:background="@drawable/round"
-                android:hint="@string/string_age">
+                android:hint="@string/string_age"
+                app:hintTextColor="@color/white">
 
                 <!--this is the actual edit text which takes the input-->
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/age_input"
-                    android:textColorHint="@color/white"
-
                     android:layout_width="match_parent"
-                    android:textColor="@color/black"
+
                     android:layout_height="wrap_content"
                     android:background="@drawable/round"
                     android:inputType="numberDecimal"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/white"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -133,8 +133,8 @@
                     android:layout_marginStart="32dp"
                     android:layout_marginTop="64dp"
                     android:layout_marginEnd="32dp"
-                    android:background="@drawable/round"
                     android:layout_weight="1"
+                    android:background="@drawable/round"
                     android:hint="@string/height_in_ft">
 
                     <!--this is the actual edit text which takes the input-->
@@ -143,8 +143,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/round"
-                        android:textColor="@color/black"
                         android:inputType="numberDecimal"
+                        android:textColor="@color/black"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
@@ -158,18 +158,18 @@
                     android:layout_marginStart="32dp"
                     android:layout_marginTop="64dp"
                     android:layout_marginEnd="32dp"
-                    android:background="@drawable/round"
                     android:layout_weight="1"
+                    android:background="@drawable/round"
                     android:hint="@string/inches">
 
                     <!--this is the actual edit text which takes the input-->
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/heightin_input"
                         android:layout_width="match_parent"
-                        android:textColor="@color/black"
                         android:layout_height="wrap_content"
                         android:background="@drawable/round"
                         android:inputType="numberDecimal"
+                        android:textColor="@color/black"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
@@ -177,7 +177,6 @@
 
 
             </LinearLayout>
-
 
 
             <com.google.android.material.textfield.TextInputLayout
@@ -195,8 +194,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/round"
-                    android:textColor="@color/black"
                     android:inputType="numberDecimal"
+                    android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -208,20 +207,20 @@
                 android:id="@+id/submit_button"
                 android:layout_width="150dp"
                 android:layout_height="100dp"
-                app:elevation="50dp"
-                app:backgroundTint="@color/red_connectify"
                 android:layout_gravity="center"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="64dp"
                 android:layout_marginEnd="32dp"
                 android:layout_marginBottom="10dp"
-                app:cornerRadius="50dp"
                 android:minWidth="48dp"
                 android:minHeight="48dp"
                 android:text="SUBMIT"
                 android:textColor="#ffffff"
                 android:textSize="23sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                app:backgroundTint="@color/red_connectify"
+                app:cornerRadius="50dp"
+                app:elevation="50dp" />
 
 
         </LinearLayout>

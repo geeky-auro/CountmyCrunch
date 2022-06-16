@@ -17,6 +17,7 @@
             android:textAlignment="center"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:fontFamily="@font/federoka_regular"
             android:padding="4dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>

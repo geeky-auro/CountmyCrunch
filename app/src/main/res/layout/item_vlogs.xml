@@ -41,23 +41,32 @@
         </io.supercharge.shimmerlayout.ShimmerLayout>
 
 
-        <TextView
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="5dp">
 
-            android:id="@+id/title_vlog"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ellipsize="marquee"
-            android:fontFamily="@font/googlesans_regular"
-            android:marqueeRepeatLimit="marquee_forever"
-            android:scrollHorizontally="true"
-            android:singleLine="true"
-            android:text="ABCeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
-            android:textStyle="bold"
-            android:textColor="#000"
-            android:textSize="25sp"
-            android:textAlignment="textStart"
-            android:padding="8dp">
-        </TextView>
+    <TextView
+
+        android:id="@+id/title_vlog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:fontFamily="@font/yeseva_one"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="ABCeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:textSize="25sp"
+        android:textAlignment="textStart"
+        android:padding="8dp">
+    </TextView>
+
+
+</androidx.cardview.widget.CardView>
+
 
         <TextView
             android:id="@+id/description_vlog"

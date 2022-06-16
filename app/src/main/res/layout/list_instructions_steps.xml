@@ -48,7 +48,7 @@
                 android:textColor="#C51162"
                 android:textSize="16sp"
                 android:padding="8dp"
-                android:fontFamily="@font/carter_one"
+                android:fontFamily="@font/federoka_regular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
             <androidx.recyclerview.widget.RecyclerView
@@ -61,7 +61,7 @@
                 android:textColor="#AA0A52"
                 android:textSize="16sp"
                 android:padding="8dp"
-                android:fontFamily="@font/carter_one"
+               android:fontFamily="@font/federoka_regular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
             <androidx.recyclerview.widget.RecyclerView

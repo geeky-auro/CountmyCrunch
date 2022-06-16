@@ -54,17 +54,35 @@
             android:layout_height="match_parent"/>
     </androidx.cardview.widget.CardView>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:visibility="gone"
-            android:id="@+id/recycler_random"
-            android:layout_margin="4dp"
+
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-    </RelativeLayout>
+            android:layout_height="match_parent">
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/loader"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                style="@style/SpinKitView.Large.Circle"
+                app:SpinKit_Color="@color/white">
+
+            </com.github.ybq.android.spinkit.SpinKitView>
+            <androidx.recyclerview.widget.RecyclerView
+                android:visibility="gone"
+                android:id="@+id/recycler_random"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </RelativeLayout>
+
+
+
+
 
 
 </LinearLayout>
