@@ -17,6 +17,8 @@ class BlogScreen : AppCompatActivity() {
         setContentView(R.layout.activity_blog_screen)
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
+        shimmer_anim.startShimmerAnimation()
+
 
         val blogLink:String? = if (savedInstanceState == null) {
             intent.extras?.getString("link")
@@ -45,8 +47,10 @@ class BlogScreen : AppCompatActivity() {
         dialog.show()
 
         showVlog.webViewClient=object : WebViewClient(){
+
             override fun onPageFinished(view: WebView?, url: String?) {
                 dialog.dismiss()
+                shimmer_anim.stopShimmerAnimation()
             }
         }
 

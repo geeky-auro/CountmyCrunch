@@ -2,7 +2,7 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/mainCard"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="10dp"
     android:padding="2dp"
@@ -14,24 +14,40 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.google.android.material.card.MaterialCardView
+
+        <io.supercharge.shimmerlayout.ShimmerLayout
+            android:id="@+id/shimmer_image"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:id="@+id/image_vlog"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            app:shimmer_animation_duration="1200"
+            app:shimmer_auto_start="true">
+
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="360dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/scenary"
-                ></ImageView>
-        </com.google.android.material.card.MaterialCardView>
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/image_vlog"
+                    android:layout_width="match_parent"
+                    android:layout_height="360dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/scenary"
+                    ></ImageView>
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </io.supercharge.shimmerlayout.ShimmerLayout>
+
 
         <TextView
+
             android:id="@+id/title_vlog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ellipsize="marquee"
-            android:fontFamily="@font/googlesans_bold"
+            android:fontFamily="@font/googlesans_regular"
             android:marqueeRepeatLimit="marquee_forever"
             android:scrollHorizontally="true"
             android:singleLine="true"
@@ -47,14 +63,14 @@
             android:id="@+id/description_vlog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/googlesans_regular"
+            android:fontFamily="@font/googlesans_medium"
             android:text="ABCeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
             android:textStyle="bold"
             android:textColor="#322E2E"
             android:textSize="18sp"
             android:maxLines="10"
             android:textAlignment="textStart"
-            android:padding="8dp">
+            android:padding="14dp">
         </TextView>
 
     </LinearLayout>

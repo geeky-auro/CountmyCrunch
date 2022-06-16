@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.aurosaswatraj.countmycrunch.R
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
+import io.supercharge.shimmerlayout.ShimmerLayout
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.item_vlogs.view.*
 import java.lang.Exception
@@ -19,12 +20,19 @@ class VlogsViewHolder(override val containerView: View) :
     private val image_vlog: ImageView =containerView.findViewById(R.id.image_vlog)
     private val title_vlog: TextView =containerView.findViewById(R.id.title_vlog)
     private val description_vlog: TextView =containerView.findViewById(R.id.description_vlog)
+    private val shimmer_img:ShimmerLayout=containerView.findViewById(R.id.shimmer_image)
+
+
+
     var picasso =Picasso.Builder(containerView.getContext()).listener { picasso, uri, exception ->
             Log.d("TAG", " onImageLoadFailed message")
 
             exception.printStackTrace()
         }.build()
+
+
     fun bind( currentItem: HealthVlogs){
+        shimmer_img.startShimmerAnimation()
         picasso.setIndicatorsEnabled(true)
         picasso.load(currentItem.getMimgae())
             .fit()
@@ -33,12 +41,14 @@ class VlogsViewHolder(override val containerView: View) :
 
                 override fun onSuccess() {
                     Log.d("TAG","Do nothing")
+                    shimmer_img.stopShimmerAnimation()
                 }
 
                 override fun onError(e: Exception?) {
 
                     val generateRandomeImageNum:Int=(Math.random()*(6-1+1)+1).toInt()
                     val imageLink:String
+                    shimmer_img.stopShimmerAnimation()
                     when(generateRandomeImageNum){
                         1->{
                             imageLink="https://i.ytimg.com/vi/K26QQopxvW0/maxresdefault.jpg"
