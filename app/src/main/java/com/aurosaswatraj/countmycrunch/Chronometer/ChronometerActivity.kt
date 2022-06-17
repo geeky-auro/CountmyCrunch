@@ -14,7 +14,7 @@ import com.aurosaswatraj.countmycrunch.Dialogs.UserDarkModeDialog
 import com.aurosaswatraj.countmycrunch.R
 import kotlinx.android.synthetic.main.activity_chronometer2.*
 
-class Chronometer_Activity : AppCompatActivity() {
+class ChronometerActivity : AppCompatActivity() {
 
 
     private val rotateOpen: Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.rotate_open_anim) }
@@ -24,11 +24,11 @@ class Chronometer_Activity : AppCompatActivity() {
         setContentView(R.layout.activity_chronometer2)
         val window = this.window
         window.statusBarColor = Color.parseColor("#2f3640")
-        var darkModeDialog = UserDarkModeDialog()
+        val darkModeDialog = UserDarkModeDialog()
         darkModeDialog.darkModeDialog(this, this)
         requestedOrientation =ActivityInfo.SCREEN_ORIENTATION_PORTRAIT // Fixed portrait orientation
 
-        var laps:ArrayList<Laps> = ArrayList()
+        val laps:ArrayList<Laps> = ArrayList()
         var counter = 0
 
 
@@ -37,7 +37,7 @@ class Chronometer_Activity : AppCompatActivity() {
         lap_Rv.adapter=ChronometerLapAdapter(laps)
 
 
-        var objectAnimator = ObjectAnimator.ofFloat(i_canchor, "rotation", 0f, 360f)
+        val objectAnimator = ObjectAnimator.ofFloat(i_canchor, "rotation", 0f, 360f)
         objectAnimator.setDuration(4000)
         objectAnimator.setRepeatCount(ObjectAnimator.INFINITE)
 
@@ -65,7 +65,6 @@ class Chronometer_Activity : AppCompatActivity() {
         }
 
         btn_stop_.setOnClickListener {
-            val elapsedtime: Long = SystemClock.elapsedRealtime() - time_Here.getBase()
 
             laps.add(Laps(counter++,time_Here.text.toString()))
             lap_Rv.adapter?.notifyDataSetChanged()

@@ -19,7 +19,7 @@ import androidx.core.app.NotificationManagerCompat
 import androidx.fragment.app.DialogFragment
 import com.aurosaswatraj.countmycrunch.CMCScheduler.AlarmReceiver
 import com.aurosaswatraj.countmycrunch.CMCScheduler.TimePickerFragement
-import com.aurosaswatraj.countmycrunch.Chronometer.Chronometer_Activity
+import com.aurosaswatraj.countmycrunch.Chronometer.ChronometerActivity
 import com.aurosaswatraj.countmycrunch.Dialogs.UserDarkModeDialog
 import com.aurosaswatraj.countmycrunch.Dialogs.UserManualDialog
 import com.aurosaswatraj.countmycrunch.Fooding.Foodz
@@ -121,7 +121,7 @@ class DashBoard : AppCompatActivity(),TimePickerDialog.OnTimeSetListener {
 
 
         chronometer.setOnClickListener {
-            intent=Intent(applicationContext,Chronometer_Activity::class.java).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+            intent=Intent(applicationContext,ChronometerActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
             startActivity(intent)
         }
 
