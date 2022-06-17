@@ -8,7 +8,7 @@ import android.os.Build;
 public class App extends Application {
 
     public static final String CHANNEL_1_ID="channel1";
-    public static final String CHANNEL_2_ID="channel2";
+
 
     @Override
     public void onCreate() {
@@ -23,18 +23,12 @@ public class App extends Application {
                     "CountMyCrunch",
                     NotificationManager.IMPORTANCE_HIGH
             );
-            channel1.setDescription("This is Channel 1");
+            channel1.setDescription("CMC Channel Main");
 
-            NotificationChannel channel2=new NotificationChannel(
-                    CHANNEL_2_ID,
-                    "Channel 2",
-                    NotificationManager.IMPORTANCE_LOW
-            );
-            channel2.setDescription("This is Channel 2");
 
             NotificationManager manger=getSystemService(NotificationManager.class);
             manger.createNotificationChannel(channel1);
-            manger.createNotificationChannel(channel2);
+
 
         }
     }
