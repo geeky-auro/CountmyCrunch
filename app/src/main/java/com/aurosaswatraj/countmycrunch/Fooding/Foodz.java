@@ -61,7 +61,7 @@ public class Foodz extends AppCompatActivity {
 
         Window window = this.getWindow();
         window.setStatusBarColor(Color.parseColor("#C51162"));
-        progressBar = (ProgressBar)findViewById(R.id.loader);
+        progressBar = findViewById(R.id.loader);
         Sprite doubleBounce = new Wave();
         progressBar.setIndeterminateDrawable(doubleBounce);
 

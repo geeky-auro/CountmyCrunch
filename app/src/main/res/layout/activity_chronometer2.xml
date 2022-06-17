@@ -51,8 +51,37 @@
                         android:textSize="24sp"
                         android:textStyle="bold" />
 
+                    <androidx.cardview.widget.CardView
+
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        app:cardElevation="10dp"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardCornerRadius="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="8dp"
+                        android:focusable="true"
+                        app:cardBackgroundColor="#2B2929"
+                        android:layout_alignParentEnd="true">
+                        <ImageButton
+                            android:id="@+id/reset_btn"
+                            android:layout_gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/ic_baseline_reset_"
+                            android:background="?android:selectableItemBackground"
+                           ></ImageButton>
+                    </androidx.cardview.widget.CardView>
+
+
+
 
                 </RelativeLayout>
+
+
             </androidx.appcompat.widget.Toolbar>
 
             <androidx.constraintlayout.widget.ConstraintLayout

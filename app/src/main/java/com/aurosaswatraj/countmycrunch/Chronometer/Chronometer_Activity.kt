@@ -5,6 +5,8 @@ import android.content.pm.ActivityInfo
 import android.graphics.Color
 import android.os.Bundle
 import android.os.SystemClock
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -15,7 +17,7 @@ import kotlinx.android.synthetic.main.activity_chronometer2.*
 class Chronometer_Activity : AppCompatActivity() {
 
 
-
+    private val rotateOpen: Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.rotate_open_anim) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +31,7 @@ class Chronometer_Activity : AppCompatActivity() {
         var laps:ArrayList<Laps> = ArrayList()
         var counter = 0
 
-        laps.add(Laps(counter++,time_Here.text.toString()))
+
 
         lap_Rv.layoutManager=LinearLayoutManager(applicationContext,RecyclerView.VERTICAL,false)
         lap_Rv.adapter=ChronometerLapAdapter(laps)
@@ -52,6 +54,14 @@ class Chronometer_Activity : AppCompatActivity() {
             //   start time
             time_Here.base = SystemClock.elapsedRealtime()
             time_Here.start()
+        }
+
+        reset_btn.setOnClickListener {
+            it.startAnimation(rotateOpen)
+            laps.clear()
+            lap_Rv.adapter?.notifyDataSetChanged()
+            counter=0
+
         }
 
         btn_stop_.setOnClickListener {

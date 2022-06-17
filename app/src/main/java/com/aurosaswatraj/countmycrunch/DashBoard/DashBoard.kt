@@ -247,8 +247,7 @@ class DashBoard : AppCompatActivity(),TimePickerDialog.OnTimeSetListener {
         val alarmManager:AlarmManager= getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val intent=Intent(this,AlarmReceiver::class.java)
         val pendingIntent:PendingIntent=PendingIntent.getBroadcast(this,1,intent,0)
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,c.timeInMillis,AlarmManager.INTERVAL_DAY,pendingIntent)
-
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP,c.timeInMillis,pendingIntent)
 
     }
 
