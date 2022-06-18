@@ -11,6 +11,8 @@ public class NotificationReceiver extends BroadcastReceiver {
         String message=intent.getStringExtra("toastMessage");
         Toast.makeText(context,message,Toast.LENGTH_LONG).show();
 
+        context.startActivity(intent);
+
 
     }
 }

@@ -1,6 +1,7 @@
 package com.aurosaswatraj.countmycrunch.CMCScheduler;
 
 import android.app.Application;
+import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.os.Build;
@@ -24,6 +25,7 @@ public class App extends Application {
                     NotificationManager.IMPORTANCE_HIGH
             );
             channel1.setDescription("CMC Channel Main");
+            channel1.setLockscreenVisibility(Notification.VISIBILITY_PUBLIC);
 
 
             NotificationManager manger=getSystemService(NotificationManager.class);

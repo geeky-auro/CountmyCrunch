@@ -267,5 +267,10 @@ class DashBoard : AppCompatActivity(),TimePickerDialog.OnTimeSetListener {
 
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finishAffinity()
+    }
+
 
 }
