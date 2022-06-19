@@ -31,7 +31,7 @@
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             app:layout_constraintEnd_toEndOf="@+id/insideView"
             app:cardBackgroundColor="#FF8A80"
             android:layout_margin="14dp"
@@ -48,7 +48,7 @@
             <TextView
                 android:id="@+id/mFoodDisplay"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:fontFamily="@font/googlesans_bold"
                 android:padding="2dp"
                 android:text="Dataset"
