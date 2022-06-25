@@ -79,9 +79,6 @@ class MainActivity : AppCompatActivity(),FragmentCalorieOutput,Calorie_Calculato
 
 
 
-//    TODO:Implement a graph :https://www.mobindustry.net/blog/how-to-quickly-implement-beautiful-charts-in-your-android-app/
-
-
     private fun initialInitialization(savedInstanceState: Bundle?,id: Int) {
         fragmentB=CalorieOutputFragment()
 
