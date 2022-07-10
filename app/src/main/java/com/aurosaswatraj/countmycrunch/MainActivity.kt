@@ -17,7 +17,6 @@ import com.aurosaswatraj.countmycrunch.CalorieCounter.CalorieOutputFragment
 import com.aurosaswatraj.countmycrunch.CalorieCounter.Calorie_Calculator
 import com.aurosaswatraj.countmycrunch.CalorieCounter.FragmentCalorieOutput
 import com.aurosaswatraj.countmycrunch.Dialogs.UserDarkModeDialog
-import com.aurosaswatraj.countmycrunch.Dialogs.UserManualDialog
 import com.aurosaswatraj.countmycrunch.ProgressTracking.MainActivityFragment
 import com.thecode.aestheticdialogs.*
 import kotlinx.android.synthetic.main.activity_main.*
@@ -46,9 +45,9 @@ class MainActivity : AppCompatActivity(),FragmentCalorieOutput,Calorie_Calculato
         id =intent.getIntExtra("id",-1)
         initialInitialization(savedInstanceState,id)
 
-        var itemID:Int=id
+        val itemID:Int=id
         Log.d(TAG," Id is $itemID")
-        var selectedFragment:Fragment?
+        val selectedFragment:Fragment?
         when(itemID){
             1->{
                 selectedFragment=BMIFinder()
@@ -69,22 +68,13 @@ class MainActivity : AppCompatActivity(),FragmentCalorieOutput,Calorie_Calculato
                     .commit()
             }
         }
-
-
-
-
-
-
     }
 
 
 
     private fun initialInitialization(savedInstanceState: Bundle?,id: Int) {
         fragmentB=CalorieOutputFragment()
-
-
-
-        if(savedInstanceState==null){
+         if(savedInstanceState==null){
             bottomNaviView(id)
 
         }
@@ -94,9 +84,7 @@ class MainActivity : AppCompatActivity(),FragmentCalorieOutput,Calorie_Calculato
 
     private fun bottomNaviView(id:Int){
         bottomNavigationView.setOnItemSelectedListener {
-            var selectedFragment:Fragment?
-
-
+            val selectedFragment:Fragment?
             when (it.itemId) {
                 R.id.BMI1->{selectedFragment=BMIFinder()
                     supportFragmentManager.beginTransaction().replace(R.id.fragment_container_view,
