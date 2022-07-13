@@ -18,6 +18,15 @@ public class UserManualDialog {
                 .setTitle("User Guide")
                 .setCancelable(true)
                 .setDialogBackgroundColor(Color.WHITE)
+
+
+                .addButton("About Us", Color.WHITE, Color.parseColor("#301934"), CFAlertDialog.CFAlertActionStyle.POSITIVE, CFAlertDialog.CFAlertActionAlignment.JUSTIFIED, (dialog, which) -> {
+                    String strName = "https://countmycrunch.netlify.app/about.html";
+                    i.putExtra("STRING_I_NEED", strName);
+                    context.startActivity(i);
+                    dialog.dismiss();
+                })
+
                 .addButton("BMI Calculator", Color.WHITE, Color.BLACK, CFAlertDialog.CFAlertActionStyle.POSITIVE, CFAlertDialog.CFAlertActionAlignment.JUSTIFIED, (dialog, which) -> {
                     String strName = "https://countmycrunch.netlify.app/bmicalc";
                     i.putExtra("STRING_I_NEED", strName);
@@ -27,6 +36,13 @@ public class UserManualDialog {
 
                 .addButton("Calorie Counter", Color.WHITE, Color.BLACK, CFAlertDialog.CFAlertActionStyle.POSITIVE, CFAlertDialog.CFAlertActionAlignment.JUSTIFIED, (dialog, which) -> {
                     String strName = "https://countmycrunch.netlify.app/caloriecalc.html";
+                    i.putExtra("STRING_I_NEED", strName);
+                    context.startActivity(i);
+                    dialog.dismiss();
+                })
+
+                .addButton("Contact Us", Color.WHITE, Color.parseColor("#023020"), CFAlertDialog.CFAlertActionStyle.POSITIVE, CFAlertDialog.CFAlertActionAlignment.JUSTIFIED, (dialog, which) -> {
+                    String strName = "https://countmycrunch.netlify.app/contactus.html";
                     i.putExtra("STRING_I_NEED", strName);
                     context.startActivity(i);
                     dialog.dismiss();
