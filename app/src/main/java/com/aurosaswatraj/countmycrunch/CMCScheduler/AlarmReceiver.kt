@@ -1,15 +1,12 @@
 package com.aurosaswatraj.countmycrunch.CMCScheduler
 
 import android.app.Notification
-import android.app.Notification.EXTRA_COMPACT_ACTIONS
-import android.app.Notification.EXTRA_NOTIFICATION_ID
 import android.app.PendingIntent
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.graphics.Color
-import android.os.SystemClock
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.aurosaswatraj.countmycrunch.DashBoard.DashBoard
@@ -21,7 +18,8 @@ class AlarmReceiver : BroadcastReceiver() {
     val i=Intent(p0,DashBoard::class.java)
         p1!!.flags=Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
 
-        val pendingIntent=PendingIntent.getActivity(p0,0,i,0)
+        val pendingIntent=PendingIntent.getActivity(p0,0,i,
+            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
 
 
         val bitmap=BitmapFactory.decodeResource(p0?.resources,R.mipmap.ic_launcher_round)
