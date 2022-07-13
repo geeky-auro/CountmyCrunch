@@ -78,6 +78,25 @@ class DashBoard : AppCompatActivity(),TimePickerDialog.OnTimeSetListener {
             startActivity(intent)
         }
 
+        share.setOnClickListener {
+            try {
+                val shareIntent = Intent(Intent.ACTION_SEND)
+                shareIntent.type = "text/plain"
+                shareIntent.putExtra(Intent.EXTRA_SUBJECT, "My application name")
+                var shareMessage = "\nCountMyCrunch-The Ultimate Health and Wellness Platform\n" +
+                        "Don’t just Count your Calories, make your Calories Count!\n\n"
+                shareMessage =
+                    """
+                    $shareMessage https://play.google.com/store/apps/details?id=com.aurosaswatraj.countmycrunch
+                    
+                    """.trimIndent()
+                shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage)
+                startActivity(Intent.createChooser(shareIntent, "choose one"))
+            } catch (e: Exception) {
+                //e.toString();
+            }
+        }
+
         val darkModeDialog=UserDarkModeDialog()
         darkModeDialog.darkModeDialog(this,this)
         window.statusBarColor = Color.parseColor("#2f3640")
@@ -146,11 +165,13 @@ class DashBoard : AppCompatActivity(),TimePickerDialog.OnTimeSetListener {
            setAlarm.visibility=View.VISIBLE
            cancelAlarm.visibility=View.VISIBLE
            developer.visibility=View.VISIBLE
+           share.visibility=View.VISIBLE
        }
         else{
            setAlarm.visibility=View.INVISIBLE
            cancelAlarm.visibility=View.INVISIBLE
            developer.visibility=View.INVISIBLE
+           share.visibility=View.INVISIBLE
        }
     }
 
@@ -162,6 +183,7 @@ class DashBoard : AppCompatActivity(),TimePickerDialog.OnTimeSetListener {
             cancelAlarm.startAnimation(fromBottom)
             scheduler_btn.startAnimation(rotateOpen)
             developer.startAnimation(fromLeft)
+            share.startAnimation(fromLeft)
 
         }
         else{
@@ -169,6 +191,7 @@ class DashBoard : AppCompatActivity(),TimePickerDialog.OnTimeSetListener {
             cancelAlarm.startAnimation(toBottom)
             scheduler_btn.startAnimation(rotateClose)
             developer.startAnimation(fromRight)
+            share.startAnimation(fromRight)
 
         }
     }
@@ -178,11 +201,13 @@ class DashBoard : AppCompatActivity(),TimePickerDialog.OnTimeSetListener {
             setAlarm.isClickable=true
             cancelAlarm.isClickable=true
             developer.isClickable=true
+            share.isClickable=true
         }
         else{
             setAlarm.isClickable=false
             cancelAlarm.isClickable=false
             developer.isClickable=false
+            share.isClickable=false
         }
 
     }
@@ -212,6 +237,7 @@ class DashBoard : AppCompatActivity(),TimePickerDialog.OnTimeSetListener {
                     dialog.dismiss()
                     //actions...
                 }
+
             })
             .show()
     }

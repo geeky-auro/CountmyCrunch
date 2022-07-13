@@ -488,15 +488,30 @@
         android:id="@+id/developer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
         android:clickable="true"
-        app:elevation="20sp"
-        android:visibility="invisible"
-        app:backgroundTint="@color/md_white_1000"
-        android:layout_marginRight="16dp"
         android:scaleType="centerCrop"
         android:tint="@color/md_white_1000"
+        android:visibility="invisible"
+        app:backgroundTint="@color/md_white_1000"
+        app:elevation="20sp"
         app:layout_constraintEnd_toStartOf="@+id/scheduler_btn"
         app:layout_constraintTop_toTopOf="@+id/scheduler_btn"
         app:srcCompat="@drawable/coding" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:clickable="true"
+        android:scaleType="centerCrop"
+        android:tint="@color/md_white_1000"
+        android:visibility="invisible"
+        app:backgroundTint="@color/md_white_1000"
+        app:elevation="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/developer"
+        app:layout_constraintTop_toTopOf="@+id/developer"
+        app:srcCompat="@drawable/ic_share" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
