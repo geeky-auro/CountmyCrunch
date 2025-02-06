@@ -45,7 +45,7 @@ dependencies {
 
 //    Extensions to Application
     implementation 'com.github.marcoscgdev:DialogSheet:2.1.2'
-    implementation 'com.crowdfire.cfalertdialog:cfalertdialog:1.1.0'
+    implementation 'com.afollestad.material-dialogs:core:3.3.0'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.github.Shashank02051997:FancyAlertDialog-Android:0.2'
     implementation 'io.github.amrdeveloper:lottiedialog:1.0.0'
